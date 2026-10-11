@@ -11,22 +11,28 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div>
-      <section className="bg-navy text-white py-20 sm:py-28">
+      <section className="bg-navy text-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="font-heading text-4xl sm:text-5xl font-bold mb-4 text-gold">
+          <h1
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3"
+            style={{ fontFamily: "Georgia, serif" }}
+          >
             Welcome to Success Plus
           </h1>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-2xl uppercase tracking-wide font-semibold">
+          <p className="text-base sm:text-lg text-gold max-w-2xl uppercase tracking-wide font-semibold">
             Discover How to Become a Great Leader
           </p>
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="py-14 sm:py-18">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="font-heading text-3xl font-bold text-navy mb-6">
+              <h2
+                className="text-3xl font-bold text-navy mb-6"
+                style={{ fontFamily: "Georgia, serif" }}
+              >
                 Our Story
               </h2>
               <p className="text-gray-700 text-lg leading-relaxed mb-6">
@@ -56,7 +62,7 @@ export default function AboutPage() {
             </div>
 
             <div className="space-y-8">
-              <div className="bg-navy rounded-2xl p-8 text-white">
+              <div id="testimonials" className="bg-navy rounded-lg p-8 text-white">
                 <blockquote className="text-lg leading-relaxed italic text-gray-300">
                   &ldquo;The &lsquo;Success Model&rsquo; of Success Plus is very
                   unique. It is not a classroom instrumental environment. It is
@@ -71,8 +77,11 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="bg-gray-50 rounded-2xl p-8">
-                <h3 className="font-heading text-xl font-bold text-navy mb-4">
+              <div className="bg-gray-50 rounded-lg p-8">
+                <h3
+                  className="text-xl font-bold text-navy mb-4"
+                  style={{ fontFamily: "Georgia, serif" }}
+                >
                   The Success Model
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -98,23 +107,28 @@ export default function AboutPage() {
       </section>
 
       {/* Trusted By */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-14 bg-lavender">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm uppercase tracking-widest text-gray-500 font-semibold mb-8">
+          <p className="text-sm uppercase tracking-widest text-navy/60 font-semibold mb-8">
             Trusted by America&apos;s Most Recognized Brands
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-12 text-2xl font-heading font-bold text-gray-300">
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 text-2xl font-bold text-navy/50" style={{ fontFamily: "Georgia, serif" }}>
             <span>Coca-Cola</span>
             <span>Tyson Foods</span>
             <span>Johnsonville</span>
+            <span>Bonnie Plants</span>
+            <span>American Seafoods</span>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-navy py-16">
+      <section className="bg-navy py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-3xl font-bold text-white mb-4">
+          <h2
+            className="text-3xl font-bold text-white mb-4"
+            style={{ fontFamily: "Georgia, serif" }}
+          >
             Ready to Work with Isaac?
           </h2>
           <p className="text-gray-300 text-lg max-w-xl mx-auto mb-8">
@@ -124,14 +138,14 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="tel:8444677587"
-              className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy-dark font-bold px-8 py-3 rounded transition-colors"
+              className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy-dark font-bold px-8 py-3 rounded uppercase tracking-wider transition-colors"
             >
               <Phone className="h-5 w-5" />
               844-467-7587
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-navy font-bold px-8 py-3 rounded transition-colors"
+              className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-navy font-bold px-8 py-3 rounded uppercase tracking-wider transition-colors"
             >
               Contact Us
               <ArrowRight className="h-4 w-4" />

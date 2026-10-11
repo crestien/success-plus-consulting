@@ -12,28 +12,31 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div>
-      <section className="bg-navy text-white py-20 sm:py-28">
+      <section className="bg-navy text-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="font-heading text-4xl sm:text-5xl font-bold text-gold mb-4">
+          <h1
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3"
+            style={{ fontFamily: "Georgia, serif" }}
+          >
             Ensure Long-Term, Measurable Success!
           </h1>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-2xl">
+          <p className="text-lg text-gold uppercase tracking-wide font-semibold">
             Connect With Us Today!
           </p>
-          <p className="text-gold font-semibold mt-2 uppercase tracking-wider">
+          <p className="text-gold-light font-semibold mt-2 uppercase tracking-wider text-sm">
             Motivation. Sales. Leadership.
           </p>
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="py-14 sm:py-18">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
               <div className="mb-10">
                 <Link
                   href="/invite-isaac-to-speak"
-                  className="inline-flex items-center gap-2 bg-navy hover:bg-navy-light text-white font-bold px-6 py-3 rounded transition-colors"
+                  className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy-dark font-bold px-6 py-3 rounded uppercase tracking-wider transition-colors text-sm"
                 >
                   <BookOpen className="h-5 w-5" />
                   Book Isaac for Your Next Event
@@ -58,11 +61,11 @@ export default function ContactPage() {
 
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-semibold text-navy uppercase text-sm tracking-wider mb-2">
+                  <h3 className="font-bold text-navy uppercase text-sm tracking-wider mb-2">
                     Address
                   </h3>
                   <div className="flex items-start gap-3 text-gray-700">
-                    <MapPin className="h-5 w-5 text-gold mt-0.5 shrink-0" />
+                    <MapPin className="h-5 w-5 text-gold-dark mt-0.5 shrink-0" />
                     <div>
                       <p>400 South 4th Street, Suite 401M – 231</p>
                       <p>Minneapolis, MN 55415</p>
@@ -71,11 +74,11 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-navy uppercase text-sm tracking-wider mb-2">
+                  <h3 className="font-bold text-navy uppercase text-sm tracking-wider mb-2">
                     Mailing Address
                   </h3>
                   <div className="flex items-start gap-3 text-gray-700">
-                    <Mail className="h-5 w-5 text-gold mt-0.5 shrink-0" />
+                    <Mail className="h-5 w-5 text-gold-dark mt-0.5 shrink-0" />
                     <div>
                       <p>P.O. Box 195</p>
                       <p>Dearmanville, AL 36257</p>
@@ -84,12 +87,12 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-navy uppercase text-sm tracking-wider mb-2">
+                  <h3 className="font-bold text-navy uppercase text-sm tracking-wider mb-2">
                     Phone
                   </h3>
                   <a
                     href="tel:8444677587"
-                    className="flex items-center gap-3 text-gold-dark hover:text-gold transition-colors text-lg font-bold"
+                    className="flex items-center gap-3 text-navy hover:text-navy-light transition-colors text-lg font-bold"
                   >
                     <Phone className="h-5 w-5 shrink-0" />
                     844-467-7587
@@ -99,8 +102,11 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
-                <h2 className="font-heading text-2xl font-bold text-navy mb-6">
+              <div className="bg-white rounded-lg shadow-lg border border-gray-100 p-8">
+                <h2
+                  className="text-2xl font-bold text-navy mb-6"
+                  style={{ fontFamily: "Georgia, serif" }}
+                >
                   Send Us a Message
                 </h2>
                 <ContactForm variant="full" />

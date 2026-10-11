@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -74,12 +73,12 @@ export function ContactForm({ variant = "full" }: { variant?: "full" | "compact"
           placeholder={variant === "full" ? "How can we help?" : "Any comments?"}
         />
       </div>
-      <Button
+      <button
         type="submit"
-        className="w-full bg-gold hover:bg-gold-dark text-navy-dark font-bold py-3"
+        className="w-full bg-gold hover:bg-gold-dark text-navy-dark font-bold py-3 px-6 rounded uppercase tracking-wider transition-colors text-sm"
       >
         {variant === "full" ? "Send Message" : "Subscribe"}
-      </Button>
+      </button>
     </form>
   );
 }

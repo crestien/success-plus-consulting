@@ -17,7 +17,7 @@ export default function StrategicPlanningPage() {
         { title: "4 Ways to Deal with Change", href: "#" },
       ]}
     >
-      <h2 className="font-heading text-2xl font-bold text-navy mb-4">
+      <h2 className="text-2xl font-bold text-navy mb-4" style={{ fontFamily: "Georgia, serif" }}>
         Do you know where your business is headed?
       </h2>
       <p>

@@ -26,7 +26,7 @@ export default function LeadershipCoachingPage() {
       subtitle="Discover How to Become a Great Leader"
       blogPosts={blogPosts}
     >
-      <h2 className="font-heading text-2xl font-bold text-navy mb-4">
+      <h2 className="text-2xl font-bold text-navy mb-4" style={{ fontFamily: "Georgia, serif" }}>
         Build a Plan.
       </h2>
       <p>

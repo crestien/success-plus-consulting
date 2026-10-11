@@ -26,7 +26,7 @@ export default function OneToOneMentoringPage() {
       subtitle="Find Out How Success Plus Helps Leaders"
       blogPosts={blogPosts}
     >
-      <h2 className="font-heading text-2xl font-bold text-navy mb-4">
+      <h2 className="text-2xl font-bold text-navy mb-4" style={{ fontFamily: "Georgia, serif" }}>
         What challenges are you facing today?
       </h2>
       <p>

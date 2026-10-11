@@ -21,18 +21,21 @@ const eventTypes = [
 export default function FreeSeminarPage() {
   return (
     <div>
-      <section className="bg-navy text-white py-20 sm:py-28">
+      <section className="bg-navy text-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="font-heading text-4xl sm:text-5xl font-bold mb-4 text-gold">
+          <h1
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3"
+            style={{ fontFamily: "Georgia, serif" }}
+          >
             Free Seminar
           </h1>
-          <p className="text-lg text-gray-300 max-w-2xl uppercase tracking-wide font-semibold">
+          <p className="text-lg text-gold uppercase tracking-wide font-semibold">
             At Your Next Event!
           </p>
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="py-14 sm:py-18">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
@@ -46,8 +49,11 @@ export default function FreeSeminarPage() {
                 work environment.
               </p>
 
-              <div className="bg-gray-50 rounded-xl p-6">
-                <h3 className="font-heading text-lg font-bold text-navy mb-4">
+              <div className="bg-gray-50 rounded-lg p-6">
+                <h3
+                  className="text-lg font-bold text-navy mb-4"
+                  style={{ fontFamily: "Georgia, serif" }}
+                >
                   Isaac&apos;s Presentations Are Perfect For:
                 </h3>
                 <div className="grid grid-cols-2 gap-2">
@@ -65,8 +71,11 @@ export default function FreeSeminarPage() {
             </div>
 
             <div>
-              <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
-                <h3 className="font-heading text-xl font-bold text-navy mb-2">
+              <div className="bg-white rounded-lg shadow-lg border border-gray-100 p-8">
+                <h3
+                  className="text-xl font-bold text-navy mb-2"
+                  style={{ fontFamily: "Georgia, serif" }}
+                >
                   Send a Request
                 </h3>
                 <p className="text-gray-600 mb-6">

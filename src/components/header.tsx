@@ -21,51 +21,23 @@ export function Header() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-navy text-white shadow-lg">
-      <div className="bg-navy-dark">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between py-2 text-sm">
-          <a
-            href="tel:8444677587"
-            className="flex items-center gap-2 text-gold hover:text-gold-light transition-colors"
-          >
-            <Phone className="h-4 w-4" />
-            <span className="font-semibold">844-467-7587</span>
-            <span className="hidden sm:inline">Call Today!</span>
-          </a>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/invite-isaac-to-speak"
-              className="hidden sm:inline-block text-gold hover:text-gold-light transition-colors"
-            >
-              Invite Isaac to Speak
-            </Link>
-          </div>
-        </div>
-      </div>
-
+    <header className="sticky top-0 z-50 bg-white shadow-md">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="flex flex-col">
-              <span className="text-xl font-bold tracking-tight text-gold font-heading">
-                Success Plus
-              </span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-gray-300 -mt-1">
-                Consulting
-              </span>
-            </div>
+        <div className="flex h-20 items-center justify-between">
+          <Link href="/" className="flex items-center shrink-0">
+            <span className="text-navy text-2xl sm:text-3xl tracking-wide" style={{ fontFamily: "Georgia, serif" }}>
+              <span className="font-normal">S</span>
+              <span className="text-[0.75em] font-normal">UCCESS</span>
+              {" "}
+              <span className="font-normal text-gold">P</span>
+              <span className="text-[0.75em] font-normal">LUS</span>
+            </span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
             <Link
-              href="/"
-              className="px-4 py-2 text-sm font-medium hover:text-gold transition-colors"
-            >
-              Home
-            </Link>
-            <Link
               href="/about"
-              className="px-4 py-2 text-sm font-medium hover:text-gold transition-colors"
+              className="px-3 py-2 text-sm font-medium text-navy hover:text-navy-light transition-colors"
             >
               About
             </Link>
@@ -75,17 +47,17 @@ export function Header() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium hover:text-gold transition-colors">
+              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-navy hover:text-navy-light transition-colors">
                 Services
                 <ChevronDown className="h-3 w-3" />
               </button>
               {servicesOpen && (
-                <div className="absolute left-0 top-full w-64 bg-navy-dark rounded-b-lg shadow-xl border border-navy-light/20 py-2">
+                <div className="absolute left-0 top-full w-64 bg-white rounded-b-lg shadow-xl border border-gray-200 py-2">
                   {services.map((s) => (
                     <Link
                       key={s.href}
                       href={s.href}
-                      className="block px-4 py-2.5 text-sm hover:bg-navy-light hover:text-gold transition-colors"
+                      className="block px-4 py-2.5 text-sm text-navy hover:bg-navy hover:text-white transition-colors"
                     >
                       {s.name}
                     </Link>
@@ -95,21 +67,35 @@ export function Header() {
             </div>
 
             <Link
+              href="/about#testimonials"
+              className="px-3 py-2 text-sm font-medium text-navy hover:text-navy-light transition-colors"
+            >
+              Testimonials
+            </Link>
+            <Link
               href="/contact"
-              className="px-4 py-2 text-sm font-medium hover:text-gold transition-colors"
+              className="px-3 py-2 text-sm font-medium text-navy hover:text-navy-light transition-colors"
             >
               Contact
             </Link>
             <Link
-              href="/contact"
-              className="ml-4 bg-gold hover:bg-gold-dark text-navy-dark px-5 py-2 rounded text-sm font-bold transition-colors"
+              href="/invite-isaac-to-speak"
+              className="px-3 py-2 text-sm font-medium text-navy hover:text-navy-light transition-colors"
             >
-              Get Started
+              Invite Isaac To Speak
             </Link>
+
+            <a
+              href="tel:8444677587"
+              className="ml-4 inline-flex items-center gap-2 bg-navy hover:bg-navy-light text-white font-semibold px-5 py-2.5 rounded text-sm transition-colors"
+            >
+              <Phone className="h-4 w-4" />
+              844-467-7587
+            </a>
           </div>
 
           <button
-            className="lg:hidden p-2 hover:text-gold transition-colors"
+            className="lg:hidden p-2 text-navy hover:text-navy-light transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -119,25 +105,25 @@ export function Header() {
       </nav>
 
       {mobileOpen && (
-        <div className="lg:hidden bg-navy-dark border-t border-navy-light/20">
+        <div className="lg:hidden bg-white border-t border-gray-200">
           <div className="px-4 py-4 space-y-1">
             <Link
               href="/"
-              className="block px-3 py-2.5 text-sm font-medium hover:bg-navy-light hover:text-gold rounded transition-colors"
+              className="block px-3 py-2.5 text-sm font-medium text-navy hover:bg-navy hover:text-white rounded transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               Home
             </Link>
             <Link
               href="/about"
-              className="block px-3 py-2.5 text-sm font-medium hover:bg-navy-light hover:text-gold rounded transition-colors"
+              className="block px-3 py-2.5 text-sm font-medium text-navy hover:bg-navy hover:text-white rounded transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               About
             </Link>
             <div>
               <button
-                className="flex items-center gap-1 w-full px-3 py-2.5 text-sm font-medium hover:bg-navy-light hover:text-gold rounded transition-colors"
+                className="flex items-center gap-1 w-full px-3 py-2.5 text-sm font-medium text-navy hover:bg-navy hover:text-white rounded transition-colors"
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
               >
                 Services
@@ -151,7 +137,7 @@ export function Header() {
                     <Link
                       key={s.href}
                       href={s.href}
-                      className="block px-3 py-2 text-sm hover:bg-navy-light hover:text-gold rounded transition-colors"
+                      className="block px-3 py-2 text-sm text-navy hover:bg-navy hover:text-white rounded transition-colors"
                       onClick={() => setMobileOpen(false)}
                     >
                       {s.name}
@@ -161,27 +147,34 @@ export function Header() {
               )}
             </div>
             <Link
-              href="/invite-isaac-to-speak"
-              className="block px-3 py-2.5 text-sm font-medium hover:bg-navy-light hover:text-gold rounded transition-colors"
+              href="/about#testimonials"
+              className="block px-3 py-2.5 text-sm font-medium text-navy hover:bg-navy hover:text-white rounded transition-colors"
               onClick={() => setMobileOpen(false)}
             >
-              Invite Isaac to Speak
+              Testimonials
             </Link>
             <Link
               href="/contact"
-              className="block px-3 py-2.5 text-sm font-medium hover:bg-navy-light hover:text-gold rounded transition-colors"
+              className="block px-3 py-2.5 text-sm font-medium text-navy hover:bg-navy hover:text-white rounded transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               Contact
             </Link>
+            <Link
+              href="/invite-isaac-to-speak"
+              className="block px-3 py-2.5 text-sm font-medium text-navy hover:bg-navy hover:text-white rounded transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              Invite Isaac To Speak
+            </Link>
             <div className="pt-2">
-              <Link
-                href="/contact"
-                className="block text-center bg-gold hover:bg-gold-dark text-navy-dark px-5 py-2.5 rounded text-sm font-bold transition-colors"
-                onClick={() => setMobileOpen(false)}
+              <a
+                href="tel:8444677587"
+                className="flex items-center justify-center gap-2 bg-navy hover:bg-navy-light text-white font-semibold px-5 py-2.5 rounded text-sm transition-colors"
               >
-                Get Started
-              </Link>
+                <Phone className="h-4 w-4" />
+                844-467-7587
+              </a>
             </div>
           </div>
         </div>

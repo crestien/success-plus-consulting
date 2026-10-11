@@ -18,7 +18,7 @@ export default function ImproveRetentionPage() {
         { title: "Education vs Training: What's More Important?", href: "#" },
       ]}
     >
-      <h2 className="font-heading text-2xl font-bold text-navy mb-4">
+      <h2 className="text-2xl font-bold text-navy mb-4" style={{ fontFamily: "Georgia, serif" }}>
         Do you have a plan?
       </h2>
       <p>

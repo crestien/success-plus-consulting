@@ -9,59 +9,65 @@ import {
   Heart,
   GraduationCap,
   ArrowRight,
-  Phone,
   BookOpen,
 } from "lucide-react";
-import { ContactForm } from "@/components/contact-form";
 
 const services = [
   {
-    title: "Leadership Coaching",
-    description: "Become a great leader!",
+    title: "Leadership\nCoaching",
+    cta: "Become a Great Leader!",
     icon: Users,
     href: "/leadership-coaching",
+    gradient: "from-blue-600 to-blue-800",
   },
   {
-    title: "Improve Retention",
-    description: "Develop a plan to improve retention!",
+    title: "Improve\nRetention",
+    cta: "Develop a Plan to Improve Retention!",
     icon: TrendingUp,
     href: "/improve-retention",
+    gradient: "from-indigo-600 to-indigo-800",
   },
   {
-    title: "Diversity Coaching",
-    description: "Learn more about diversity coaching",
+    title: "Diversity\nCoaching",
+    cta: "Learn More About Diversity Coaching",
     icon: Globe,
     href: "/diversity-coaching",
+    gradient: "from-purple-600 to-purple-800",
   },
   {
-    title: "One to One Mentoring",
-    description: "Get insight & personal guidance",
+    title: "One to One\nMentoring",
+    cta: "Get Insight & Personal Guidance",
     icon: UserCheck,
     href: "/one-to-one-mentoring",
+    gradient: "from-cyan-600 to-cyan-800",
   },
   {
-    title: "Strategic Planning",
-    description: "Create your strategy today!",
+    title: "Strategic\nPlanning",
+    cta: "Create Your Strategy Today!",
     icon: Target,
     href: "/strategic-planning",
+    gradient: "from-teal-600 to-teal-800",
   },
   {
-    title: "Talent Development",
-    description: "Reach your full potential",
+    title: "Talent\nDevelopment",
+    cta: "Reach Your Full Potential",
     icon: Sparkles,
     href: "/talent-development",
+    gradient: "from-emerald-600 to-emerald-800",
   },
   {
-    title: "Life Coach for Teens",
-    description: "Let us help your teens",
+    title: "Life Coach\nfor Teens",
+    cta: "Let Us Help Your Teens",
     icon: Heart,
     href: "/life-coach-for-teens",
+    gradient: "from-rose-600 to-rose-800",
   },
   {
-    title: "Leadership Trainee Program",
-    description: "Learn more about this program",
+    title: "Leadership\nTrainee Program",
+    cta: "Learn More About This Program",
     icon: GraduationCap,
     href: "/leadership-trainee-program",
+    gradient: "from-amber-600 to-amber-800",
   },
 ];
 
@@ -69,107 +75,182 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-navy text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--color-navy-light)_0%,_transparent_60%)] opacity-40" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-gold font-semibold uppercase tracking-widest text-sm mb-4">
-                Results-Oriented Leadership Strategies
-              </p>
-              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                Coach to Managers
-                <br />
-                and{" "}
-                <span className="text-gold">Supervisors</span>
-              </h1>
-              <p className="mt-4 text-lg text-gray-300">
-                Advisor to CEOs &amp; Leaders
-              </p>
-              <p className="mt-6 text-gray-300 text-lg leading-relaxed max-w-lg">
-                His knowledge, expert analysis, and training philosophy can help
-                you increase productivity.
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy-dark font-bold px-8 py-3.5 rounded text-base transition-colors"
-                >
-                  Work With Isaac
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="/invite-isaac-to-speak"
-                  className="inline-flex items-center justify-center gap-2 border-2 border-gold text-gold hover:bg-gold hover:text-navy-dark font-bold px-8 py-3.5 rounded text-base transition-colors"
-                >
-                  <BookOpen className="h-4 w-4" />
-                  Book Isaac for Your Next Event
-                </Link>
-              </div>
-            </div>
-            <div className="hidden lg:block">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-                <h3 className="font-heading text-xl font-bold text-gold mb-2">
-                  Subscribe to Monthly Tips
-                </h3>
-                <p className="text-gray-300 text-sm mb-6">
-                  Get leadership insights delivered to your inbox.
+      <section className="bg-white py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+            {/* Book */}
+            <div className="relative">
+              <div className="w-56 sm:w-64 bg-navy rounded-lg shadow-2xl p-6 text-white text-center">
+                <p className="text-[10px] uppercase tracking-wider text-gray-300 mb-2">
+                  Leadership in a Changing World
                 </p>
-                <ContactForm variant="compact" />
+                <h2
+                  className="text-2xl font-bold leading-tight mb-3"
+                  style={{ fontFamily: "Georgia, serif" }}
+                >
+                  Improving
+                  <br />
+                  <span className="text-gold text-lg">Profits</span>
+                  <br />
+                  <span className="italic text-sm font-normal text-gray-300">
+                    through
+                  </span>
+                  <br />
+                  People
+                </h2>
+                <div className="border-t border-navy-light pt-3 mt-3">
+                  <p className="text-xs text-gray-300">
+                    Boosting Your Organization&apos;s Bottom Line
+                    <br />
+                    With a Results-Oriented Leadership Process
+                  </p>
+                </div>
+                <p className="mt-4 text-sm font-bold">Isaac Russell</p>
+                <p className="text-[9px] text-gray-400 uppercase tracking-wider">
+                  Nationally Recognized Executive Leadership Coach
+                </p>
               </div>
             </div>
+
+            {/* Get Your Copy */}
+            <div className="text-center lg:text-left">
+              <h1
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy leading-tight"
+                style={{ fontFamily: "Georgia, serif" }}
+              >
+                Get Your
+                <br />
+                Copy!
+              </h1>
+            </div>
+
+            {/* Author Circle */}
+            <div className="relative">
+              <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-full border-[6px] border-gold bg-navy flex items-center justify-center relative">
+                <div className="text-center text-white">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-navy-light rounded-full flex items-center justify-center mb-2">
+                    <Users className="h-8 w-8 sm:h-10 sm:w-10 text-gold" />
+                  </div>
+                  <p
+                    className="text-xs sm:text-sm font-bold italic"
+                    style={{ fontFamily: "Georgia, serif" }}
+                  >
+                    Isaac Russell
+                  </p>
+                </div>
+              </div>
+              <p className="text-center mt-3 text-xs sm:text-sm font-bold text-navy uppercase tracking-wider">
+                Learn More About the Author
+              </p>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-10 sm:mt-14">
+            <Link
+              href="/about"
+              className="inline-flex items-center justify-center gap-2 bg-red-cta hover:bg-red-cta-dark text-white font-bold px-10 py-4 rounded text-sm sm:text-base uppercase tracking-wider transition-colors w-full sm:w-auto"
+            >
+              Get Your Copy of Isaac&apos;s Book
+            </Link>
+            <Link
+              href="/invite-isaac-to-speak"
+              className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy-dark font-bold px-10 py-4 rounded text-sm sm:text-base uppercase tracking-wider transition-colors w-full sm:w-auto"
+            >
+              Invite Isaac to Speak
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Event Banner */}
-      <section className="bg-gold">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 text-center">
-          <p className="text-navy-dark font-bold text-lg sm:text-xl">
-            You&apos;re Invited To An{" "}
-            <span className="uppercase">In-Person Networking Event</span> with
-            Guest Speaker Isaac Russell
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block mt-3 bg-navy hover:bg-navy-light text-white font-bold px-6 py-2.5 rounded text-sm transition-colors"
+      {/* Yellow Banner */}
+      <section className="bg-gold py-10 sm:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2
+            className="text-navy text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wide leading-tight"
+            style={{ fontFamily: "Georgia, serif" }}
           >
-            Register to Attend
-          </Link>
+            Results-Oriented
+            <br />
+            Leadership Strategies
+          </h2>
+          <p className="text-navy-dark text-lg sm:text-xl mt-4 font-medium">
+            Coach to Managers and Supervisors
+          </p>
+          <p className="text-navy-dark text-lg sm:text-xl font-medium">
+            Advisor to CEOs &amp; Leaders
+          </p>
+        </div>
+      </section>
+
+      {/* Client Logos */}
+      <section className="bg-lavender py-12 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 lg:gap-20">
+            {["Coca-Cola", "Bonnie Plants", "Johnsonville", "Tyson", "American Seafoods"].map(
+              (brand) => (
+                <span
+                  key={brand}
+                  className="text-xl sm:text-2xl font-bold text-navy/60"
+                  style={{ fontFamily: "Georgia, serif" }}
+                >
+                  {brand}
+                </span>
+              )
+            )}
+          </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 sm:py-28 bg-gray-50">
+      <section className="py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy">
-              Services
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3">
+            <h2
+              className="text-3xl sm:text-4xl font-bold text-navy uppercase"
+              style={{ fontFamily: "Georgia, serif" }}
+            >
+              Work With Isaac
             </h2>
-            <p className="mt-3 text-gray-600 text-lg max-w-2xl mx-auto">
-              To improve the communication &amp; relationships with your
-              employees.
-            </p>
+            <Link
+              href="/invite-isaac-to-speak"
+              className="mt-4 sm:mt-0 inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy-dark font-bold px-6 py-3 rounded text-sm uppercase tracking-wider transition-colors"
+            >
+              Book Isaac for Your Next Event
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
+          <p className="text-gray-600 text-base mb-10">
+            <span className="underline">Services</span> to improve the
+            communication &amp; relationships with your employees.
+          </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {services.map((service) => {
               const Icon = service.icon;
               return (
                 <Link
                   key={service.href}
                   href={service.href}
-                  className="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-gold/30 transition-all duration-300 hover:-translate-y-1"
+                  className="group block overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow"
                 >
-                  <div className="w-12 h-12 bg-navy/5 rounded-lg flex items-center justify-center mb-4 group-hover:bg-gold/10 transition-colors">
-                    <Icon className="h-6 w-6 text-navy group-hover:text-gold-dark transition-colors" />
+                  {/* Photo area */}
+                  <div
+                    className={`h-40 bg-gradient-to-br ${service.gradient} flex items-center justify-center`}
+                  >
+                    <Icon className="h-16 w-16 text-white/40 group-hover:text-white/60 transition-colors" />
                   </div>
-                  <h3 className="font-bold text-navy text-base mb-1.5">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 uppercase tracking-wide font-medium">
-                    {service.description}
-                  </p>
+                  {/* Navy text area */}
+                  <div className="bg-navy p-4 text-center">
+                    <h3 className="text-white font-bold text-base sm:text-lg uppercase tracking-wide whitespace-pre-line leading-tight min-h-[2.5rem]">
+                      {service.title}
+                    </h3>
+                    <div className="mt-3">
+                      <span className="inline-block bg-gold hover:bg-gold-dark text-navy-dark text-xs sm:text-sm font-bold uppercase tracking-wider px-4 py-2 rounded transition-colors">
+                        {service.cta}
+                      </span>
+                    </div>
+                  </div>
                 </Link>
               );
             })}
@@ -178,14 +259,17 @@ export default function Home() {
       </section>
 
       {/* About Teaser */}
-      <section className="py-20 sm:py-28">
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-gold font-semibold uppercase tracking-widest text-sm mb-3">
+              <p className="text-gold-dark font-semibold uppercase tracking-widest text-sm mb-3">
                 About Isaac Russell
               </p>
-              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-navy mb-6">
+              <h2
+                className="text-3xl sm:text-4xl font-bold text-navy mb-6"
+                style={{ fontFamily: "Georgia, serif" }}
+              >
                 From the Factory Floor to the C-Suite
               </h2>
               <p className="text-gray-700 text-lg leading-relaxed mb-4">
@@ -203,13 +287,13 @@ export default function Home() {
               </p>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 text-gold-dark font-semibold hover:text-gold transition-colors"
+                className="inline-flex items-center gap-2 text-navy font-semibold hover:text-navy-light transition-colors"
               >
                 Learn more about Success Plus
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-            <div className="bg-navy rounded-2xl p-8 text-white">
+            <div className="bg-navy rounded-lg p-8 text-white">
               <blockquote className="text-lg leading-relaxed italic text-gray-300">
                 &ldquo;The &lsquo;Success Model&rsquo; of Success Plus is very
                 unique. It is not a classroom instrumental environment. It is
@@ -227,10 +311,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-navy py-16 sm:py-20">
+      {/* Subscribe / CTA */}
+      <section className="bg-navy py-14 sm:py-18">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2
+            className="text-3xl sm:text-4xl font-bold text-white mb-4"
+            style={{ fontFamily: "Georgia, serif" }}
+          >
             Ready to Transform Your Leadership?
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
@@ -240,32 +327,19 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="tel:8444677587"
-              className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy-dark font-bold px-8 py-3.5 rounded text-base transition-colors"
+              className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy-dark font-bold px-8 py-3.5 rounded uppercase tracking-wider transition-colors"
             >
-              <Phone className="h-5 w-5" />
+              <BookOpen className="h-5 w-5" />
               844-467-7587
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-navy font-bold px-8 py-3.5 rounded text-base transition-colors"
+              className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-navy font-bold px-8 py-3.5 rounded uppercase tracking-wider transition-colors"
             >
               Send Us a Message
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Mobile Subscribe (hidden on lg) */}
-      <section className="lg:hidden py-16 bg-gray-50">
-        <div className="mx-auto max-w-md px-4">
-          <h3 className="font-heading text-2xl font-bold text-navy mb-2 text-center">
-            Subscribe to Monthly Tips
-          </h3>
-          <p className="text-gray-600 text-center mb-6">
-            Get leadership insights delivered to your inbox.
-          </p>
-          <ContactForm variant="compact" />
         </div>
       </section>
     </div>

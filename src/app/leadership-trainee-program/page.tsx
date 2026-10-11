@@ -14,7 +14,7 @@ export default function LeadershipTraineeProgramPage() {
       subtitle="Learn More About This Program"
       blogPosts={[]}
     >
-      <h2 className="font-heading text-2xl font-bold text-navy mb-4">
+      <h2 className="text-2xl font-bold text-navy mb-4" style={{ fontFamily: "Georgia, serif" }}>
         Build a Process.
       </h2>
       <p>

@@ -18,7 +18,7 @@ export default function TalentDevelopmentPage() {
         { title: "Setting the Tone: How to Stay Motivated So You Can Motivate", href: "#" },
       ]}
     >
-      <h2 className="font-heading text-2xl font-bold text-navy mb-4">
+      <h2 className="text-2xl font-bold text-navy mb-4" style={{ fontFamily: "Georgia, serif" }}>
         Learn Real Leadership Skills That Can&apos;t Be Taught In The Classroom
       </h2>
       <p>

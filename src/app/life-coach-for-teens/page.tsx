@@ -14,7 +14,7 @@ export default function LifeCoachForTeensPage() {
       subtitle="Let Us Help Your Teens"
       blogPosts={[]}
     >
-      <h2 className="font-heading text-2xl font-bold text-navy mb-4">
+      <h2 className="text-2xl font-bold text-navy mb-4" style={{ fontFamily: "Georgia, serif" }}>
         What Can We Do For Your Teen?
       </h2>
       <p>
