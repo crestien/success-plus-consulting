@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Success Plus Consulting Website
+
+A modern website for Success Plus Consulting, a leadership consulting firm founded in 1993 by CEO Isaac Russell. Built with Next.js, TypeScript, and Tailwind CSS.
+
+## Pages
+
+- **Home** — Hero section, services grid, testimonials, and CTA
+- **About** — Company history, the Success Model, and client testimonials
+- **Leadership Coaching** — Leadership plan development services
+- **Improve Retention** — Employee retention strategy services
+- **Diversity Coaching** — Workforce diversity training
+- **One to One Mentoring** — Personal leadership mentoring
+- **Strategic Planning** — Business strategy development
+- **Talent Development** — On-the-job skill building
+- **Life Coach for Teens** — Teen Mentoring Program
+- **Leadership Trainee Program** — Official training process development
+- **Invite Isaac to Speak** — Speaking engagement booking
+- **Free Seminar** — Request a free seminar
+- **Contact** — Contact form and business info
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4 + shadcn/ui
+- **Icons:** Lucide React
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The dev server runs on [http://localhost:4173](http://localhost:4173).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment to SiteGround
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This site is designed for SiteGround's Node.js Projects hosting (GrowBig, GoGeek, or Cloud plans):
 
-## Learn More
+1. Push the repo to GitHub
+2. In SiteGround Client Area, go to **Websites > Node.js Projects > New Project**
+3. Import the GitHub repository
+4. SiteGround will handle build and deployment automatically
+5. Automatic redeployment on push is supported
 
-To learn more about Next.js, take a look at the following resources:
+### Build for production
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/
+│   ├── about/              # About page
+│   ├── api/contact/        # Contact form API route
+│   ├── contact/            # Contact page
+│   ├── diversity-coaching/ # Service page
+│   ├── free-seminar/       # Free seminar page
+│   ├── improve-retention/  # Service page
+│   ├── invite-isaac-to-speak/ # Speaker booking page
+│   ├── leadership-coaching/   # Service page
+│   ├── leadership-trainee-program/ # Service page
+│   ├── life-coach-for-teens/  # Service page
+│   ├── one-to-one-mentoring/  # Service page
+│   ├── strategic-planning/    # Service page
+│   ├── talent-development/    # Service page
+│   ├── globals.css         # Global styles & theme
+│   ├── layout.tsx          # Root layout
+│   └── page.tsx            # Homepage
+├── components/
+│   ├── ui/                 # shadcn/ui primitives
+│   ├── contact-form.tsx    # Reusable contact form
+│   ├── footer.tsx          # Site footer
+│   ├── header.tsx          # Navigation header
+│   └── service-page.tsx    # Reusable service page template
+└── lib/
+    └── utils.ts            # Utility functions
+```
