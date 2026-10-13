@@ -12,6 +12,8 @@ export default function TalentDevelopmentPage() {
     <ServicePage
       title="Talent Development"
       subtitle="Reach Your Full Potential"
+      image="/images/services/page-conflict.png"
+      imageAlt="Talent development coaching"
       blogPosts={[
         { title: "Education vs Training: What's More Important?", href: "#" },
         { title: "The Root Cause To Lost Profits", href: "#" },

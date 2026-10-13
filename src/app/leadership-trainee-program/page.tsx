@@ -12,6 +12,8 @@ export default function LeadershipTraineeProgramPage() {
     <ServicePage
       title="Leadership Trainee Program"
       subtitle="Learn More About This Program"
+      image="/images/services/trainee.jpg"
+      imageAlt="Leadership trainee program"
       blogPosts={[]}
     >
       <h2 className="text-2xl font-bold text-navy mb-4" style={{ fontFamily: "Georgia, serif" }}>

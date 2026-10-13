@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Phone } from "lucide-react";
 
 interface ServicePageProps {
@@ -6,9 +7,18 @@ interface ServicePageProps {
   subtitle: string;
   children: React.ReactNode;
   blogPosts?: { title: string; href: string }[];
+  image?: string;
+  imageAlt?: string;
 }
 
-export function ServicePage({ title, subtitle, children, blogPosts }: ServicePageProps) {
+export function ServicePage({
+  title,
+  subtitle,
+  children,
+  blogPosts,
+  image,
+  imageAlt,
+}: ServicePageProps) {
   return (
     <div>
       <section className="bg-navy text-white py-16 sm:py-24">
@@ -29,6 +39,17 @@ export function ServicePage({ title, subtitle, children, blogPosts }: ServicePag
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
+              {image ? (
+                <div className="relative mb-8 overflow-hidden rounded-lg bg-gray-100">
+                  <Image
+                    src={image}
+                    alt={imageAlt ?? title}
+                    width={900}
+                    height={500}
+                    className="h-auto w-full object-cover"
+                  />
+                </div>
+              ) : null}
               <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
                 {children}
               </div>

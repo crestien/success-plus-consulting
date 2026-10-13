@@ -12,6 +12,8 @@ export default function LifeCoachForTeensPage() {
     <ServicePage
       title="Life Coach for Teens"
       subtitle="Let Us Help Your Teens"
+      image="/images/services/teens.jpg"
+      imageAlt="Teen mentoring"
       blogPosts={[]}
     >
       <h2 className="text-2xl font-bold text-navy mb-4" style={{ fontFamily: "Georgia, serif" }}>

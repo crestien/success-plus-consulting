@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
 
 export const metadata: Metadata = {
@@ -39,6 +40,13 @@ export default function InviteIsaacToSpeakPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
+              <Image
+                src="/images/isaac-russell.jpg"
+                alt="Isaac Russell, leadership speaker and founder of Success Plus Consulting"
+                width={310}
+                height={310}
+                className="mb-8 h-auto w-56 sm:w-64"
+              />
               <h2
                 className="text-2xl font-bold text-navy mb-2"
                 style={{ fontFamily: "Georgia, serif" }}

@@ -1,148 +1,81 @@
 import Link from "next/link";
-import {
-  Users,
-  TrendingUp,
-  Globe,
-  UserCheck,
-  Target,
-  Sparkles,
-  Heart,
-  GraduationCap,
-  ArrowRight,
-  BookOpen,
-} from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, BookOpen } from "lucide-react";
 
 const services = [
   {
     title: "Leadership\nCoaching",
     cta: "Become a Great Leader!",
-    icon: Users,
     href: "/leadership-coaching",
-    gradient: "from-blue-600 to-blue-800",
+    image: "/images/services/leadership.jpg",
   },
   {
     title: "Improve\nRetention",
     cta: "Develop a Plan to Improve Retention!",
-    icon: TrendingUp,
     href: "/improve-retention",
-    gradient: "from-indigo-600 to-indigo-800",
+    image: "/images/services/retention.jpg",
   },
   {
     title: "Diversity\nCoaching",
     cta: "Learn More About Diversity Coaching",
-    icon: Globe,
     href: "/diversity-coaching",
-    gradient: "from-purple-600 to-purple-800",
+    image: "/images/services/diversity.jpg",
   },
   {
     title: "One to One\nMentoring",
     cta: "Get Insight & Personal Guidance",
-    icon: UserCheck,
     href: "/one-to-one-mentoring",
-    gradient: "from-cyan-600 to-cyan-800",
+    image: "/images/services/mentoring.png",
   },
   {
     title: "Strategic\nPlanning",
     cta: "Create Your Strategy Today!",
-    icon: Target,
     href: "/strategic-planning",
-    gradient: "from-teal-600 to-teal-800",
+    image: "/images/services/planning.png",
   },
   {
     title: "Talent\nDevelopment",
     cta: "Reach Your Full Potential",
-    icon: Sparkles,
     href: "/talent-development",
-    gradient: "from-emerald-600 to-emerald-800",
+    image: "/images/services/talent.jpg",
   },
   {
     title: "Life Coach\nfor Teens",
     cta: "Let Us Help Your Teens",
-    icon: Heart,
     href: "/life-coach-for-teens",
-    gradient: "from-rose-600 to-rose-800",
+    image: "/images/services/teens.jpg",
   },
   {
     title: "Leadership\nTrainee Program",
     cta: "Learn More About This Program",
-    icon: GraduationCap,
     href: "/leadership-trainee-program",
-    gradient: "from-amber-600 to-amber-800",
+    image: "/images/services/trainee.jpg",
   },
+];
+
+const clients = [
+  { name: "Coca-Cola", src: "/images/clients/coca-cola.png" },
+  { name: "Bonnie Plants", src: "/images/clients/bonnie-plants.png" },
+  { name: "Johnsonville", src: "/images/clients/johnsonville.png" },
+  { name: "Tyson", src: "/images/clients/tyson.png" },
+  { name: "American Seafoods", src: "/images/clients/american-seafoods.png" },
 ];
 
 export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-white py-12 sm:py-16 lg:py-20">
+      <section className="bg-white py-10 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
-            {/* Book */}
-            <div className="relative">
-              <div className="w-56 sm:w-64 bg-navy rounded-lg shadow-2xl p-6 text-white text-center">
-                <p className="text-[10px] uppercase tracking-wider text-gray-300 mb-2">
-                  Leadership in a Changing World
-                </p>
-                <h2
-                  className="text-2xl font-bold leading-tight mb-3"
-                  style={{ fontFamily: "Georgia, serif" }}
-                >
-                  Improving
-                  <br />
-                  <span className="text-gold text-lg">Profits</span>
-                  <br />
-                  <span className="italic text-sm font-normal text-gray-300">
-                    through
-                  </span>
-                  <br />
-                  People
-                </h2>
-                <div className="border-t border-navy-light pt-3 mt-3">
-                  <p className="text-xs text-gray-300">
-                    Boosting Your Organization&apos;s Bottom Line
-                    <br />
-                    With a Results-Oriented Leadership Process
-                  </p>
-                </div>
-                <p className="mt-4 text-sm font-bold">Isaac Russell</p>
-                <p className="text-[9px] text-gray-400 uppercase tracking-wider">
-                  Nationally Recognized Executive Leadership Coach
-                </p>
-              </div>
-            </div>
-
-            {/* Get Your Copy */}
-            <div className="text-center lg:text-left">
-              <h1
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy leading-tight"
-                style={{ fontFamily: "Georgia, serif" }}
-              >
-                Get Your
-                <br />
-                Copy!
-              </h1>
-            </div>
-
-            {/* Author Circle */}
-            <div className="relative">
-              <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-full border-[6px] border-gold bg-navy flex items-center justify-center relative">
-                <div className="text-center text-white">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-navy-light rounded-full flex items-center justify-center mb-2">
-                    <Users className="h-8 w-8 sm:h-10 sm:w-10 text-gold" />
-                  </div>
-                  <p
-                    className="text-xs sm:text-sm font-bold italic"
-                    style={{ fontFamily: "Georgia, serif" }}
-                  >
-                    Isaac Russell
-                  </p>
-                </div>
-              </div>
-              <p className="text-center mt-3 text-xs sm:text-sm font-bold text-navy uppercase tracking-wider">
-                Learn More About the Author
-              </p>
-            </div>
+          <div className="mx-auto max-w-5xl">
+            <Image
+              src="/images/book-header.jpg"
+              alt="Get your copy of Improving Profits Through People by Isaac Russell"
+              width={1536}
+              height={430}
+              className="h-auto w-full"
+              priority
+            />
           </div>
 
           {/* CTA Buttons */}
@@ -186,18 +119,17 @@ export default function Home() {
       {/* Client Logos */}
       <section className="bg-lavender py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 lg:gap-20">
-            {["Coca-Cola", "Bonnie Plants", "Johnsonville", "Tyson", "American Seafoods"].map(
-              (brand) => (
-                <span
-                  key={brand}
-                  className="text-xl sm:text-2xl font-bold text-navy/60"
-                  style={{ fontFamily: "Georgia, serif" }}
-                >
-                  {brand}
-                </span>
-              )
-            )}
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 lg:gap-16">
+            {clients.map((brand) => (
+              <Image
+                key={brand.name}
+                src={brand.src}
+                alt={brand.name}
+                width={180}
+                height={72}
+                className="h-12 sm:h-16 w-auto object-contain"
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -226,34 +158,33 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {services.map((service) => {
-              const Icon = service.icon;
-              return (
-                <Link
-                  key={service.href}
-                  href={service.href}
-                  className="group block overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow"
-                >
-                  {/* Photo area */}
-                  <div
-                    className={`h-40 bg-gradient-to-br ${service.gradient} flex items-center justify-center`}
-                  >
-                    <Icon className="h-16 w-16 text-white/40 group-hover:text-white/60 transition-colors" />
+            {services.map((service) => (
+              <Link
+                key={service.href}
+                href={service.href}
+                className="group block overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow"
+              >
+                <div className="relative h-40 bg-navy">
+                  <Image
+                    src={service.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="bg-navy p-4 text-center">
+                  <h3 className="text-white font-bold text-base sm:text-lg uppercase tracking-wide whitespace-pre-line leading-tight min-h-[2.5rem]">
+                    {service.title}
+                  </h3>
+                  <div className="mt-3">
+                    <span className="inline-block bg-gold hover:bg-gold-dark text-navy-dark text-xs sm:text-sm font-bold uppercase tracking-wider px-4 py-2 rounded transition-colors">
+                      {service.cta}
+                    </span>
                   </div>
-                  {/* Navy text area */}
-                  <div className="bg-navy p-4 text-center">
-                    <h3 className="text-white font-bold text-base sm:text-lg uppercase tracking-wide whitespace-pre-line leading-tight min-h-[2.5rem]">
-                      {service.title}
-                    </h3>
-                    <div className="mt-3">
-                      <span className="inline-block bg-gold hover:bg-gold-dark text-navy-dark text-xs sm:text-sm font-bold uppercase tracking-wider px-4 py-2 rounded transition-colors">
-                        {service.cta}
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -293,18 +224,27 @@ export default function Home() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-            <div className="bg-navy rounded-lg p-8 text-white">
-              <blockquote className="text-lg leading-relaxed italic text-gray-300">
-                &ldquo;The &lsquo;Success Model&rsquo; of Success Plus is very
-                unique. It is not a classroom instrumental environment. It is
-                relationship oriented through on-the-job interaction and
-                mentoring. Think of it as coaching rather than training.&rdquo;
-              </blockquote>
-              <div className="mt-6 border-t border-navy-light pt-4">
-                <p className="font-semibold text-gold">John Sherman</p>
-                <p className="text-sm text-gray-400">
-                  CEO – East Region, Coca-Cola Bottling Company United, Inc.
-                </p>
+            <div>
+              <Image
+                src="/images/isaac-russell.jpg"
+                alt="Isaac Russell, Founder and CEO of Success Plus Consulting"
+                width={310}
+                height={310}
+                className="mx-auto mb-6 h-auto w-64 sm:w-72"
+              />
+              <div className="bg-navy rounded-lg p-8 text-white">
+                <blockquote className="text-lg leading-relaxed italic text-gray-300">
+                  &ldquo;The &lsquo;Success Model&rsquo; of Success Plus is very
+                  unique. It is not a classroom instrumental environment. It is
+                  relationship oriented through on-the-job interaction and
+                  mentoring. Think of it as coaching rather than training.&rdquo;
+                </blockquote>
+                <div className="mt-6 border-t border-navy-light pt-4">
+                  <p className="font-semibold text-gold">John Sherman</p>
+                  <p className="text-sm text-gray-400">
+                    CEO – East Region, Coca-Cola Bottling Company United, Inc.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

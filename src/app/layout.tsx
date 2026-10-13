@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   title: "Success Plus Consulting - Coaching, Mentoring, Author",
   description:
     "Success Plus is a leadership consulting firm providing hands-on management training and coaching. Founded in 1993 by CEO Isaac Russell.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/images/logo-square.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

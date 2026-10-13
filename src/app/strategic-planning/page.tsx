@@ -12,6 +12,8 @@ export default function StrategicPlanningPage() {
     <ServicePage
       title="Strategic Planning"
       subtitle="Create Your Strategy Today!"
+      image="/images/services/page-planning.png"
+      imageAlt="Strategic planning session"
       blogPosts={[
         { title: "The Root Cause To Lost Profits", href: "#" },
         { title: "4 Ways to Deal with Change", href: "#" },

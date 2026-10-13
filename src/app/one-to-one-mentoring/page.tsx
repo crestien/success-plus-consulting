@@ -24,6 +24,8 @@ export default function OneToOneMentoringPage() {
     <ServicePage
       title="One to One Mentoring"
       subtitle="Find Out How Success Plus Helps Leaders"
+      image="/images/services/page-coaching.png"
+      imageAlt="One to one mentoring"
       blogPosts={blogPosts}
     >
       <h2 className="text-2xl font-bold text-navy mb-4" style={{ fontFamily: "Georgia, serif" }}>

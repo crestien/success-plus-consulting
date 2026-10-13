@@ -24,6 +24,8 @@ export default function LeadershipCoachingPage() {
     <ServicePage
       title="Leadership Coaching"
       subtitle="Discover How to Become a Great Leader"
+      image="/images/services/page-gears.png"
+      imageAlt="Leadership coaching session"
       blogPosts={blogPosts}
     >
       <h2 className="text-2xl font-bold text-navy mb-4" style={{ fontFamily: "Georgia, serif" }}>

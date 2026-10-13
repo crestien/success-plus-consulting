@@ -12,6 +12,8 @@ export default function DiversityCoachingPage() {
     <ServicePage
       title="Diversity Coaching"
       subtitle="Learn More About Diversity Coaching"
+      image="/images/services/page-diversity.jpg"
+      imageAlt="Diversity coaching"
       blogPosts={[
         { title: "3 Things to Consider Before Hiring a Diversity Coach", href: "#" },
         { title: "The Root Cause To Lost Profits", href: "#" },

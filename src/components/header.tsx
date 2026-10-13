@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 
@@ -25,13 +26,14 @@ export function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center shrink-0">
-            <span className="text-navy text-2xl sm:text-3xl tracking-wide" style={{ fontFamily: "Georgia, serif" }}>
-              <span className="font-normal">S</span>
-              <span className="text-[0.75em] font-normal">UCCESS</span>
-              {" "}
-              <span className="font-normal text-gold">P</span>
-              <span className="text-[0.75em] font-normal">LUS</span>
-            </span>
+            <Image
+              src="/images/logo.png"
+              alt="Success Plus"
+              width={240}
+              height={32}
+              className="h-8 sm:h-10 w-auto"
+              priority
+            />
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">

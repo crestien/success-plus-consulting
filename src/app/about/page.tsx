@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 
@@ -29,6 +30,13 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
+              <Image
+                src="/images/isaac-russell.jpg"
+                alt="Isaac Russell, Founder and CEO of Success Plus Consulting"
+                width={310}
+                height={310}
+                className="mb-8 h-auto w-56 sm:w-64"
+              />
               <h2
                 className="text-3xl font-bold text-navy mb-6"
                 style={{ fontFamily: "Georgia, serif" }}
@@ -112,12 +120,23 @@ export default function AboutPage() {
           <p className="text-sm uppercase tracking-widest text-navy/60 font-semibold mb-8">
             Trusted by America&apos;s Most Recognized Brands
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 text-2xl font-bold text-navy/50" style={{ fontFamily: "Georgia, serif" }}>
-            <span>Coca-Cola</span>
-            <span>Tyson Foods</span>
-            <span>Johnsonville</span>
-            <span>Bonnie Plants</span>
-            <span>American Seafoods</span>
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+            {[
+              { name: "Coca-Cola", src: "/images/clients/coca-cola.png" },
+              { name: "Tyson Foods", src: "/images/clients/tyson.png" },
+              { name: "Johnsonville", src: "/images/clients/johnsonville.png" },
+              { name: "Bonnie Plants", src: "/images/clients/bonnie-plants.png" },
+              { name: "American Seafoods", src: "/images/clients/american-seafoods.png" },
+            ].map((brand) => (
+              <Image
+                key={brand.name}
+                src={brand.src}
+                alt={brand.name}
+                width={160}
+                height={64}
+                className="h-12 w-auto object-contain"
+              />
+            ))}
           </div>
         </div>
       </section>

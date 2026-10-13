@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Phone } from "lucide-react";
 
 export function Footer() {
@@ -8,20 +9,14 @@ export function Footer() {
         <div className="flex-1 bg-navy text-white py-10 px-6 sm:px-10 lg:px-16">
           <div className="max-w-lg mx-auto md:mx-0 md:ml-auto md:mr-8">
             <div className="mb-6">
-              <span
-                className="text-2xl tracking-wide"
-                style={{ fontFamily: "Georgia, serif" }}
-              >
-                <span className="font-normal text-white">S</span>
-                <span className="text-[0.75em] font-normal text-white">
-                  UCCESS
-                </span>{" "}
-                <span className="font-normal text-gold">P</span>
-                <span className="text-[0.75em] font-normal text-white">
-                  LUS
-                </span>
-              </span>
-              <p className="text-[10px] uppercase tracking-[0.25em] text-gray-300 mt-1">
+              <Image
+                src="/images/logo-white.png"
+                alt="Success Plus"
+                width={220}
+                height={42}
+                className="h-9 w-auto"
+              />
+              <p className="text-[10px] uppercase tracking-[0.25em] text-gray-300 mt-2">
                 Corporate Leadership Consultants
               </p>
             </div>

@@ -12,6 +12,8 @@ export default function ImproveRetentionPage() {
     <ServicePage
       title="Improve Retention"
       subtitle="Develop a Plan to Improve Retention!"
+      image="/images/services/page-gears.png"
+      imageAlt="Employee retention planning"
       blogPosts={[
         { title: "The Root Cause To Lost Profits", href: "#" },
         { title: "4 Ways to Deal with Change", href: "#" },
