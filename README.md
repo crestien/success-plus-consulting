@@ -51,6 +51,8 @@ In Site Tools for the Node.js project, confirm:
 | Start command | `npm start` or `node index.js` |
 | Output directory | leave blank / `.next` |
 
+Images are served as static files from `/images/...`. Next.js image optimization (`/_next/image`) is turned off because SiteGround’s firewall blocks that endpoint.
+
 Then trigger a new deploy from the connected GitHub branch (`main`). Check the deploy logs if the default Hello World page is still showing.
 
 ### If the build fails with "no space left on device"

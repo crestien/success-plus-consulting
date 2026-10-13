@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  images: {
+    // SiteGround blocks /_next/image (WAF treats it as an open proxy).
+    unoptimized: true,
+  },
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
