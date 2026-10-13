@@ -47,7 +47,7 @@ In Site Tools for the Node.js project, confirm:
 | Framework | Next.js (or Node.js) |
 | Node version | 20 or newer |
 | Package manager | npm |
-| Build command | `npm run build` |
+| Build command | `npm run build` (uses webpack; SiteGround blocks Turbopack) |
 | Start command | `npm start` or `node index.js` |
 | Output directory | leave blank / `.next` |
 
