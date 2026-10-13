@@ -53,6 +53,18 @@ In Site Tools for the Node.js project, confirm:
 
 Then trigger a new deploy from the connected GitHub branch (`main`). Check the deploy logs if the default Hello World page is still showing.
 
+### If the build fails with "no space left on device"
+
+SiteGround keeps each failed deploy under `public_html/.nodeapp/`. Those leftover folders fill the account quota, so `npm install` dies with `ENOSPC` and the site stays on the default Hello World page.
+
+1. In Site Tools → File Manager, open `public_html/.nodeapp/`.
+2. Delete every old numbered folder (for example `1791857856-7saoz4`). Keep only the currently running app if one exists.
+3. Empty the File Manager Recycle Bin / Trash.
+4. In Site Tools → Statistics or Disk Usage, confirm free space is back.
+5. Redeploy `main`.
+
+This repo is also slimmed so `npm install` no longer pulls the `shadcn` CLI, ESLint, or TypeScript packages.
+
 ### Build for production
 
 ```bash
