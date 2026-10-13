@@ -2,10 +2,14 @@
   "name": "success-plus-consulting",
   "version": "0.1.0",
   "private": true,
+  "main": "index.js",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "next dev --port 4173",
     "build": "next build",
-    "start": "next start",
+    "start": "node server.js",
     "lint": "eslint"
   },
   "dependencies": {

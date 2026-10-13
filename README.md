@@ -36,13 +36,22 @@ The dev server runs on [http://localhost:4173](http://localhost:4173).
 
 ## Deployment to SiteGround
 
-This site is designed for SiteGround's Node.js Projects hosting (GrowBig, GoGeek, or Cloud plans):
+This site is built for SiteGround Node.js Projects (GrowBig, GoGeek, or Cloud).
 
-1. Push the repo to GitHub
-2. In SiteGround Client Area, go to **Websites > Node.js Projects > New Project**
-3. Import the GitHub repository
-4. SiteGround will handle build and deployment automatically
-5. Automatic redeployment on push is supported
+SiteGround starts `index.js` by default and assigns a `PORT`. This repo includes `index.js` / `server.js` so Next.js binds to that port on `0.0.0.0`.
+
+In Site Tools for the Node.js project, confirm:
+
+| Setting | Value |
+| --- | --- |
+| Framework | Next.js (or Node.js) |
+| Node version | 20 or newer |
+| Package manager | npm |
+| Build command | `npm run build` |
+| Start command | `npm start` or `node index.js` |
+| Output directory | leave blank / `.next` |
+
+Then trigger a new deploy from the connected GitHub branch (`main`). Check the deploy logs if the default Hello World page is still showing.
 
 ### Build for production
 
