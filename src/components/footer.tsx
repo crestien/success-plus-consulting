@@ -1,112 +1,124 @@
+import Link from "next/link";
 import Image from "next/image";
 import { Phone } from "lucide-react";
+import { services, site } from "@/lib/site";
+
+const icons = {
+  linkedin:
+    "M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z",
+  facebook:
+    "M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z",
+  x: "M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.4l-5.8-7.58-6.63 7.58H.48l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93zm-1.29 19.5h2.04L6.48 3.24H4.3l13.31 17.41z",
+};
+
+const socialLinks = [
+  { label: "LinkedIn", href: site.social.linkedin, path: icons.linkedin },
+  { label: "Facebook", href: site.social.facebook, path: icons.facebook },
+  { label: "X (Twitter)", href: site.social.x, path: icons.x },
+];
+
+const company = [
+  { name: "About Success Plus", href: "/about" },
+  { name: "Testimonials", href: "/about#testimonials" },
+  { name: "Invite Isaac to Speak", href: "/invite-isaac-to-speak" },
+  { name: "Free Seminar", href: "/free-seminar" },
+  { name: "Contact", href: "/contact" },
+];
 
 export function Footer() {
-  return (
-    <footer>
-      <div className="flex flex-col md:flex-row">
-        {/* Navy left side */}
-        <div className="flex-1 bg-navy text-white py-10 px-6 sm:px-10 lg:px-16">
-          <div className="max-w-lg mx-auto md:mx-0 md:ml-auto md:mr-8">
-            <div className="mb-6">
-              <Image
-                src="/images/logo-white.png"
-                alt="Success Plus"
-                width={220}
-                height={42}
-                className="h-9 w-auto"
-              />
-              <p className="text-[10px] uppercase tracking-[0.25em] text-gray-300 mt-2">
-                Corporate Leadership Consultants
-              </p>
-            </div>
+  const { office, mailing } = site.addresses;
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-gray-300">
-              <div>
-                <p className="font-semibold text-white mb-1">
-                  Success Plus Consulting
+  return (
+    <footer className="relative overflow-hidden bg-ink text-white/70">
+      <div aria-hidden className="bg-grid pointer-events-none absolute inset-0 opacity-60" />
+      <div aria-hidden className="pointer-events-none absolute -top-40 right-0 h-80 w-80 rounded-full bg-gold/10 blur-3xl" />
+
+      <div className="container-x relative py-16 sm:py-20">
+        <div className="grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <Image src="/images/logo-white.png" alt={site.shortName} width={600} height={113} className="h-10 w-auto" />
+            <p className="mt-6 max-w-sm text-sm leading-relaxed">
+              Hands-on leadership coaching, mentoring, and strategy for organizations that want to improve profits
+              through people. Serving clients nationwide since {site.founded}.
+            </p>
+            <a
+              href={site.phoneHref}
+              className="mt-6 inline-flex items-center gap-2 text-lg font-semibold text-gold hover:text-gold-light"
+            >
+              <Phone className="h-5 w-5" aria-hidden />
+              {site.phone}
+            </a>
+            <ul className="mt-6 flex gap-3">
+              {socialLinks.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-gold hover:bg-gold hover:text-ink"
+                  >
+                    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+                      <path d={s.path} />
+                    </svg>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="grid gap-10 sm:grid-cols-3 lg:col-span-8">
+            <div>
+              <h2 className="text-sm font-semibold text-white">Services</h2>
+              <ul className="mt-4 space-y-2.5 text-sm">
+                {services.map((s) => (
+                  <li key={s.href}>
+                    <Link href={s.href} className="transition-colors hover:text-gold">
+                      {s.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-sm font-semibold text-white">Company</h2>
+              <ul className="mt-4 space-y-2.5 text-sm">
+                {company.map((c) => (
+                  <li key={c.href}>
+                    <Link href={c.href} className="transition-colors hover:text-gold">
+                      {c.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-sm font-semibold text-white">Visit &amp; write</h2>
+              <address className="mt-4 space-y-5 text-sm leading-relaxed not-italic">
+                <p>
+                  <span className="block text-white/90">{site.name}</span>
+                  {office.street}
+                  <br />
+                  {office.suite}
+                  <br />
+                  {office.city}, {office.region} {office.postal}
                 </p>
-                <p>400 South 4th Street</p>
-                <p>Suite 401M – 231</p>
-                <p>Minneapolis, MN 55415</p>
-              </div>
-              <div>
-                <p className="font-semibold text-white mb-1">
-                  Success Plus Consulting
+                <p>
+                  <span className="block text-white/90">{mailing.label}</span>
+                  {mailing.street}
+                  <br />
+                  {mailing.city}, {mailing.region} {mailing.postal}
                 </p>
-                <p>P.O. Box 195</p>
-                <p>Dearmanville, AL 36257</p>
-              </div>
+              </address>
             </div>
           </div>
         </div>
 
-        {/* Yellow right side */}
-        <div className="md:w-[320px] lg:w-[380px] bg-gold py-10 px-6 sm:px-10">
-          <div className="max-w-xs mx-auto md:mx-0">
-            <h3
-              className="text-xl font-bold text-navy-dark mb-4"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
-              Keep In Touch
-            </h3>
-
-            <a
-              href="tel:8444677587"
-              className="flex items-center gap-2 text-navy-dark font-bold text-lg hover:text-navy transition-colors mb-6"
-            >
-              <Phone className="h-5 w-5" />
-              844-467-7587
-            </a>
-
-            <div className="flex items-center gap-4">
-              <a
-                href="https://www.linkedin.com/company/success-plus-consulting"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-navy-dark hover:text-navy transition-colors"
-                aria-label="LinkedIn"
-              >
-                <svg
-                  className="h-5 w-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-              </a>
-              <a
-                href="https://www.facebook.com/successpluscoaching"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-navy-dark hover:text-navy transition-colors"
-                aria-label="Facebook"
-              >
-                <svg
-                  className="h-5 w-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                </svg>
-              </a>
-              <a
-                href="https://twitter.com/successplusllc"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-navy-dark hover:text-navy transition-colors"
-                aria-label="Twitter"
-              >
-                <svg
-                  className="h-5 w-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                </svg>
-              </a>
-            </div>
-          </div>
+        <div className="mt-16 flex flex-col gap-3 border-t border-white/10 pt-8 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} {site.name}. All rights reserved.
+          </p>
+          <p>Motivation. Sales. Leadership.</p>
         </div>
       </div>
     </footer>

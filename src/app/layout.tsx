@@ -1,31 +1,109 @@
-import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Fraunces, Geist } from "next/font/google";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { site } from "@/lib/site";
+import { ogImage } from "@/lib/seo";
 import "./globals.css";
 
-const geistSans = Geist({
+const sans = Geist({
   variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const display = Fraunces({
+  variable: "--font-display",
+  subsets: ["latin"],
+  axes: ["opsz", "SOFT"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Success Plus Consulting - Coaching, Mentoring, Author",
-  description:
-    "Success Plus is a leadership consulting firm providing hands-on management training and coaching. Founded in 1993 by CEO Isaac Russell.",
+  metadataBase: new URL(site.url),
+  title: {
+    default: `${site.name} | Leadership Coaching, Mentoring & Speaking`,
+    template: `%s | ${site.name}`,
+  },
+  description: site.description,
+  applicationName: site.name,
+  authors: [{ name: "Isaac Russell" }],
+  keywords: [
+    "leadership coaching",
+    "executive coach",
+    "management training",
+    "employee retention",
+    "diversity coaching",
+    "strategic planning",
+    "keynote speaker",
+    "Isaac Russell",
+  ],
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    locale: "en_US",
+    url: "/",
+    title: `${site.name} | Results-Oriented Leadership Strategies`,
+    description: site.description,
+    images: [ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@successplusllc",
+  },
   icons: {
     icon: "/favicon.png",
     apple: "/images/logo-square.png",
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#15163f",
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: site.name,
+  url: site.url,
+  logo: `${site.url}/images/logo-square.png`,
+  image: `${site.url}/images/book-header.jpg`,
+  description: site.description,
+  telephone: `+1-${site.phone}`,
+  foundingDate: String(site.founded),
+  founder: { "@type": "Person", name: "Isaac Russell", jobTitle: "Founder & CEO" },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: `${site.addresses.office.street}, ${site.addresses.office.suite}`,
+    addressLocality: site.addresses.office.city,
+    addressRegion: site.addresses.office.region,
+    postalCode: site.addresses.office.postal,
+    addressCountry: "US",
+  },
+  areaServed: "US",
+  sameAs: Object.values(site.social),
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
+    <html lang="en" className={`${sans.variable} ${display.variable}`}>
+      <body className="flex min-h-dvh flex-col">
+        <a
+          href="#main"
+          className="sr-only z-[100] rounded-full bg-gold px-5 py-3 font-semibold text-ink focus:not-sr-only focus:fixed focus:top-4 focus:left-4"
+        >
+          Skip to content
+        </a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main" className="flex-1">
+          {children}
+        </main>
         <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+        />
       </body>
     </html>
   );

@@ -22,8 +22,10 @@ A modern website for Success Plus Consulting, a leadership consulting firm found
 
 - **Framework:** Next.js 16 (App Router)
 - **Language:** TypeScript
-- **Styling:** Tailwind CSS v4 + shadcn/ui
+- **Styling:** Tailwind CSS v4 (design tokens and utilities in `src/app/globals.css`)
+- **Fonts:** Fraunces (display) + Geist (body) via `next/font`
 - **Icons:** Lucide React
+- **Email:** Nodemailer (contact, speaking, and seminar forms)
 
 ## Getting Started
 
@@ -65,7 +67,21 @@ SiteGround keeps each failed deploy under `public_html/.nodeapp/`. Those leftove
 4. In Site Tools → Statistics or Disk Usage, confirm free space is back.
 5. Redeploy `main`.
 
-This repo is also slimmed so `npm install` no longer pulls the `shadcn` CLI, ESLint, or TypeScript packages.
+This repo is also slimmed so `npm install` no longer pulls the `shadcn` CLI or ESLint.
+
+## Environment variables
+
+Set these in SiteGround (Node.js project → Environment variables) so the forms deliver email. Without `SMTP_HOST` and `CONTACT_TO`, submissions are only written to the server log.
+
+| Variable | Example | Notes |
+| --- | --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | `https://successplusllc.com` | Used for canonical URLs, sitemap, and Open Graph. Set before building. |
+| `SMTP_HOST` | `mail.yourdomain.com` | SiteGround: Site Tools → Email → Accounts → Mail Configuration |
+| `SMTP_PORT` | `465` | 465 uses TLS; anything else uses STARTTLS |
+| `SMTP_USER` | `website@yourdomain.com` | |
+| `SMTP_PASS` | | |
+| `CONTACT_TO` | `info@yourdomain.com` | Where form submissions go |
+| `CONTACT_FROM` | `website@yourdomain.com` | Optional; defaults to `SMTP_USER` |
 
 ### Build for production
 
@@ -92,15 +108,18 @@ src/
 │   ├── one-to-one-mentoring/  # Service page
 │   ├── strategic-planning/    # Service page
 │   ├── talent-development/    # Service page
+│   ├── sitemap.ts / robots.ts # SEO routes
 │   ├── globals.css         # Global styles & theme
 │   ├── layout.tsx          # Root layout
 │   └── page.tsx            # Homepage
 ├── components/
-│   ├── ui/                 # shadcn/ui primitives
+│   ├── sections.tsx        # Shared page sections (hero, cards, CTA, testimonial)
 │   ├── contact-form.tsx    # Reusable contact form
 │   ├── footer.tsx          # Site footer
 │   ├── header.tsx          # Navigation header
 │   └── service-page.tsx    # Reusable service page template
 └── lib/
+    ├── site.ts             # Business info, services, clients (single source of truth)
+    ├── seo.ts              # Per-page metadata helper
     └── utils.ts            # Utility functions
 ```

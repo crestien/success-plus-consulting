@@ -1,114 +1,101 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, CalendarCheck, Phone } from "lucide-react";
+import { CtaBand, PageHero, SectionHeading, ServiceCard, TestimonialCard } from "@/components/sections";
+import { services, site } from "@/lib/site";
 
 interface ServicePageProps {
-  title: string;
+  href: string;
   subtitle: string;
+  intro: string;
   children: React.ReactNode;
-  blogPosts?: { title: string; href: string }[];
-  image?: string;
-  imageAlt?: string;
 }
 
-export function ServicePage({
-  title,
-  subtitle,
-  children,
-  blogPosts,
-  image,
-  imageAlt,
-}: ServicePageProps) {
+export function ServicePage({ href, subtitle, intro, children }: ServicePageProps) {
+  const index = services.findIndex((s) => s.href === href);
+  const service = services[index];
+  const related = [1, 2, 3].map((n) => services[(index + n) % services.length]);
+
   return (
-    <div>
-      <section className="bg-navy text-white py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3"
-            style={{ fontFamily: "Georgia, serif" }}
-          >
-            {title}
-          </h1>
-          <p className="text-base sm:text-lg text-gold max-w-2xl uppercase tracking-wide font-semibold">
-            {subtitle}
-          </p>
+    <>
+      <PageHero
+        eyebrow={subtitle}
+        title={service.name}
+        subtitle={intro}
+        crumbs={[{ name: "Services", href: "/#services" }, { name: service.name }]}
+        aside={
+          <div className="relative">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] ring-1 ring-white/10">
+              <Image
+                src={service.image}
+                alt=""
+                fill
+                priority
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
+              />
+              <div aria-hidden className="absolute inset-0 bg-gradient-to-tr from-ink/40 to-transparent" />
+            </div>
+            <div className="absolute -bottom-5 left-6 rounded-2xl bg-gold px-5 py-3 text-sm font-semibold text-ink shadow-xl">
+              Free needs assessment
+            </div>
+          </div>
+        }
+      >
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <Link href="/contact" className="btn-gold">
+            Contact Success Plus
+            <ArrowRight className="h-4 w-4" aria-hidden />
+          </Link>
+          <a href={site.phoneHref} className="btn-ghost-light">
+            <Phone className="h-4 w-4" aria-hidden />
+            {site.phone}
+          </a>
+        </div>
+      </PageHero>
+
+      <section className="bg-white py-20 sm:py-24">
+        <div className="container-x grid gap-14 lg:grid-cols-12">
+          <article className="prose-sp lg:col-span-7">{children}</article>
+
+          <aside className="lg:col-span-5 lg:col-start-8">
+            <div className="space-y-6 lg:sticky lg:top-28">
+              <div className="card-surface p-8">
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gold text-ink">
+                  <CalendarCheck className="h-5 w-5" aria-hidden />
+                </span>
+                <h2 className="font-display mt-5 text-2xl font-medium text-ink">Ready to get started?</h2>
+                <p className="mt-2 text-muted-foreground">
+                  Call today for a free needs assessment and find out which service will benefit your business most.
+                </p>
+                <div className="mt-6 grid gap-3">
+                  <a href={site.phoneHref} className="btn-navy">
+                    <Phone className="h-4 w-4" aria-hidden />
+                    {site.phone}
+                  </a>
+                  <Link href="/contact" className="btn-ghost-dark">
+                    Send us a message
+                  </Link>
+                </div>
+              </div>
+              <TestimonialCard className="hidden lg:block" />
+            </div>
+          </aside>
         </div>
       </section>
 
-      <section className="py-14 sm:py-18">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2">
-              {image ? (
-                <div className="relative mb-8 overflow-hidden rounded-lg bg-gray-100">
-                  <Image
-                    src={image}
-                    alt={imageAlt ?? title}
-                    width={900}
-                    height={500}
-                    className="h-auto w-full object-cover"
-                  />
-                </div>
-              ) : null}
-              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-                {children}
-              </div>
-
-              <div className="mt-10">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy-dark font-bold px-8 py-3 rounded uppercase tracking-wider transition-colors"
-                >
-                  <Phone className="h-4 w-4" />
-                  Contact Success Plus
-                </Link>
-              </div>
-            </div>
-
-            <aside>
-              {blogPosts && blogPosts.length > 0 && (
-                <div className="bg-gray-50 rounded-lg p-6">
-                  <h3
-                    className="text-xl font-bold text-navy mb-4"
-                    style={{ fontFamily: "Georgia, serif" }}
-                  >
-                    From the Blog
-                  </h3>
-                  <ul className="space-y-3">
-                    {blogPosts.map((post, i) => (
-                      <li key={i}>
-                        <span className="group flex items-start gap-2 text-sm text-gray-700 hover:text-navy cursor-pointer transition-colors">
-                          <ArrowRight className="h-4 w-4 mt-0.5 shrink-0 text-gold" />
-                          {post.title}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              <div className="bg-navy rounded-lg p-6 mt-6 text-white text-center">
-                <h3
-                  className="text-lg font-bold text-gold mb-2"
-                  style={{ fontFamily: "Georgia, serif" }}
-                >
-                  Ready to Get Started?
-                </h3>
-                <p className="text-gray-300 text-sm mb-4">
-                  Call us today for a free needs assessment.
-                </p>
-                <a
-                  href="tel:8444677587"
-                  className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy-dark font-bold px-6 py-2.5 rounded text-sm transition-colors"
-                >
-                  <Phone className="h-4 w-4" />
-                  844-467-7587
-                </a>
-              </div>
-            </aside>
+      <section className="bg-cream py-20 sm:py-24">
+        <div className="container-x">
+          <SectionHeading eyebrow="Keep exploring" title="More ways we help leaders grow." />
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {related.map((s) => (
+              <ServiceCard key={s.href} service={s} />
+            ))}
           </div>
         </div>
       </section>
-    </div>
+
+      <CtaBand />
+    </>
   );
 }
