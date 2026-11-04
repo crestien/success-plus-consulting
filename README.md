@@ -23,7 +23,7 @@ A modern website for Success Plus Consulting, a leadership consulting firm found
 - **Framework:** Next.js 16 (App Router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS v4 (design tokens and utilities in `src/app/globals.css`)
-- **Fonts:** Fraunces (display) + Geist (body) via `next/font`
+- **Fonts:** Source Serif 4 (display) + Geist (body) via `next/font`
 - **Icons:** Lucide React
 - **Email:** Nodemailer (contact, speaking, and seminar forms)
 

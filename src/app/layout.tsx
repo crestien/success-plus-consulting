@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Geist } from "next/font/google";
+import { Geist, Source_Serif_4 } from "next/font/google";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { site } from "@/lib/site";
@@ -12,10 +12,10 @@ const sans = Geist({
   display: "swap",
 });
 
-const display = Fraunces({
+const display = Source_Serif_4({
   variable: "--font-display",
   subsets: ["latin"],
-  axes: ["opsz", "SOFT"],
+  axes: ["opsz"],
   style: ["normal", "italic"],
   display: "swap",
 });
