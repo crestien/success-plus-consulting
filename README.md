@@ -75,7 +75,7 @@ Set these in SiteGround (Node.js project → Environment variables) so the forms
 
 | Variable | Example | Notes |
 | --- | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | `https://successplusllc.com` | Used for canonical URLs, sitemap, and Open Graph. Set before building. |
+| `NEXT_PUBLIC_SITE_URL` | `https://www.successplusconsulting.com` (default) | Used for canonical URLs, sitemap, and Open Graph. Only set it to override. |
 | `SMTP_HOST` | `mail.yourdomain.com` | SiteGround: Site Tools → Email → Accounts → Mail Configuration |
 | `SMTP_PORT` | `465` | 465 uses TLS; anything else uses STARTTLS |
 | `SMTP_USER` | `website@yourdomain.com` | |

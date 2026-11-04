@@ -4,7 +4,7 @@ export const site = {
   tagline: "Corporate Leadership Consultants",
   description:
     "Success Plus is a leadership consulting firm providing hands-on management training, coaching, and mentoring. Founded in 1993 by CEO Isaac Russell.",
-  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://successplusllc.com").replace(/\/$/, ""),
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.successplusconsulting.com").replace(/\/$/, ""),
   founded: 1993,
   phone: "844-467-7587",
   phoneHref: "tel:+18444677587",
