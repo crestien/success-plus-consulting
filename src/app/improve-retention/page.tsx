@@ -1,43 +1,27 @@
-import type { Metadata } from "next";
 import { ServicePage } from "@/components/service-page";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Improve Retention - Success Plus Consulting",
-  description:
-    "Success Plus possesses the expertise to help you develop a thorough plan to prevent turnover and retain your workforce.",
-};
+const intro =
+  "Success Plus has the expertise to help you develop a thorough plan to prevent turnover and retain your workforce.";
+
+export const metadata = pageMeta("Improve Retention", intro, "/improve-retention");
 
 export default function ImproveRetentionPage() {
   return (
-    <ServicePage
-      title="Improve Retention"
-      subtitle="Develop a Plan to Improve Retention!"
-      image="/images/services/page-gears.png"
-      imageAlt="Employee retention planning"
-      blogPosts={[
-        { title: "The Root Cause To Lost Profits", href: "#" },
-        { title: "4 Ways to Deal with Change", href: "#" },
-        { title: "Education vs Training: What's More Important?", href: "#" },
-      ]}
-    >
-      <h2 className="text-2xl font-bold text-navy mb-4" style={{ fontFamily: "Georgia, serif" }}>
-        Do you have a plan?
-      </h2>
+    <ServicePage href="/improve-retention" subtitle="Develop a plan to improve retention" intro={intro}>
+      <h2>Do you have a plan?</h2>
+      <p className="lead">
+        Did you know that over 1/3 of new employees quit their jobs within a month? What about the fact that it can
+        cost up to $10,000 just to replace <strong>one</strong> employee?
+      </p>
       <p>
-        Did you know that over 1/3 of new employees quit their jobs within a
-        month? What about the fact that it can cost up to $10,000 just to
-        replace ONE employee?
+        A company&apos;s most valuable resource is its employees, and retaining that resource is vital to success.
+        High turnover rates and absenteeism are issues that hinder growth, slow productivity, and waste money. If you
+        don&apos;t have a plan to reduce turnover, you need one today.
       </p>
-      <p className="mt-4">
-        A company&apos;s most valuable resource is its employees, and retaining
-        that resource is vital to success. High turnover rates and absenteeism
-        are issues that hinder growth, slow productivity, and waste money. If
-        you don&apos;t have a plan to reduce turnover, you need one today.
-      </p>
-      <p className="mt-4">
-        Success Plus possesses the expertise to help you develop a thorough plan
-        to prevent turnover and retain your workforce. Contact Success Plus
-        today to learn more.
+      <p>
+        Success Plus possesses the expertise to help you develop a thorough plan to prevent turnover and retain your
+        workforce. Contact Success Plus today to learn more.
       </p>
     </ServicePage>
   );

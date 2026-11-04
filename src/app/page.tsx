@@ -1,287 +1,231 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight, BookOpen, Handshake, Mic, Phone, Sprout, UsersRound } from "lucide-react";
+import { CtaBand, LogoMarquee, SectionHeading, ServiceCard, TestimonialCard } from "@/components/sections";
+import { services, site, yearsInBusiness } from "@/lib/site";
 
-const services = [
-  {
-    title: "Leadership\nCoaching",
-    cta: "Become a Great Leader!",
-    href: "/leadership-coaching",
-    image: "/images/services/leadership.jpg",
-  },
-  {
-    title: "Improve\nRetention",
-    cta: "Develop a Plan to Improve Retention!",
-    href: "/improve-retention",
-    image: "/images/services/retention.jpg",
-  },
-  {
-    title: "Diversity\nCoaching",
-    cta: "Learn More About Diversity Coaching",
-    href: "/diversity-coaching",
-    image: "/images/services/diversity.jpg",
-  },
-  {
-    title: "One to One\nMentoring",
-    cta: "Get Insight & Personal Guidance",
-    href: "/one-to-one-mentoring",
-    image: "/images/services/mentoring.png",
-  },
-  {
-    title: "Strategic\nPlanning",
-    cta: "Create Your Strategy Today!",
-    href: "/strategic-planning",
-    image: "/images/services/planning.png",
-  },
-  {
-    title: "Talent\nDevelopment",
-    cta: "Reach Your Full Potential",
-    href: "/talent-development",
-    image: "/images/services/talent.jpg",
-  },
-  {
-    title: "Life Coach\nfor Teens",
-    cta: "Let Us Help Your Teens",
-    href: "/life-coach-for-teens",
-    image: "/images/services/teens.jpg",
-  },
-  {
-    title: "Leadership\nTrainee Program",
-    cta: "Learn More About This Program",
-    href: "/leadership-trainee-program",
-    image: "/images/services/trainee.jpg",
-  },
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+const stats = [
+  { value: String(site.founded), label: "Founded by CEO Isaac Russell" },
+  { value: `${yearsInBusiness()}+`, label: "Years helping leaders and their teams" },
+  { value: "30%", label: "Turnover reduction for Tyson Foods" },
+  { value: "$10K", label: "Cost to replace just one employee" },
 ];
 
-const clients = [
-  { name: "Coca-Cola", src: "/images/clients/coca-cola.png" },
-  { name: "Bonnie Plants", src: "/images/clients/bonnie-plants.png" },
-  { name: "Johnsonville", src: "/images/clients/johnsonville.png" },
-  { name: "Tyson", src: "/images/clients/tyson.png" },
-  { name: "American Seafoods", src: "/images/clients/american-seafoods.png" },
+const pillars = [
+  {
+    icon: Handshake,
+    title: "Relationship oriented",
+    text: "Not a classroom instrumental environment. We build trust between leaders and the people they lead.",
+  },
+  {
+    icon: UsersRound,
+    title: "On-the-job, hands-on",
+    text: "Coaching happens where the work happens, through real interaction and mentoring on the floor.",
+  },
+  {
+    icon: Sprout,
+    title: "People over process",
+    text: "Invest in your workforce and the bottom line takes care of itself. Assume nothing, teach everything.",
+  },
 ];
 
 export default function Home() {
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="bg-white py-10 sm:py-14 lg:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-5xl">
-            <Image
-              src="/images/book-header.jpg"
-              alt="Get your copy of Improving Profits Through People by Isaac Russell"
-              width={1536}
-              height={430}
-              className="h-auto w-full"
-              priority
-            />
-          </div>
+    <>
+      {/* ---------------------------------------------------------- Hero */}
+      <section className="relative isolate overflow-hidden bg-ink text-white">
+        <div aria-hidden className="bg-grid absolute inset-0 -z-10" />
+        <div aria-hidden className="absolute -top-40 -left-40 -z-10 h-[520px] w-[520px] rounded-full bg-navy blur-3xl" />
+        <div aria-hidden className="absolute right-0 bottom-0 -z-10 h-[420px] w-[420px] rounded-full bg-gold/15 blur-3xl" />
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-10 sm:mt-14">
-            <Link
-              href="/about"
-              className="inline-flex items-center justify-center gap-2 bg-red-cta hover:bg-red-cta-dark text-white font-bold px-10 py-4 rounded text-sm sm:text-base uppercase tracking-wider transition-colors w-full sm:w-auto"
-            >
-              Get Your Copy of Isaac&apos;s Book
-            </Link>
-            <Link
-              href="/invite-isaac-to-speak"
-              className="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-dark text-navy-dark font-bold px-10 py-4 rounded text-sm sm:text-base uppercase tracking-wider transition-colors w-full sm:w-auto"
-            >
-              Invite Isaac to Speak
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Yellow Banner */}
-      <section className="bg-gold py-10 sm:py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2
-            className="text-navy text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-wide leading-tight"
-            style={{ fontFamily: "Georgia, serif" }}
-          >
-            Results-Oriented
-            <br />
-            Leadership Strategies
-          </h2>
-          <p className="text-navy-dark text-lg sm:text-xl mt-4 font-medium">
-            Coach to Managers and Supervisors
-          </p>
-          <p className="text-navy-dark text-lg sm:text-xl font-medium">
-            Advisor to CEOs &amp; Leaders
-          </p>
-        </div>
-      </section>
-
-      {/* Client Logos */}
-      <section className="bg-lavender py-12 sm:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 lg:gap-16">
-            {clients.map((brand) => (
-              <Image
-                key={brand.name}
-                src={brand.src}
-                alt={brand.name}
-                width={180}
-                height={72}
-                className="h-12 sm:h-16 w-auto object-contain"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3">
-            <h2
-              className="text-3xl sm:text-4xl font-bold text-navy uppercase"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
-              Work With Isaac
-            </h2>
-            <Link
-              href="/invite-isaac-to-speak"
-              className="mt-4 sm:mt-0 inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy-dark font-bold px-6 py-3 rounded text-sm uppercase tracking-wider transition-colors"
-            >
-              Book Isaac for Your Next Event
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <p className="text-gray-600 text-base mb-10">
-            <span className="underline">Services</span> to improve the
-            communication &amp; relationships with your employees.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {services.map((service) => (
-              <Link
-                key={service.href}
-                href={service.href}
-                className="group block overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow"
-              >
-                <div className="relative h-40 bg-navy">
-                  <Image
-                    src={service.image}
-                    alt=""
-                    fill
-                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="bg-navy p-4 text-center">
-                  <h3 className="text-white font-bold text-base sm:text-lg uppercase tracking-wide whitespace-pre-line leading-tight min-h-[2.5rem]">
-                    {service.title}
-                  </h3>
-                  <div className="mt-3">
-                    <span className="inline-block bg-gold hover:bg-gold-dark text-navy-dark text-xs sm:text-sm font-bold uppercase tracking-wider px-4 py-2 rounded transition-colors">
-                      {service.cta}
-                    </span>
-                  </div>
-                </div>
+        <div className="container-x grid items-center gap-16 pt-16 pb-20 sm:pt-24 lg:grid-cols-12 lg:pb-28">
+          <div className="lg:col-span-7">
+            <p className="eyebrow rise text-gold">Leadership consulting since {site.founded}</p>
+            <h1 className="font-display rise rise-1 mt-6 text-5xl leading-[1.02] font-medium sm:text-6xl lg:text-7xl">
+              Results-oriented <em className="text-gold not-italic sm:italic">leadership</em> strategies.
+            </h1>
+            <p className="rise rise-2 mt-7 max-w-xl text-lg leading-relaxed text-white/75 sm:text-xl">
+              Coach to managers and supervisors. Advisor to CEOs and leaders. Success Plus helps America’s most
+              recognized brands increase productivity, reduce turnover, and build stronger teams.
+            </p>
+            <div className="rise rise-3 mt-10 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contact" className="btn-gold">
+                Get a free needs assessment
+                <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About Teaser */}
-      <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-gold-dark font-semibold uppercase tracking-widest text-sm mb-3">
-                About Isaac Russell
-              </p>
-              <h2
-                className="text-3xl sm:text-4xl font-bold text-navy mb-6"
-                style={{ fontFamily: "Georgia, serif" }}
-              >
-                From the Factory Floor to the C-Suite
-              </h2>
-              <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                Isaac Russell is a dynamic force in the world of leadership
-                development and the Founder &amp; CEO of Success Plus
-                Consulting. His inspiring journey began as an hourly factory
-                worker, eventually rising through the ranks to become a trusted
-                advisor for some of America&apos;s most recognized brands.
-              </p>
-              <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                With over 20 years of hands-on experience, Isaac is the
-                architect of the &ldquo;Success Model,&rdquo; a unique,
-                relationship-oriented approach to management that prioritizes
-                people over process.
-              </p>
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 text-navy font-semibold hover:text-navy-light transition-colors"
-              >
-                Learn more about Success Plus
-                <ArrowRight className="h-4 w-4" />
+              <Link href="/invite-isaac-to-speak" className="btn-ghost-light">
+                <Mic className="h-4 w-4" aria-hidden />
+                Invite Isaac to speak
               </Link>
             </div>
-            <div>
+            <a
+              href={site.phoneHref}
+              className="rise rise-3 mt-8 inline-flex items-center gap-2 text-sm text-white/60 hover:text-white"
+            >
+              <Phone className="h-4 w-4" aria-hidden />
+              Prefer to talk? Call <span className="font-semibold text-white">{site.phone}</span>
+            </a>
+          </div>
+
+          {/* Visual */}
+          <div className="rise rise-2 relative mx-auto w-full max-w-md lg:col-span-5">
+            <div className="relative aspect-square rounded-[2rem] sm:aspect-[4/5] bg-gradient-to-br from-navy to-navy-dark p-8 ring-1 ring-white/10">
+              <div aria-hidden className="bg-grid absolute inset-0 rounded-[2rem]" />
               <Image
-                src="/images/isaac-russell.jpg"
-                alt="Isaac Russell, Founder and CEO of Success Plus Consulting"
-                width={310}
-                height={310}
-                className="mx-auto mb-6 h-auto w-64 sm:w-72"
+                src="/images/book-cover.webp"
+                alt="Improving Profits Through People, by Isaac Russell"
+                width={305}
+                height={410}
+                priority
+                className="relative mx-auto mt-0 w-[56%] -rotate-3 sm:mt-4 sm:w-[68%] drop-shadow-[0_30px_30px_rgb(0_0_0/0.5)]"
               />
-              <div className="bg-navy rounded-lg p-8 text-white">
-                <blockquote className="text-lg leading-relaxed italic text-gray-300">
-                  &ldquo;The &lsquo;Success Model&rsquo; of Success Plus is very
-                  unique. It is not a classroom instrumental environment. It is
-                  relationship oriented through on-the-job interaction and
-                  mentoring. Think of it as coaching rather than training.&rdquo;
-                </blockquote>
-                <div className="mt-6 border-t border-navy-light pt-4">
-                  <p className="font-semibold text-gold">John Sherman</p>
-                  <p className="text-sm text-gray-400">
-                    CEO – East Region, Coca-Cola Bottling Company United, Inc.
-                  </p>
+              <div className="float absolute -bottom-6 -left-4 flex items-center gap-4 rounded-2xl bg-white p-3 pr-6 text-ink shadow-2xl sm:-left-10">
+                <Image
+                  src="/images/isaac-portrait.webp"
+                  alt="Isaac Russell"
+                  width={400}
+                  height={400}
+                  className="h-16 w-16 rounded-full"
+                />
+                <div>
+                  <p className="font-semibold">Isaac Russell</p>
+                  <p className="text-xs text-muted-foreground">Founder &amp; CEO · Author · Speaker</p>
                 </div>
+              </div>
+              <div className="absolute -top-5 -right-3 rounded-2xl bg-gold px-4 py-3 text-ink shadow-xl sm:-right-8">
+                <p className="font-display text-3xl leading-none font-semibold">{yearsInBusiness()}+</p>
+                <p className="mt-1 text-[11px] font-semibold tracking-wider uppercase">years of results</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Subscribe / CTA */}
-      <section className="bg-navy py-14 sm:py-18">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2
-            className="text-3xl sm:text-4xl font-bold text-white mb-4"
-            style={{ fontFamily: "Georgia, serif" }}
-          >
-            Ready to Transform Your Leadership?
-          </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
-            Contact us today and get a free needs assessment to determine which
-            service will best benefit your business.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="tel:8444677587"
-              className="inline-flex items-center gap-2 bg-gold hover:bg-gold-dark text-navy-dark font-bold px-8 py-3.5 rounded uppercase tracking-wider transition-colors"
-            >
-              <BookOpen className="h-5 w-5" />
-              844-467-7587
-            </a>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-navy font-bold px-8 py-3.5 rounded uppercase tracking-wider transition-colors"
-            >
-              Send Us a Message
-              <ArrowRight className="h-4 w-4" />
+      <LogoMarquee />
+
+      {/* --------------------------------------------------------- Stats */}
+      <section className="bg-white py-20 sm:py-24">
+        <div className="container-x">
+          <dl className="grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-4">
+            {stats.map((s) => (
+              <div key={s.label} className="reveal flex flex-col border-l-2 border-gold pl-5">
+                <dt className="order-2 mt-2 text-sm leading-snug text-muted-foreground">{s.label}</dt>
+                <dd className="font-display order-1 text-5xl font-medium text-ink sm:text-6xl">{s.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------ Services */}
+      <section id="services" className="bg-cream py-20 sm:py-28">
+        <div className="container-x">
+          <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+            <SectionHeading
+              eyebrow="Work with Isaac"
+              title="Services that strengthen the people behind your profits."
+              intro="Improve the communication and relationships between your leaders and your employees."
+            />
+            <Link href="/invite-isaac-to-speak" className="btn-navy shrink-0 self-start lg:self-auto">
+              Book Isaac for your next event
+              <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
+          </div>
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((s) => (
+              <ServiceCard key={s.href} service={s} />
+            ))}
           </div>
         </div>
       </section>
-    </div>
+
+      {/* ------------------------------------------------- Success Model */}
+      <section className="relative isolate overflow-hidden bg-ink py-20 text-white sm:py-28">
+        <div aria-hidden className="bg-grid absolute inset-0 -z-10" />
+        <div className="container-x grid gap-16 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <SectionHeading
+              tone="light"
+              eyebrow="The Success Model"
+              title={
+                <>
+                  Think of it as <em className="text-gold">coaching</em>, not training.
+                </>
+              }
+              intro="Isaac challenges the status quo with homespun wisdom, proving you don’t need complex theories to drive results. You need to connect with your team."
+            />
+            <ul className="mt-12 space-y-8">
+              {pillars.map(({ icon: Icon, title, text }) => (
+                <li key={title} className="reveal flex gap-5">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gold/10 text-gold ring-1 ring-gold/30">
+                    <Icon className="h-5 w-5" aria-hidden />
+                  </span>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">{title}</h3>
+                    <p className="mt-1 leading-relaxed text-white/65">{text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex items-center lg:col-span-6 lg:col-start-7">
+            <TestimonialCard tone="dark" className="reveal" />
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------- About/book */}
+      <section className="bg-white py-20 sm:py-28">
+        <div className="container-x grid items-center gap-16 lg:grid-cols-2">
+          <div className="reveal relative order-2 lg:order-1">
+            <div className="relative mx-auto aspect-square max-w-lg rounded-[2rem] bg-lavender">
+              <div aria-hidden className="absolute inset-10 rounded-full bg-gold/60 blur-2xl" />
+              <Image
+                src="/images/book-cover.webp"
+                alt="Improving Profits Through People book cover"
+                width={305}
+                height={410}
+                className="absolute top-1/2 left-1/2 w-[54%] -translate-x-1/2 -translate-y-1/2 rotate-2 drop-shadow-[0_30px_30px_rgb(20_21_47/0.35)]"
+              />
+            </div>
+          </div>
+          <div className="order-1 lg:order-2">
+            <SectionHeading
+              eyebrow="From the factory floor to the C-suite"
+              title="Meet Isaac Russell."
+            />
+            <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
+              <p>
+                Isaac Russell is a dynamic force in leadership development and the Founder &amp; CEO of Success Plus
+                Consulting. His journey began as an hourly factory worker, rising through the ranks to become a
+                trusted advisor for Coca-Cola, Tyson Foods, and Johnsonville.
+              </p>
+              <p>
+                He is also the author of{" "}
+                <strong className="font-semibold text-ink">Improving Profits Through People</strong>, a practical guide
+                to boosting your organization’s bottom line with a results-oriented leadership process.
+              </p>
+            </div>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contact" className="btn-navy">
+                <BookOpen className="h-4 w-4" aria-hidden />
+                Get your copy of Isaac’s book
+              </Link>
+              <Link href="/about" className="btn-ghost-dark">
+                More about Success Plus
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CtaBand />
+    </>
   );
 }
