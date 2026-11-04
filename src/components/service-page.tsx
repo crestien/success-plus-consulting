@@ -17,7 +17,7 @@ export function ServicePage({ href, subtitle, intro, children }: ServicePageProp
   const related = [1, 2, 3].map((n) => services[(index + n) % services.length]);
 
   return (
-    <>
+    <div>
       <PageHero
         eyebrow={subtitle}
         title={service.name}
@@ -96,6 +96,6 @@ export function ServicePage({ href, subtitle, intro, children }: ServicePageProp
       </section>
 
       <CtaBand />
-    </>
+    </div>
   );
 }

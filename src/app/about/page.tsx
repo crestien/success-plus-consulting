@@ -20,7 +20,7 @@ const roles = [
 
 export default function AboutPage() {
   return (
-    <>
+    <div>
       <PageHero
         eyebrow="Discover how to become a great leader"
         title="Welcome to Success Plus."
@@ -136,6 +136,6 @@ export default function AboutPage() {
         title="Ready to work with Isaac?"
         text="Contact us for a free needs assessment and discover how Success Plus can help transform your organization."
       />
-    </>
+    </div>
   );
 }

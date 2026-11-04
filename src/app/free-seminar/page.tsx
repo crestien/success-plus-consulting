@@ -10,7 +10,7 @@ export const metadata = pageMeta(
 
 export default function FreeSeminarPage() {
   return (
-    <>
+    <div>
       <PageHero
         eyebrow="At your next event"
         title="Request a free seminar."
@@ -48,6 +48,6 @@ export default function FreeSeminarPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

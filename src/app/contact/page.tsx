@@ -49,7 +49,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <>
+    <div>
       <PageHero
         eyebrow="Motivation. Sales. Leadership."
         title="Ensure long-term, measurable success."
@@ -100,6 +100,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

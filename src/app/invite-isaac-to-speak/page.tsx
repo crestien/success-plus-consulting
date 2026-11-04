@@ -11,7 +11,7 @@ export const metadata = pageMeta(
 
 export default function InviteIsaacToSpeakPage() {
   return (
-    <>
+    <div>
       <PageHero
         eyebrow="Keynotes · Seminars · Retreats"
         title="Invite Isaac to speak."
@@ -79,6 +79,6 @@ export default function InviteIsaacToSpeakPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
