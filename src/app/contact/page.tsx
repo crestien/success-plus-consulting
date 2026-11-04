@@ -7,7 +7,7 @@ import { site, yearsInBusiness } from "@/lib/site";
 
 export const metadata = pageMeta(
   "Contact",
-  `Contact Success Plus Consulting today for a free needs assessment. Call ${site.phone}.`,
+  `Let’s talk about your organization. Contact Success Plus Consulting for a free needs assessment. Call ${site.phone}.`,
   "/contact",
 );
 
@@ -51,9 +51,9 @@ export default function ContactPage() {
   return (
     <div>
       <PageHero
-        eyebrow="Motivation. Sales. Leadership."
-        title="Ensure long-term, measurable success."
-        subtitle="Fill out the form or call to connect with us today and get a free needs assessment to determine which service will best benefit your business."
+        eyebrow="Contact"
+        title="Let’s talk about your organization."
+        subtitle="Tell us about your people, your leaders, and the challenge in front of you. We’ll listen first, and the first conversation is a free needs assessment."
         crumbs={[{ name: "Contact" }]}
       />
 
@@ -61,11 +61,10 @@ export default function ContactPage() {
         <div className="container-x grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <p className="text-lg leading-relaxed text-muted-foreground">
-              For over {yearsInBusiness()} years, Success Plus has worked with major American
-              brands like Coca-Cola, Tyson Foods, and Johnsonville to increase productivity, reduce turnover, and
-              create an overall better, and more profitable, work environment. The insight, expertise, and training
-              philosophy of Founder and CEO Isaac Russell helps managers, supervisors, and executives develop their
-              skills and transform into truly great leaders.
+              Every organization is unique. We don&apos;t start with a standardized program; we start by understanding
+              your people, culture, challenges, and business objectives. For over {yearsInBusiness()} years, Success Plus
+              has partnered with organizations including Coca-Cola, Tyson Foods, and Johnsonville to strengthen
+              leadership, improve workforce performance, and reduce turnover.
             </p>
 
             <address className="mt-10 grid gap-4 not-italic">
@@ -94,7 +93,7 @@ export default function ContactPage() {
           <div className="lg:col-span-7">
             <div className="card-surface p-7 sm:p-10">
               <h2 className="font-display text-3xl font-medium text-ink">Send us a message</h2>
-              <p className="mt-2 mb-8 text-muted-foreground">Tell us a little about your team and what you&apos;d like to improve.</p>
+              <p className="mt-2 mb-8 text-muted-foreground">Share a little about your organization, your role, and the challenge you&apos;re facing.</p>
               <ContactForm />
             </div>
           </div>

@@ -5,13 +5,13 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, ChevronDown, Menu, Phone, X } from "lucide-react";
-import { services, site } from "@/lib/site";
+import { services, site, solutionAreas } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const nav = [
+  { name: "How We Work", href: "/how-we-work" },
+  { name: "Results", href: "/results" },
   { name: "About", href: "/about" },
-  { name: "Testimonials", href: "/testimonials" },
-  { name: "Speaking", href: "/invite-isaac-to-speak" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -62,7 +62,7 @@ export function Header() {
   }, [servicesOpen]);
 
   const isActive = (href: string) => pathname === href.split("#")[0] && !href.includes("#");
-  const servicesActive = services.some((s) => s.href === pathname);
+  const servicesActive = pathname.startsWith("/solutions") || services.some((s) => s.href === pathname);
 
   return (
     <header
@@ -95,37 +95,44 @@ export function Header() {
                 servicesActive ? "text-navy" : "text-foreground/80 hover:text-navy",
               )}
             >
-              Services
+              Solutions
               <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", servicesOpen && "rotate-180")} aria-hidden />
             </button>
 
             <div
               id="services-menu"
               className={cn(
-                "absolute top-full left-1/2 w-[640px] -translate-x-1/2 pt-3 transition-all duration-200",
+                "absolute top-full left-1/2 w-[760px] -translate-x-1/2 pt-3 transition-all duration-200",
                 servicesOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0",
               )}
             >
-              <div className="card-surface grid grid-cols-2 gap-1 p-3">
-                {services.map((s) => (
-                  <Link
-                    key={s.href}
-                    href={s.href}
-                    className="group flex items-start gap-3 rounded-2xl p-3 transition-colors hover:bg-muted"
-                  >
-                    <Image
-                      src={s.image}
-                      alt=""
-                      width={48}
-                      height={48}
-                      className="h-12 w-12 shrink-0 rounded-xl object-cover"
-                    />
-                    <span>
-                      <span className="block text-sm font-semibold text-ink group-hover:text-navy">{s.name}</span>
-                      <span className="mt-0.5 line-clamp-2 block text-xs leading-snug text-muted-foreground">{s.summary}</span>
-                    </span>
-                  </Link>
+              <div className="card-surface grid grid-cols-3 gap-2 p-4">
+                {solutionAreas.map((a) => (
+                  <div key={a.slug} className="rounded-2xl p-3">
+                    <Link href={a.href} className="group block">
+                      <span className="font-display block text-lg font-medium text-ink group-hover:text-navy">{a.name}</span>
+                      <span className="mt-1 line-clamp-3 block text-xs leading-snug text-muted-foreground">{a.summary}</span>
+                    </Link>
+                    <ul className="mt-3 space-y-1 border-t border-border pt-3">
+                      {services
+                        .filter((s) => a.services.includes(s.href))
+                        .map((s) => (
+                          <li key={s.href}>
+                            <Link href={s.href} className="block rounded-lg px-2 py-1 text-sm text-foreground/80 hover:bg-muted hover:text-navy">
+                              {s.name}
+                            </Link>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
                 ))}
+                <Link
+                  href="/solutions"
+                  className="col-span-3 flex items-center justify-between rounded-2xl bg-muted px-4 py-3 text-sm font-semibold text-navy hover:bg-lavender"
+                >
+                  All solutions
+                  <ArrowUpRight className="h-4 w-4" aria-hidden />
+                </Link>
               </div>
             </div>
           </div>
@@ -151,7 +158,7 @@ export function Header() {
             {site.phone}
           </a>
           <Link href="/contact" className="btn-navy px-5 py-2.5">
-            Free assessment
+            Let&apos;s talk
             <ArrowUpRight className="h-4 w-4" aria-hidden />
           </Link>
         </div>
@@ -175,16 +182,17 @@ export function Header() {
       >
         <div className="container-x space-y-8 py-6">
           <div>
-            <p className="eyebrow mb-3 text-muted-foreground">Services</p>
-            <ul className="grid gap-1 sm:grid-cols-2">
-              {services.map((s) => (
-                <li key={s.href}>
+            <p className="eyebrow mb-3 text-muted-foreground">Solutions</p>
+            <ul className="grid gap-2">
+              {solutionAreas.map((a) => (
+                <li key={a.slug}>
                   <Link
-                    href={s.href}
+                    href={a.href}
+                    onClick={() => setMobileOpen(false)}
                     className="flex items-center gap-3 rounded-2xl p-2 text-base font-medium text-ink hover:bg-muted"
                   >
-                    <Image src={s.image} alt="" width={40} height={40} className="h-10 w-10 rounded-lg object-cover" />
-                    {s.name}
+                    <Image src={a.image} alt="" width={40} height={40} className="h-10 w-10 rounded-lg object-cover" />
+                    {a.name}
                   </Link>
                 </li>
               ))}
@@ -205,7 +213,7 @@ export function Header() {
           </ul>
           <div className="grid gap-3 sm:grid-cols-2">
             <Link href="/contact" className="btn-navy">
-              Get a free needs assessment
+              Let&apos;s talk about your organization
             </Link>
             <a href={site.phoneHref} className="btn-ghost-dark">
               <Phone className="h-4 w-4" aria-hidden />

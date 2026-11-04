@@ -4,19 +4,14 @@ A modern website for Success Plus Consulting, a leadership consulting firm found
 
 ## Pages
 
-- **Home** — Hero section, services grid, testimonials, and CTA
-- **About** — Company history, the Success Model, and client testimonials
-- **Leadership Coaching** — Leadership plan development services
-- **Improve Retention** — Employee retention strategy services
-- **Diversity Coaching** — Workforce diversity training
-- **One to One Mentoring** — Personal leadership mentoring
-- **Strategic Planning** — Business strategy development
-- **Talent Development** — On-the-job skill building
-- **Life Coach for Teens** — Teen Mentoring Program
-- **Leadership Trainee Program** — Official training process development
-- **Invite Isaac to Speak** — Speaking engagement booking
-- **Free Seminar** — Request a free seminar
-- **Contact** — Contact form and business info
+- **Home** — Brand line hero, promise, what we help solve, the Success Plus difference, 7-step method, proof, Meet Isaac
+- **How We Work** — Listen → Assess → Analyze → Customize → Partner → Measure → Evolve
+- **Solutions** — Overview plus three area pages (`/solutions/[area]`): Leadership Development, Organizational Performance, Strategic Consulting
+- **Service detail pages** — Leadership Coaching, Improve Retention, Diversity Coaching, One to One Mentoring, Strategic Planning, Talent Development, Life Coach for Teens, Leadership Trainee Program
+- **Results** — Featured 30%+ turnover result and client testimonials (`/testimonials` redirects here)
+- **About**, **Invite Isaac to Speak**, **Free Seminar**, **Contact**
+
+Brand messaging, solution areas, the method, and testimonials all live in `src/lib/site.ts`.
 
 ## Tech Stack
 

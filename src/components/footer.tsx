@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone } from "lucide-react";
-import { services, site } from "@/lib/site";
+import { services, site, solutionAreas } from "@/lib/site";
 
 const icons = {
   linkedin:
@@ -18,8 +18,9 @@ const socialLinks = [
 ];
 
 const company = [
+  { name: "How We Work", href: "/how-we-work" },
+  { name: "Results", href: "/results" },
   { name: "About Success Plus", href: "/about" },
-  { name: "Testimonials", href: "/testimonials" },
   { name: "Invite Isaac to Speak", href: "/invite-isaac-to-speak" },
   { name: "Free Seminar", href: "/free-seminar" },
   { name: "Contact", href: "/contact" },
@@ -38,8 +39,7 @@ export function Footer() {
           <div className="lg:col-span-4">
             <Image src="/images/logo-white.png" alt={site.shortName} width={600} height={113} className="h-10 w-auto" />
             <p className="mt-6 max-w-sm text-sm leading-relaxed">
-              Hands-on leadership coaching, mentoring, and strategy for organizations that want to improve profits
-              through people. Serving clients nationwide since {site.founded}.
+              {site.tagline}. Serving organizations nationwide since {site.founded}.
             </p>
             <a
               href={site.phoneHref}
@@ -69,8 +69,15 @@ export function Footer() {
 
           <div className="grid gap-10 sm:grid-cols-3 lg:col-span-8">
             <div>
-              <h2 className="text-sm font-semibold text-white">Services</h2>
+              <h2 className="text-sm font-semibold text-white">Solutions</h2>
               <ul className="mt-4 space-y-2.5 text-sm">
+                {solutionAreas.map((a) => (
+                  <li key={a.href}>
+                    <Link href={a.href} className="font-medium text-white/90 transition-colors hover:text-gold">
+                      {a.name}
+                    </Link>
+                  </li>
+                ))}
                 {services.map((s) => (
                   <li key={s.href}>
                     <Link href={s.href} className="transition-colors hover:text-gold">
@@ -118,7 +125,7 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <p>Motivation. Sales. Leadership.</p>
+          <p className="font-display text-sm text-white/70 italic">{site.brandLine}</p>
         </div>
       </div>
     </footer>

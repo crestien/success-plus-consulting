@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
     // SiteGround blocks /_next/image (WAF treats it as an open proxy).
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      { source: "/testimonials", destination: "/results", permanent: true },
+      { source: "/services", destination: "/solutions", permanent: true },
+    ];
+  },
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,

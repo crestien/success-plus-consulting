@@ -258,8 +258,8 @@ export function EventTypes() {
 /* Closing call to action                                              */
 /* ------------------------------------------------------------------ */
 export function CtaBand({
-  title = "Ready to transform your leadership?",
-  text = "Contact us today and get a free needs assessment to determine which service will best benefit your business.",
+  title = "Let’s talk about your organization.",
+  text = "Tell us what’s happening with your leaders and your workforce. We’ll listen first, and the first conversation is a free needs assessment.",
 }: {
   title?: string;
   text?: string;
@@ -273,7 +273,7 @@ export function CtaBand({
         <p className="mx-auto mt-5 max-w-xl text-lg text-white/75">{text}</p>
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link href="/contact" className="btn-gold w-full sm:w-auto">
-            Get a free needs assessment
+            Start the conversation
             <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
           <a href={site.phoneHref} className="btn-ghost-light w-full sm:w-auto">

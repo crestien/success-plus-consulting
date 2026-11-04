@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CalendarCheck, Phone } from "lucide-react";
 import { CtaBand, PageHero, SectionHeading, ServiceCard, TestimonialCard } from "@/components/sections";
-import { services, site } from "@/lib/site";
+import { services, site, solutionAreas } from "@/lib/site";
 
 interface ServicePageProps {
   href: string;
@@ -15,6 +15,7 @@ export function ServicePage({ href, subtitle, intro, children }: ServicePageProp
   const index = services.findIndex((s) => s.href === href);
   const service = services[index];
   const related = [1, 2, 3].map((n) => services[(index + n) % services.length]);
+  const area = solutionAreas.find((a) => a.services.includes(href));
 
   return (
     <div>
@@ -22,7 +23,11 @@ export function ServicePage({ href, subtitle, intro, children }: ServicePageProp
         eyebrow={subtitle}
         title={service.name}
         subtitle={intro}
-        crumbs={[{ name: "Services", href: "/#services" }, { name: service.name }]}
+        crumbs={[
+          { name: "Solutions", href: "/solutions" },
+          ...(area ? [{ name: area.name, href: area.href }] : []),
+          { name: service.name },
+        ]}
         aside={
           <div className="relative">
             <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] ring-1 ring-white/10">
@@ -44,7 +49,7 @@ export function ServicePage({ href, subtitle, intro, children }: ServicePageProp
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <Link href="/contact" className="btn-gold">
-            Contact Success Plus
+            Let&apos;s talk
             <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
           <a href={site.phoneHref} className="btn-ghost-light">
@@ -66,7 +71,7 @@ export function ServicePage({ href, subtitle, intro, children }: ServicePageProp
                 </span>
                 <h2 className="font-display mt-5 text-2xl font-medium text-ink">Ready to get started?</h2>
                 <p className="mt-2 text-muted-foreground">
-                  Call today for a free needs assessment and find out which service will benefit your business most.
+                  Every engagement is built around your organization. The first conversation is a free needs assessment.
                 </p>
                 <div className="mt-6 grid gap-3">
                   <a href={site.phoneHref} className="btn-navy">

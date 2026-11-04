@@ -23,13 +23,15 @@ const display = Source_Serif_4({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Leadership Coaching, Mentoring & Speaking`,
+    default: `${site.name} | Strengthen Organizational Performance Through People`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
   applicationName: site.name,
   authors: [{ name: "Isaac Russell" }],
   keywords: [
+    "organizational performance consulting",
+    "leadership development",
     "leadership coaching",
     "executive coach",
     "management training",
@@ -44,7 +46,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: "en_US",
     url: "/",
-    title: `${site.name} | Results-Oriented Leadership Strategies`,
+    title: `${site.name} | Strengthen Organizational Performance Through People`,
     description: site.description,
     images: [ogImage],
   },

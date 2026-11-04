@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
   "Invite Isaac to Speak",
-  "Invite Isaac Russell to speak at your next event, meeting, or retreat. A dynamic force in leadership development.",
+  "Invite Isaac Russell, founder of Success Plus Consulting, to speak at your next event, meeting, or retreat on leadership and organizational performance through people.",
   "/invite-isaac-to-speak",
 );
 
@@ -15,7 +15,7 @@ export default function InviteIsaacToSpeakPage() {
       <PageHero
         eyebrow="Keynotes · Seminars · Retreats"
         title="Invite Isaac to speak."
-        subtitle="Book Isaac Russell for your next event, meeting, or retreat. Infectious energy, down-to-earth wisdom, and leadership lessons your team will put to work the next day."
+        subtitle="Book Isaac Russell for your next event, meeting, or retreat. From the factory floor to the C-suite: practical leadership lessons your team will put to work the next day."
         crumbs={[{ name: "Invite Isaac to Speak" }]}
       />
 
@@ -38,28 +38,25 @@ export default function InviteIsaacToSpeakPage() {
 
             <div className="prose-sp mt-8">
               <p className="lead">
-                Isaac Russell is a dynamic force in the world of leadership development and the Founder &amp; CEO of
-                Success Plus Consulting.
+                Isaac Russell is the Founder and CEO of Success Plus Consulting, a boutique leadership and organizational
+                performance consulting firm.
               </p>
               <p>
-                A true testament to the power of grit and growth, Isaac didn&apos;t just study leadership in a
-                classroom; he lived it. His inspiring journey began as an hourly factory worker, where he learned the
-                ropes from the ground up, eventually rising through the ranks to become a trusted advisor for some of
-                America&apos;s most recognized brands, including Coca-Cola, Tyson Foods, and Johnsonville.
+                Isaac brings a perspective to leadership that can only come from firsthand experience. His career began
+                as an hourly factory worker, giving him an early understanding of the realities employees and frontline
+                supervisors face every day. He experienced organizations from the ground up, eventually progressing into
+                leadership and becoming a trusted advisor to organizations and leaders at every level, including
+                Coca-Cola, Tyson Foods, and Johnsonville.
               </p>
               <p>
-                Isaac is the architect of the &ldquo;Success Model,&rdquo; a unique, relationship-oriented approach to
-                management that prioritizes people over process. He challenges the status quo with his &ldquo;homespun
-                wisdom,&rdquo; proving that you don&apos;t need complex theories to drive results; you need to connect
-                with your team. His methods have transformed first-line supervisors into confident leaders, slashed
-                turnover rates, and skyrocketed productivity for major corporations.
+                Isaac believes people genuinely want to succeed. His talks look beyond the symptoms of poor performance
+                to what is really happening: Are expectations clear? Do people have the skills and support they need?
+                Are leaders equipped to lead effectively?
               </p>
               <p>
-                Isaac is also the celebrated author of <strong>Improving Profits Through People</strong>, a practical
-                guide that encapsulates his philosophy: when you invest in your workforce, the bottom line takes care of
-                itself. Whether he is coaching a CEO or mentoring a new manager, Isaac brings an infectious energy and a
-                &ldquo;down-to-earth&rdquo; style that empowers individuals to assume nothing, teach everything, and
-                lead with purpose.
+                As the architect of the Success Model and author of <strong>Improving Profits Through People</strong>,
+                Isaac brings the same practical, straightforward approach to the stage that he brings to every
+                engagement, whether he is advising an executive team or mentoring a frontline supervisor.
               </p>
             </div>
 
