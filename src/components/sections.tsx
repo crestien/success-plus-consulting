@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ArrowUpRight, Check, ChevronRight, Phone, Quote } from "lucide-react";
-import { clients, eventTypes, site, testimonial, type Service } from "@/lib/site";
+import { clients, eventTypes, site, testimonial as featured, type Service, type Testimonial } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 /* ------------------------------------------------------------------ */
@@ -182,8 +182,23 @@ export function ServiceCard({ service, className }: { service: Service; classNam
 /* ------------------------------------------------------------------ */
 /* Testimonial                                                         */
 /* ------------------------------------------------------------------ */
-export function TestimonialCard({ tone = "light", className }: { tone?: "light" | "dark"; className?: string }) {
+export function TestimonialCard({
+  tone = "light",
+  className,
+  testimonial = featured,
+  size = "lg",
+}: {
+  tone?: "light" | "dark";
+  className?: string;
+  testimonial?: Testimonial;
+  size?: "lg" | "md";
+}) {
   const dark = tone === "dark";
+  const initials = testimonial.name
+    .split(" ")
+    .map((w) => w[0])
+    .join("")
+    .slice(0, 2);
   return (
     <figure
       className={cn(
@@ -193,7 +208,13 @@ export function TestimonialCard({ tone = "light", className }: { tone?: "light" 
       )}
     >
       <Quote className={cn("h-10 w-10", dark ? "text-gold" : "text-gold-dark")} aria-hidden />
-      <blockquote className={cn("font-display mt-6 text-xl leading-relaxed sm:text-2xl", dark ? "text-white" : "text-ink")}>
+      <blockquote
+        className={cn(
+          "font-display mt-6 leading-relaxed",
+          size === "lg" ? "text-xl sm:text-2xl" : "text-lg",
+          dark ? "text-white" : "text-ink",
+        )}
+      >
         “{testimonial.quote}”
       </blockquote>
       <figcaption className="mt-8 flex items-center gap-4">
@@ -201,7 +222,7 @@ export function TestimonialCard({ tone = "light", className }: { tone?: "light" 
           aria-hidden
           className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-gold font-semibold text-ink"
         >
-          JS
+          {initials}
         </span>
         <span>
           <span className={cn("block font-semibold", dark ? "text-white" : "text-ink")}>{testimonial.name}</span>

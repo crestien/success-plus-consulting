@@ -107,12 +107,49 @@ export const clients = [
   { name: "American Seafoods", src: "/images/clients/american-seafoods.png", w: 480, h: 165 },
 ];
 
-export const testimonial = {
-  quote:
-    "The ‘Success Model’ of Success Plus is very unique. It is not a classroom instrumental environment. It is relationship oriented through on-the-job interaction and mentoring. Think of it as coaching rather than training.",
-  name: "John Sherman",
-  title: "CEO – East Region, Coca-Cola Bottling Company United, Inc.",
-};
+export type Testimonial = { quote: string; name: string; title: string };
+
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      "The ‘Success Model’ of Success Plus is very unique. It is not a classroom instrumental environment. It is relationship oriented through on-the-job interaction and mentoring. Think of it as coaching rather than training.",
+    name: "John Sherman",
+    title: "CEO – East Region, Coca-Cola Bottling Company United, Inc.",
+  },
+  {
+    quote:
+      "I don’t make a habit of hiring consultants, because so few actually bring value to the table. Success Plus is the exception to the rule. They almost quietly bring about an environmental change to people’s attitudes and work style without them really knowing it’s happening.",
+    name: "David Bleth",
+    title: "President & CEO, Harrisons Poultry",
+  },
+  {
+    quote:
+      "We have gained the respect of our employees through the training that was received for the managers/supervisors at our facility. This training gave us the insight that was needed for our managers/supervisors to understand the Leadership Competencies.",
+    name: "Bob Massaro",
+    title: "Former Human Resource Manager, Tyson’s Foods",
+  },
+  {
+    quote:
+      "Isaac was an amazing leadership coach that helped me take the development of my teams to a new level. After working with Isaac I was able to develop systems and processes to drive improvement in myself and those who report to me. This lead to improvement in all major metrics with my work teams, some of which improved over 70%. The amazing part isn't the improvement, it's the sustainment in the improvements. With his help, I didn't just drive short-term change, I drove cultural change. The skills Isaac shared with me have changed how I manage people and will impact me for the rest of my career. I can't say enough about training and develop he shared with me!",
+    name: "Paul Novak",
+    title: "Asset Leader, Rockline Industries",
+  },
+  {
+    quote:
+      "Experience tells me that Success Plus can establish a positive working attitude between top management and workers regarding productivity.",
+    name: "George Howard",
+    title: "Pioneer and Former Director, Alabama Industrial Development Training",
+  },
+  {
+    quote:
+      "Our company benefited from the services received and feels that it has improved communication and relationships with our employees.",
+    name: "Allen Fletcher",
+    title: "Retired Administrator, Northeast Alabama Regional Medical Center",
+  },
+];
+
+/** Featured testimonial used on the home, about, and service pages. */
+export const testimonial = testimonials[0];
 
 export const eventTypes = [
   "Company Events",

@@ -19,7 +19,7 @@ const socialLinks = [
 
 const company = [
   { name: "About Success Plus", href: "/about" },
-  { name: "Testimonials", href: "/about#testimonials" },
+  { name: "Testimonials", href: "/testimonials" },
   { name: "Invite Isaac to Speak", href: "/invite-isaac-to-speak" },
   { name: "Free Seminar", href: "/free-seminar" },
   { name: "Contact", href: "/contact" },
