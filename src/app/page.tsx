@@ -36,7 +36,7 @@ const pillars = [
 
 export default function Home() {
   return (
-    <>
+    <div>
       {/* ---------------------------------------------------------- Hero */}
       <section className="relative isolate overflow-hidden bg-ink text-white">
         <div aria-hidden className="bg-grid absolute inset-0 -z-10" />
@@ -226,6 +226,6 @@ export default function Home() {
       </section>
 
       <CtaBand />
-    </>
+    </div>
   );
 }
