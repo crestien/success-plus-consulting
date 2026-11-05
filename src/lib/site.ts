@@ -8,17 +8,9 @@ export const site = {
     "Success Plus Consulting is a boutique leadership and organizational performance consulting firm that helps organizations develop stronger leaders, improve workforce performance, and create measurable, sustainable results.",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.successplusconsulting.com").replace(/\/$/, ""),
   founded: 1993,
-  phone: "844-467-7587",
-  phoneHref: "tel:+18444677587",
+  phone: "256-453-5577",
+  phoneHref: "tel:+12564535577",
   addresses: {
-    office: {
-      label: "Office",
-      street: "400 South 4th Street",
-      suite: "Suite 401M – 231",
-      city: "Minneapolis",
-      region: "MN",
-      postal: "55415",
-    },
     mailing: {
       label: "Mailing address",
       street: "P.O. Box 195",

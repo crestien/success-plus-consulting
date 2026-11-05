@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, Phone } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { PageHero } from "@/components/sections";
 import { pageMeta } from "@/lib/seo";
@@ -12,7 +12,7 @@ export const metadata = pageMeta(
 );
 
 export default function ContactPage() {
-  const { office, mailing } = site.addresses;
+  const { mailing } = site.addresses;
 
   const cards = [
     {
@@ -22,17 +22,6 @@ export default function ContactPage() {
         <a href={site.phoneHref} className="font-display text-2xl font-medium text-navy hover:text-navy-light">
           {site.phone}
         </a>
-      ),
-    },
-    {
-      icon: MapPin,
-      title: "Office",
-      body: (
-        <p>
-          {office.street}, {office.suite}
-          <br />
-          {office.city}, {office.region} {office.postal}
-        </p>
       ),
     },
     {

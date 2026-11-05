@@ -27,7 +27,7 @@ const company = [
 ];
 
 export function Footer() {
-  const { office, mailing } = site.addresses;
+  const { mailing } = site.addresses;
 
   return (
     <footer className="relative overflow-hidden bg-ink text-white/70">
@@ -100,18 +100,10 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="text-sm font-semibold text-white">Visit &amp; write</h2>
+              <h2 className="text-sm font-semibold text-white">Write to us</h2>
               <address className="mt-4 space-y-5 text-sm leading-relaxed not-italic">
                 <p>
                   <span className="block text-white/90">{site.name}</span>
-                  {office.street}
-                  <br />
-                  {office.suite}
-                  <br />
-                  {office.city}, {office.region} {office.postal}
-                </p>
-                <p>
-                  <span className="block text-white/90">{mailing.label}</span>
                   {mailing.street}
                   <br />
                   {mailing.city}, {mailing.region} {mailing.postal}
