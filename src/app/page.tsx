@@ -52,8 +52,8 @@ export default function Home() {
       {/* ---------------------------------------------------------- Hero */}
       <section className="relative isolate overflow-hidden bg-ink text-white">
         <div aria-hidden className="bg-grid absolute inset-0 -z-10" />
-        <div aria-hidden className="absolute -top-40 -left-40 -z-10 h-[520px] w-[520px] rounded-full bg-navy blur-3xl" />
-        <div aria-hidden className="absolute right-0 bottom-0 -z-10 h-[420px] w-[420px] rounded-full bg-gold/15 blur-3xl" />
+        <div aria-hidden className="absolute -top-40 -left-40 -z-10 h-[520px] w-[520px] rounded-full bg-navy blur-3xl drift" />
+        <div aria-hidden className="absolute right-0 bottom-0 -z-10 h-[420px] w-[420px] rounded-full bg-gold/15 blur-3xl drift-slow" />
 
         <div className="container-x grid items-center gap-16 pt-16 pb-20 sm:pt-24 lg:grid-cols-12 lg:pb-28">
           <div className="lg:col-span-7">

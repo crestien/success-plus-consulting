@@ -192,6 +192,84 @@
   }
 }
 
+/* Fade between pages (template.tsx remounts per navigation) */
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.page-in {
+  animation: page-in 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Slow drifting glow behind dark heroes */
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(8%, 6%, 0) scale(1.12);
+  }
+}
+.drift {
+  animation: drift 18s ease-in-out infinite;
+  will-change: transform;
+}
+.drift-slow {
+  animation: drift 26s ease-in-out infinite reverse;
+  will-change: transform;
+}
+
+/* Cursor spotlight on cards (coords set by <Spotlight />) */
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+.spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 50%),
+    rgb(244 208 63 / 0.16),
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+@media (hover: hover) {
+  .spotlight:hover::after {
+    opacity: 1;
+  }
+}
+
+/* Underline that draws in from the left */
+@utility link-sweep {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  padding-bottom: 2px;
+  transition:
+    background-size 0.3s cubic-bezier(0.2, 0.7, 0.2, 1),
+    color 0.2s ease;
+  &:hover,
+  &[data-active],
+  :where(a, button):hover > &,
+  :where(a, button):focus-visible > & {
+    background-size: 100% 1px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

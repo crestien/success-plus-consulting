@@ -73,14 +73,14 @@ export function Footer() {
               <ul className="mt-4 space-y-2.5 text-sm">
                 {solutionAreas.map((a) => (
                   <li key={a.href}>
-                    <Link href={a.href} className="font-medium text-white/90 transition-colors hover:text-gold">
+                    <Link href={a.href} className="link-sweep font-medium text-white/90 hover:text-gold">
                       {a.name}
                     </Link>
                   </li>
                 ))}
                 {services.map((s) => (
                   <li key={s.href}>
-                    <Link href={s.href} className="transition-colors hover:text-gold">
+                    <Link href={s.href} className="link-sweep hover:text-gold">
                       {s.name}
                     </Link>
                   </li>
@@ -92,7 +92,7 @@ export function Footer() {
               <ul className="mt-4 space-y-2.5 text-sm">
                 {company.map((c) => (
                   <li key={c.href}>
-                    <Link href={c.href} className="transition-colors hover:text-gold">
+                    <Link href={c.href} className="link-sweep hover:text-gold">
                       {c.name}
                     </Link>
                   </li>

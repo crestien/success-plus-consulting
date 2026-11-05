@@ -91,11 +91,11 @@ export function Header() {
               aria-controls="services-menu"
               onClick={() => setServicesOpen((v) => !v)}
               className={cn(
-                "flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-muted",
+                "flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors",
                 servicesActive ? "text-navy" : "text-foreground/80 hover:text-navy",
               )}
             >
-              Solutions
+              <span className="link-sweep" data-active={servicesActive || undefined}>Solutions</span>
               <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", servicesOpen && "rotate-180")} aria-hidden />
             </button>
 
@@ -143,11 +143,11 @@ export function Header() {
               href={item.href}
               aria-current={isActive(item.href) ? "page" : undefined}
               className={cn(
-                "rounded-full px-4 py-2 text-sm font-medium transition-colors hover:bg-muted",
+                "px-4 py-2 text-sm font-medium transition-colors",
                 isActive(item.href) ? "text-navy" : "text-foreground/80 hover:text-navy",
               )}
             >
-              {item.name}
+              <span className="link-sweep" data-active={isActive(item.href) || undefined}>{item.name}</span>
             </Link>
           ))}
         </div>

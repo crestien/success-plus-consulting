@@ -27,9 +27,9 @@ export function PageHero({
       <div aria-hidden className="bg-grid absolute inset-0 -z-10" />
       <div
         aria-hidden
-        className="absolute -top-32 left-1/2 -z-10 h-[420px] w-[820px] -translate-x-1/2 rounded-full bg-navy/70 blur-3xl"
+        className="absolute -top-32 left-1/2 -z-10 h-[420px] w-[820px] -translate-x-1/2 rounded-full bg-navy/70 blur-3xl drift"
       />
-      <div aria-hidden className="absolute -right-24 bottom-0 -z-10 h-64 w-64 rounded-full bg-gold/15 blur-3xl" />
+      <div aria-hidden className="absolute -right-24 bottom-0 -z-10 h-64 w-64 rounded-full bg-gold/15 blur-3xl drift-slow" />
 
       <div className={cn("container-x py-16 sm:py-24", aside && "grid items-center gap-12 lg:grid-cols-12")}>
         <div className={cn(aside && "lg:col-span-7")}>
@@ -37,7 +37,7 @@ export function PageHero({
             <nav aria-label="Breadcrumb" className="rise mb-8">
               <ol className="flex flex-wrap items-center gap-1.5 text-sm text-white/50">
                 <li>
-                  <Link href="/" className="hover:text-white">
+                  <Link href="/" className="link-sweep hover:text-white">
                     Home
                   </Link>
                 </li>
@@ -45,7 +45,7 @@ export function PageHero({
                   <li key={c.name} className="flex items-center gap-1.5">
                     <ChevronRight className="h-3.5 w-3.5" aria-hidden />
                     {c.href ? (
-                      <Link href={c.href} className="hover:text-white">
+                      <Link href={c.href} className="link-sweep hover:text-white">
                         {c.name}
                       </Link>
                     ) : (
@@ -150,7 +150,7 @@ export function ServiceCard({ service, className }: { service: Service; classNam
     <Link
       href={service.href}
       className={cn(
-        "group reveal relative flex flex-col overflow-hidden rounded-3xl border border-border bg-white transition-all duration-300 hover:-translate-y-1 hover:border-navy/20 hover:shadow-[0_24px_48px_-24px_rgb(20_21_47/0.35)]",
+        "group reveal spotlight relative flex flex-col overflow-hidden rounded-3xl border border-border bg-white transition-all duration-300 hover:-translate-y-1 hover:border-navy/20 hover:shadow-[0_24px_48px_-24px_rgb(20_21_47/0.35)]",
         className,
       )}
     >
@@ -202,11 +202,20 @@ export function TestimonialCard({
   return (
     <figure
       className={cn(
-        "relative overflow-hidden rounded-3xl p-8 sm:p-10",
+        "spotlight relative overflow-hidden rounded-3xl p-8 sm:p-10",
         dark ? "bg-white/5 text-white ring-1 ring-white/10" : "card-surface",
         className,
       )}
     >
+      <span
+        aria-hidden
+        className={cn(
+          "font-display pointer-events-none absolute -top-10 right-4 -z-10 text-[16rem] leading-none select-none sm:-top-14 sm:text-[20rem]",
+          dark ? "text-white/[0.06]" : "text-navy/[0.06]",
+        )}
+      >
+        &ldquo;
+      </span>
       <Quote className={cn("h-10 w-10", dark ? "text-gold" : "text-gold-dark")} aria-hidden />
       <blockquote
         className={cn(
@@ -268,7 +277,7 @@ export function CtaBand({
     <section className="bg-white px-5 py-20 sm:px-8 sm:py-28">
       <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-navy px-6 py-16 text-center text-white sm:px-16 sm:py-20">
         <div aria-hidden className="bg-grid absolute inset-0 -z-10" />
-        <div aria-hidden className="absolute -bottom-40 left-1/2 -z-10 h-80 w-[720px] -translate-x-1/2 rounded-full bg-gold/25 blur-3xl" />
+        <div aria-hidden className="absolute -bottom-40 left-1/2 -z-10 h-80 w-[720px] -translate-x-1/2 rounded-full bg-gold/25 blur-3xl drift-slow" />
         <h2 className="font-display mx-auto max-w-3xl text-4xl leading-tight font-medium sm:text-5xl">{title}</h2>
         <p className="mx-auto mt-5 max-w-xl text-lg text-white/75">{text}</p>
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
