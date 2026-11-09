@@ -2,7 +2,8 @@
 title: "Reducing Millennial Turnover"
 date: 2017-03-17
 excerpt: "Millennials are ambitious, outgoing, and always looking for that next step up. Rather than seeing this as a problem, learn to be proactive and use those characteristics to the benefit of your company."
-image: /images/blog/2020/07/news_Image_1489770977.webp
+image: /images/blog/covers/reducing-millennial-turnover.webp
+legacyImage: /images/blog/2020/07/news_Image_1489770977.webp
 categories: [Retention]
 author: Isaac Russell
 ---

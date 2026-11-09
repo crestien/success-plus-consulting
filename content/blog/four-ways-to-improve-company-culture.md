@@ -2,6 +2,7 @@
 title: "Four Ways to Improve Company Culture"
 date: 2016-11-16
 excerpt: "Company culture is perhaps the number one factor for success. Here are four simple ways you can start improving your culture today."
+image: /images/blog/covers/four-ways-to-improve-company-culture.webp
 categories: [Culture]
 author: Isaac Russell
 ---

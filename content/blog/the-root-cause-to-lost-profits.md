@@ -2,7 +2,8 @@
 title: "The Root Cause To Lost Profits"
 date: 2017-08-08
 excerpt: "Are you treating the symptoms or the true cause?"
-image: /images/blog/2020/07/news_Image_1502222983.webp
+image: /images/blog/covers/the-root-cause-to-lost-profits.webp
+legacyImage: /images/blog/2020/07/news_Image_1502222983.webp
 categories: [Retention]
 author: Isaac Russell
 ---

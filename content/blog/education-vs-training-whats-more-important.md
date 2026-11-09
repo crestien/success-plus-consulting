@@ -2,7 +2,8 @@
 title: "Education vs Training: What’s More Important?"
 date: 2017-05-04
 excerpt: "Getting a good education is an important, necessary part of life. At the same time, receiving on the job training can be equally as valuable."
-image: /images/blog/2020/07/news_Image_1493928134.webp
+image: /images/blog/covers/education-vs-training-whats-more-important.webp
+legacyImage: /images/blog/2020/07/news_Image_1493928134.webp
 categories: [Strategy]
 author: Isaac Russell
 ---

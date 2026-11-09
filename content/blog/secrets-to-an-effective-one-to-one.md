@@ -2,7 +2,8 @@
 title: "The Secrets to an Effective One-to-One"
 date: 2015-03-01
 excerpt: "In order to run a productive and successful business, you have to have positive manager/worker relationships, and one of the most effective ways to achieve this is by taking the time to conduct one-to-one meetings with your employees."
-image: /images/blog/2020/07/news_Image_1428091639.webp
+image: /images/blog/covers/secrets-to-an-effective-one-to-one.webp
+legacyImage: /images/blog/2020/07/news_Image_1428091639.webp
 categories: [Culture]
 author: Isaac Russell
 ---

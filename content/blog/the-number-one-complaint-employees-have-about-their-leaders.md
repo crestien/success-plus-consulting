@@ -2,6 +2,7 @@
 title: "The Number One Complaint Employees Have About Their Leaders"
 date: 2017-01-30
 excerpt: "When employees were asked what frustrates them most about their leaders, one answer rose to the top. It's also one of the easiest to fix."
+image: /images/blog/covers/the-number-one-complaint-employees-have-about-their-leaders.webp
 categories: [Culture]
 author: Isaac Russell
 ---

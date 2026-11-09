@@ -2,6 +2,7 @@
 title: "The Power of Influence"
 date: 2015-05-21
 excerpt: "What is the mark of a great leader? Is it salary? Work ethic? Title and position? Or is it something else?"
+image: /images/blog/covers/the-power-of-influence.webp
 categories: [Leadership]
 author: Isaac Russell
 ---

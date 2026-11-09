@@ -2,6 +2,7 @@
 title: "Finding the Leader Within You"
 date: 2015-05-06
 excerpt: "There is one secret to being a great leader that you simply cannot overlook."
+image: /images/blog/covers/finding-the-leader-within-you.webp
 categories: [Leadership]
 author: Isaac Russell
 ---

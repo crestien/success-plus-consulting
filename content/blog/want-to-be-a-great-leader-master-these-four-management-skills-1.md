@@ -2,7 +2,8 @@
 title: "Want To Be A Great Leader? Master These Four Management Skills"
 date: 2016-12-09
 excerpt: "These four skills are the mark of a great leader. Can you master them?"
-image: /images/blog/2020/07/news_Image_1481303805.webp
+image: /images/blog/covers/want-to-be-a-great-leader-master-these-four-management-skills-1.webp
+legacyImage: /images/blog/2020/07/news_Image_1481303805.webp
 categories: [Leadership]
 author: Isaac Russell
 ---

@@ -2,6 +2,7 @@
 title: "How to Have THE Talk"
 date: 2015-03-17
 excerpt: "As a leader in the workplace, you have a lot of responsibility resting on your shoulders. You have to keep your team motivated. You have to direct your followers towards success. You ensure that everyone is on the same page, striving for the same goal, and working in a productive, efficient manner."
+image: /images/blog/covers/how-to-have-the-talk.webp
 categories: [Culture]
 author: Isaac Russell
 ---

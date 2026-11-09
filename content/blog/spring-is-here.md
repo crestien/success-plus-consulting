@@ -2,7 +2,8 @@
 title: "Keep the Energy of a Fresh Start All Year"
 date: 2014-04-08
 excerpt: "A new season brings fresh energy. The leaders who get the most from it turn that energy into habits that last long after the season changes."
-image: /images/blog/2020/07/news_Image_1396994267.webp
+image: /images/blog/covers/spring-is-here.webp
+legacyImage: /images/blog/2020/07/news_Image_1396994267.webp
 categories: [Motivation]
 author: Isaac Russell
 ---

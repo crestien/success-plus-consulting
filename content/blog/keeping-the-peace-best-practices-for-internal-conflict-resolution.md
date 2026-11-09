@@ -2,7 +2,8 @@
 title: "Keeping The Peace: Best Practices for Internal Conflict Resolution"
 date: 2015-04-03
 excerpt: "Leadership and conflict go hand in hand. As a manager or supervisor, it is guaranteed that you will have to deal with workplace disputes at some point or another. And though natural to the work environment, conflict between employees can serve a painful blow to morale and productivity, as well as your reputation as the leader, if it isn’t handled correctly."
-image: /images/blog/2020/07/news_Image_1428940947.webp
+image: /images/blog/covers/keeping-the-peace-best-practices-for-internal-conflict-resolution.webp
+legacyImage: /images/blog/2020/07/news_Image_1428940947.webp
 categories: [Culture]
 author: Isaac Russell
 ---

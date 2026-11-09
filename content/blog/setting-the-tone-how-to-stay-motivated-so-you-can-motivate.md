@@ -2,7 +2,8 @@
 title: "Setting the Tone: How to Stay Motivated So You Can Motivate"
 date: 2017-09-19
 excerpt: "As the leader in your business or organization, you set the tone of the day, the structure, and the boundaries. You are the rabbit, you set the pace. Remember that."
-image: /images/blog/2020/07/news_Image_1505840192.webp
+image: /images/blog/covers/setting-the-tone-how-to-stay-motivated-so-you-can-motivate.webp
+legacyImage: /images/blog/2020/07/news_Image_1505840192.webp
 categories: [Motivation]
 author: Isaac Russell
 ---

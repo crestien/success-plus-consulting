@@ -14,10 +14,27 @@ import { marked } from "marked";
  *   categories: [Leadership, Retention]     (optional)
  *   author: Isaac Russell                    (optional)
  *   draft: true                              (optional: hides the post)
+ *   service: /improve-retention              (optional: related service CTA)
+ *
+ * A "## Frequently asked questions" section with "### Question" headings is
+ * also published as FAQPage structured data.
  *   ---
  *
  * The file name is the URL: content/blog/my-post.md -> /blog/my-post/
  */
+
+/** Default related page by first category, for posts without `service:`. */
+const categoryService: Record<string, string> = {
+  Leadership: "/leadership-coaching",
+  Motivation: "/leadership-coaching",
+  Retention: "/improve-retention",
+  "Case Study": "/improve-retention",
+  Diversity: "/diversity-coaching",
+  Strategy: "/strategic-planning",
+  Culture: "/solutions/organizational-performance",
+  Mentoring: "/one-to-one-mentoring",
+  "Talent Development": "/talent-development",
+};
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
@@ -29,6 +46,8 @@ export type Post = {
   image?: string;
   categories: string[];
   author: string;
+  /** Service or solution page this post supports (drives the in-post CTA). */
+  service?: string;
   body: string;
 };
 
@@ -75,6 +94,7 @@ export function getAllPosts(): Post[] {
         image: str("image") || undefined,
         categories: Array.isArray(data.categories) ? data.categories : str("categories") ? [str("categories")] : [],
         author: str("author") || "Isaac Russell",
+        service: str("service") || categoryService[(Array.isArray(data.categories) ? data.categories[0] : str("categories")) as string],
         body,
         draft: str("draft") === "true",
       };
@@ -107,4 +127,25 @@ export function formatDate(iso: string) {
 export function readingTime(md: string) {
   const words = md.replace(/[#>*_`\[\]()!-]/g, " ").split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / 225));
+}
+
+const plain = (md: string) =>
+  md
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[*_`>#]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+/** Questions and answers from a post's "Frequently asked questions" section. */
+export function getFaqs(md: string): { q: string; a: string }[] {
+  const m = md.match(/^##\s+Frequently asked questions\s*$([\s\S]*?)(?=^##\s|(?![\s\S]))/im);
+  if (!m) return [];
+  return m[1]
+    .split(/^###\s+/m)
+    .slice(1)
+    .map((chunk) => {
+      const [q, ...rest] = chunk.split("\n");
+      return { q: plain(q), a: plain(rest.join("\n")) };
+    })
+    .filter((f) => f.q && f.a);
 }

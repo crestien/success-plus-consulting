@@ -2,7 +2,8 @@
 title: "Diversity in the Workplace: Why it Matters"
 date: 2016-10-19
 excerpt: "As our country grows increasingly diverse, the inclusion of different genders, religions, races, and lifestyles is becoming a critical component to a healthy, productive workplace."
-image: /images/blog/2020/07/news_Image_1474640057.webp
+image: /images/blog/covers/diversity-in-the-workplace-why-it-matters.webp
+legacyImage: /images/blog/2020/07/news_Image_1474640057.webp
 categories: [Diversity]
 author: Isaac Russell
 ---

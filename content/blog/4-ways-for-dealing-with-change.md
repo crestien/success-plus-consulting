@@ -2,7 +2,8 @@
 title: "4 Ways to Deal with Change"
 date: 2017-08-02
 excerpt: "Change is difficult for all of us to go through. Here are four tips to help you manage the change process"
-image: /images/blog/2020/07/news_Image_1501697112.webp
+image: /images/blog/covers/4-ways-for-dealing-with-change.webp
+legacyImage: /images/blog/2020/07/news_Image_1501697112.webp
 categories: [Strategy]
 author: Isaac Russell
 ---

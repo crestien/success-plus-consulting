@@ -171,6 +171,18 @@
   .prose-blog ol {
     @apply list-decimal marker:font-semibold marker:text-navy;
   }
+  .prose-blog table {
+    @apply w-full border-collapse overflow-hidden rounded-2xl text-base ring-1 ring-border;
+  }
+  .prose-blog th {
+    @apply bg-navy px-4 py-3 text-left font-semibold text-white;
+  }
+  .prose-blog td {
+    @apply border-t border-border px-4 py-3 align-top;
+  }
+  .prose-blog tr td:first-child {
+    @apply font-semibold text-ink;
+  }
   .prose-blog blockquote {
     @apply font-display border-l-4 border-gold pl-6 text-2xl leading-snug text-ink italic;
   }

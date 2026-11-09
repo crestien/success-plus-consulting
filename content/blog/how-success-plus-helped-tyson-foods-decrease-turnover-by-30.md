@@ -2,7 +2,8 @@
 title: "Case Study: How a Tyson Foods Plant Reduced Turnover by More Than 30%"
 date: 2017-04-05
 excerpt: "How Success Plus partnered with leadership at a Tyson Foods plant in Alabama to reduce turnover by more than 30 percent and absenteeism by 10 percent."
-image: /images/blog/2020/07/news_Image_1495483690.webp
+image: /images/blog/covers/how-success-plus-helped-tyson-foods-decrease-turnover-by-30.webp
+legacyImage: /images/blog/2020/07/news_Image_1495483690.webp
 categories: [Case Study]
 author: Isaac Russell
 ---

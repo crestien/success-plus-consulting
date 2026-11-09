@@ -2,7 +2,8 @@
 title: "The Sun Rises for Everyone"
 date: 2014-04-18
 excerpt: "Every day is a fresh start. Good leaders learn from the past without living in it, and they give their people the same chance."
-image: /images/blog/2020/07/news_Image_1397850935.webp
+image: /images/blog/covers/the-sun-rises-for-everyone.webp
+legacyImage: /images/blog/2020/07/news_Image_1397850935.webp
 categories: [Motivation]
 author: Isaac Russell
 ---

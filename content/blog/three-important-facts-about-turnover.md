@@ -2,6 +2,7 @@
 title: "Three Important Facts About Turnover"
 date: 2017-03-03
 excerpt: "Turnover is one of the most expensive problems an organization can have, and one of the most misunderstood. Here are three things every leader should know."
+image: /images/blog/covers/three-important-facts-about-turnover.webp
 categories: [Retention]
 author: Isaac Russell
 ---

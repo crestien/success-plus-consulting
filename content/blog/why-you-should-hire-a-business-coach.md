@@ -2,7 +2,8 @@
 title: "Why You Should Hire A Business Coach"
 date: 2016-11-04
 excerpt: "Are businesses coaches worth it? Why would you need one? Get the answers in our latest blog."
-image: /images/blog/2020/07/news_Image_1478271948.webp
+image: /images/blog/covers/why-you-should-hire-a-business-coach.webp
+legacyImage: /images/blog/2020/07/news_Image_1478271948.webp
 categories: [Leadership]
 author: Isaac Russell
 ---

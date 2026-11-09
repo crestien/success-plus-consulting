@@ -2,7 +2,8 @@
 title: "How to Handle a Toxic Employee Before It Spreads"
 date: 2014-04-09
 excerpt: "One negative person can drag down an entire team. Here's how leaders can address toxic behavior early, fairly, and firmly."
-image: /images/blog/2020/07/news_Image_1397052955.webp
+image: /images/blog/covers/toxic-employee-problems.webp
+legacyImage: /images/blog/2020/07/news_Image_1397052955.webp
 categories: [Culture]
 author: Isaac Russell
 ---

@@ -2,6 +2,7 @@
 title: "Start Smart: Utilizing The Daily Huddle"
 date: 2015-04-15
 excerpt: "If your company isn't kicking off every day with a Daily Huddle, you might want to consider starting."
+image: /images/blog/covers/start-smart-utilizing-the-daily-huddle.webp
 categories: [Strategy]
 author: Isaac Russell
 ---

@@ -2,7 +2,8 @@
 title: "Why Diversity Plans Fail"
 date: 2017-03-22
 excerpt: "Most leaders understand the importance of workplace diversity, yet why do so many plans fail?"
-image: /images/blog/2020/07/news_Image_1490211494-1.webp
+image: /images/blog/covers/why-diversity-plans-fail.webp
+legacyImage: /images/blog/2020/07/news_Image_1490211494-1.webp
 categories: [Diversity]
 author: Isaac Russell
 ---

@@ -2,7 +2,8 @@
 title: "For Leaders, Self-Awareness Is Everything"
 date: 2017-03-10
 excerpt: "Without self-awareness, you will almost certainly fail as a leader."
-image: /images/blog/2020/07/news_Image_1484085676.webp
+image: /images/blog/covers/for-leaders-self-awareness-is-everything.webp
+legacyImage: /images/blog/2020/07/news_Image_1484085676.webp
 categories: [Leadership]
 author: Isaac Russell
 ---

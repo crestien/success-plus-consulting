@@ -2,7 +2,8 @@
 title: "5 Ways to Motivate Your Employees"
 date: 2016-10-17
 excerpt: "When your employees are motivated, everyone wins."
-image: /images/blog/2020/07/news_Image_1476737312.webp
+image: /images/blog/covers/5-ways-to-motivate-your-employees.webp
+legacyImage: /images/blog/2020/07/news_Image_1476737312.webp
 categories: [Motivation]
 author: Isaac Russell
 ---
