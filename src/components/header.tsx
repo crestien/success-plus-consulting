@@ -12,6 +12,7 @@ const nav = [
   { name: "How We Work", href: "/how-we-work" },
   { name: "Results", href: "/results" },
   { name: "About", href: "/about" },
+  { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -61,7 +62,8 @@ export function Header() {
     return () => document.removeEventListener("pointerdown", onDown);
   }, [servicesOpen]);
 
-  const isActive = (href: string) => pathname === href.split("#")[0] && !href.includes("#");
+  const isActive = (href: string) =>
+    !href.includes("#") && (pathname === href || (href === "/blog" && pathname.startsWith("/blog/")));
   const servicesActive = pathname.startsWith("/solutions") || services.some((s) => s.href === pathname);
 
   return (

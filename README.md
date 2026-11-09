@@ -118,3 +118,22 @@ src/
     ├── seo.ts              # Per-page metadata helper
     └── utils.ts            # Utility functions
 ```
+
+## Blog
+
+Posts live in `content/blog/` as Markdown files; the file name is the URL (`content/blog/my-post.md` → `/blog/my-post`). Images go in `public/images/blog/`.
+
+```md
+---
+title: "Post title"
+date: 2026-11-09
+excerpt: "One or two sentences for the listing card and search results."
+image: /images/blog/my-post.webp
+categories: [Leadership]
+author: Isaac Russell
+---
+
+Body in Markdown…
+```
+
+Commit and push to `main`, then redeploy. The 27 posts from the old WordPress blog were migrated with their original slugs and dates; old `/blog/page/N`, `/news/<slug>` and category URLs redirect to the new pages.

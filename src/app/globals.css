@@ -135,6 +135,48 @@
   .prose-sp .lead {
     @apply text-xl text-ink;
   }
+
+  /* Blog articles (Markdown) */
+  .prose-blog {
+    @apply text-[1.1875rem] leading-[1.8] text-foreground/85;
+  }
+  .prose-blog > :first-child {
+    @apply mt-0;
+  }
+  .prose-blog h2 {
+    @apply mt-12;
+  }
+  .prose-blog h3 {
+    @apply font-display mt-10 text-2xl leading-snug font-medium text-ink;
+  }
+  .prose-blog h4 {
+    @apply mt-8 text-lg font-semibold text-ink;
+  }
+  .prose-blog a {
+    @apply font-medium text-navy underline decoration-gold decoration-2 underline-offset-4 hover:text-navy-light;
+  }
+  .prose-blog ul,
+  .prose-blog ol {
+    @apply space-y-2 pl-6;
+  }
+  .prose-blog ul {
+    @apply list-disc marker:text-gold-dark;
+  }
+  .prose-blog ol {
+    @apply list-decimal marker:font-semibold marker:text-navy;
+  }
+  .prose-blog blockquote {
+    @apply font-display border-l-4 border-gold pl-6 text-2xl leading-snug text-ink italic;
+  }
+  .prose-blog img {
+    @apply h-auto max-w-full rounded-2xl;
+  }
+  .prose-blog figure figcaption {
+    @apply mt-2 text-center text-sm text-muted-foreground;
+  }
+  .prose-blog hr {
+    @apply my-12 border-border;
+  }
 }
 
 /* Logo marquee */

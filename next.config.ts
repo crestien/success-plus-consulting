@@ -13,6 +13,13 @@ const nextConfig: NextConfig = {
     return [
       { source: "/testimonials", destination: "/results", permanent: true },
       { source: "/services", destination: "/solutions", permanent: true },
+      // Old WordPress blog URLs
+      { source: "/blog/page/:n", destination: "/blog", permanent: true },
+      { source: "/blog/category/:c*", destination: "/blog", permanent: true },
+      { source: "/category/:c*", destination: "/blog", permanent: true },
+      { source: "/blog/feed", destination: "/blog", permanent: true },
+      { source: "/news/:slug", destination: "/blog/:slug", permanent: true },
+      { source: "/news", destination: "/blog", permanent: true },
     ];
   },
   webpack: (config) => {

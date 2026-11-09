@@ -21,6 +21,7 @@ const company = [
   { name: "How We Work", href: "/how-we-work" },
   { name: "Results", href: "/results" },
   { name: "About Success Plus", href: "/about" },
+  { name: "Blog", href: "/blog" },
   { name: "Invite Isaac to Speak", href: "/invite-isaac-to-speak" },
   { name: "Free Seminar", href: "/free-seminar" },
   { name: "Contact", href: "/contact" },
