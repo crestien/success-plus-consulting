@@ -20,6 +20,7 @@ const nextConfig: NextConfig = {
       { source: "/blog/feed", destination: "/blog", permanent: true },
       { source: "/news/:slug", destination: "/blog/:slug", permanent: true },
       { source: "/news", destination: "/blog", permanent: true },
+      { source: "/podcasts", destination: "/blog", permanent: true },
       // Unpublished posts
       { source: "/blog/2017-09-05-000000", destination: "/blog", permanent: false },
       { source: "/blog/respect-goes-both-ways", destination: "/blog", permanent: false },

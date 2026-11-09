@@ -171,6 +171,12 @@
   .prose-blog ol {
     @apply list-decimal marker:font-semibold marker:text-navy;
   }
+  .prose-blog .video {
+    @apply relative aspect-video overflow-hidden rounded-2xl bg-ink shadow-[0_24px_48px_-24px_rgb(20_21_47/0.45)];
+  }
+  .prose-blog .video iframe {
+    @apply absolute inset-0 h-full w-full;
+  }
   .prose-blog table {
     @apply w-full border-collapse overflow-hidden rounded-2xl text-base ring-1 ring-border;
   }

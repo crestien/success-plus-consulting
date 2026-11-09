@@ -30,6 +30,8 @@ const H = 840;
 
 /** Icon per post (falls back to the category icon). */
 const postIcons = {
+  "podcast-help-your-team-george-murray": "Mic",
+  "podcast-unstoppable-author-interview": "BookOpen",
   "what-is-leadership-coaching": "Compass",
   "how-to-reduce-employee-turnover-in-manufacturing": "Factory",
   "how-to-lead-a-diverse-workforce": "UsersRound",
