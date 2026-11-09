@@ -39,4 +39,5 @@ Work life balance is a big deal. Coaches and consultants can contest to that. In
 
 Bottom line: your employees have a life outside of work just like you, and it’s important to respect that. Where you can, offer as much flexibility as you can. Promote the idea that family is always first. Don’t ask them to work overtime unless it’s absolutely necessary, give them ample sick leave, and don’t ever make them feel guilty for taking personal time off.
 
- **Success Plus wants to help your business! In fact, we’re so confident in our services, we’re offering a FREE seminar to show you what we can bring to the table. [Just follow this link to sign up today](/free-seminar).**
+
+Motivation starts with leadership. If you want help building these habits into how your leaders work every day, [let’s talk about your organization](/contact).

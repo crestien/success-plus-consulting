@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone } from "lucide-react";
-import { services, site, solutionAreas } from "@/lib/site";
+import { programs, services, site, solutionAreas } from "@/lib/site";
 
 const icons = {
   linkedin:
@@ -79,7 +79,7 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
-                {services.map((s) => (
+                {[...services, ...programs].map((s) => (
                   <li key={s.href}>
                     <Link href={s.href} className="link-sweep hover:text-gold">
                       {s.name}

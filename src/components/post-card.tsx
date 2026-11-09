@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { formatDate, type Post } from "@/lib/blog";
+import type { Post } from "@/lib/blog";
 import { cn } from "@/lib/utils";
 
 /**
@@ -49,13 +49,9 @@ export function PostCard({ post, featured = false, className }: { post: Post; fe
         )}
       </div>
       <div className={cn("flex flex-1 flex-col p-6 sm:p-7", featured && "lg:col-span-5 lg:justify-center lg:p-10")}>
-        <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold tracking-[0.14em] text-navy-light uppercase">
-          {post.categories[0] && <span>{post.categories[0]}</span>}
-          {post.categories[0] && <span aria-hidden className="h-1 w-1 rounded-full bg-gold" />}
-          <time dateTime={post.date} className="text-muted-foreground">
-            {formatDate(post.date)}
-          </time>
-        </p>
+        {post.categories[0] && (
+          <p className="text-xs font-semibold tracking-[0.14em] text-navy-light uppercase">{post.categories[0]}</p>
+        )}
         <h3 className={cn("font-display mt-3 font-medium text-ink", featured ? "text-3xl leading-tight sm:text-4xl" : "text-xl leading-snug")}>
           {post.title}
         </h3>

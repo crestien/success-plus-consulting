@@ -1,40 +1,43 @@
 ---
-title: "Case Study: How Success Plus Helped Tyson Foods Decrease Turnover By 30%"
+title: "Case Study: How a Tyson Foods Plant Reduced Turnover by More Than 30%"
 date: 2017-04-05
-excerpt: "Learn how our leadership services helped a Tyson Foods plant in Alabama decrease turnover and absenteeism."
+excerpt: "How Success Plus partnered with leadership at a Tyson Foods plant in Alabama to reduce turnover by more than 30 percent and absenteeism by 10 percent."
 image: /images/blog/2020/07/news_Image_1495483690.webp
 categories: [Case Study]
 author: Isaac Russell
 ---
 
-For years, Success Plus has worked with major manufacturing companies all over the country to reduce turnover, improve productivity, and increase profits. Check out this quick case study about our time with Tyson Foods, and see how we were able to make a difference in one of their Alabama plants.
+For years, Success Plus has partnered with manufacturers across the country to reduce turnover, improve productivity, and strengthen the bottom line. Here's a look at our work with leadership at a Tyson Foods plant in Ashland, Alabama.
 
-### The Client:
+## The client
 
-## Tyson Foods
+Founded in 1935, Tyson Foods is one of the largest and most recognized food companies in the world, with plants across the United States.
 
-Founded in 1935, Tyson Foods is one of the most recognized and successful food service companies in the world, employing hundreds of thousands of workers across 90 plants throughout the United States.
+## The challenge
 
-### Pain Point:
+Plant leadership was facing high employee turnover and absenteeism. Supervisors had been promoted for their skills on the job but hadn't been given the tools to lead people, and the gap was showing up in the workforce numbers.
 
-## Leadership Development & Turnover
+## Our approach
 
-Success Plus was hired to help management at a Tyson manufacturing plant in Ashland, Alabama develop leadership skills and reduce employee turnover.
+We started by listening and assessing. We spent time with plant leadership, supervisors, and employees to understand the root causes behind the turnover rather than just the symptoms.
 
-### Solutions:
+From there, we worked alongside the leadership team to develop and deploy a leader standard work model built around the plant's people and goals. It focused on:
 
-## Develop & Implement a Leadership Training Program
+- Holding supervisors accountable for retention on their teams
+- Strengthening communication between leaders and employees
+- Building a better workplace culture, one shift at a time
+- Creating clear processes for hearing and addressing employee concerns
 
-After assessing the root of the issues, we developed and implemented a training program that held leaders accountable for the turnover issues and provied the steps to reducing turnover by creating a better workplace culture, strengthening communication, and developing better protocols and processess for addressing employee concerns. We implemented this program over the course of two years, followed by consultations every six months.
+This wasn't a one-time workshop. We coached leaders on the floor over two years, then followed up with consultations every six months to make sure the changes held.
 
-### Results:
+## The results
 
-## Reduced Turnover & Absenteeism with an Increase in Bottom Line Profit
+- **More than 30 percent** reduction in turnover
+- **10 percent** reduction in absenteeism
+- A more productive workplace and cost savings that strengthened the plant's bottom line
 
-We reduced turnover by 30% and decreased absenteeism by 10%. This resulted in a more productive workplace and cost savings that increased the overall bottom line.
+As former HR Manager Bob Massaro put it: "We have gained the respect of our employees through the training our managers and supervisors received at our facility."
 
----
+## Every organization is different
 
-Would you like to see similar results for your business? Sign up today for a **FREE SEMINAR** and see for yourself the value we can bring to your company.
-
-[Register Today →](/free-seminar)
+What worked at this plant was built for its people, its culture, and its challenges. Your organization deserves the same. [Let's talk about your organization](/contact), and we'll start the way we always do: by listening.

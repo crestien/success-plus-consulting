@@ -23,7 +23,7 @@ export default function FreeSeminarPage() {
           <div className="lg:col-span-6">
             <div className="prose-sp">
               <p className="lead">
-                Isaac Russell, CEO and Founder of Success Plus, has decades of experience working with some of the
+                Isaac Russell, Founder &amp; CEO of Success Plus Consulting, has decades of experience working with some of the
                 biggest, most recognized brands in America.
               </p>
               <p>

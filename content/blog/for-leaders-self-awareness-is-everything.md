@@ -19,7 +19,7 @@ Self-awareness is the ability to look within yourself and pinpoint your exact st
 
 One mistake too many leaders make is letting their passions or wants get in the way of reality—especially when it comes to decision making. Simply because you “want” something doesn’t always mean you should go after it. And if you lack self-awareness, you’re more likely to make emotional or knee-jerk decisions that not only impact you, but your employees, your profit, and your entire company.
 
-And speaking of your employees, you should be preaching self-awareness to them as well. In fact, it should be a topic of conversation [during every one-on-one](/blog/secrets-to-an-effective-one-to-one). Instilling this value in your employees will help them communicate better with you and other team members, and it will ultimately make them more productive.
+And speaking of your employees, you should be preaching self-awareness to them as well. In fact, it should be a topic of conversation [during every one-to-one](/blog/secrets-to-an-effective-one-to-one). Instilling this value in your employees will help them communicate better with you and other team members, and it will ultimately make them more productive.
 
 ### Practicing self-awareness
 
@@ -33,4 +33,4 @@ Next, look over your weaknesses. What on that list do you \*need\* to improve on
 
 Lastly, go all in on your strengths. Wherever it is that you truly excel, take full advantage.
 
-One final note, on your path to self-awareness, it’s good to have someone you can communicate with and who can help you get to where you need to be. At Success Plus, we offer one-on-one coaching services to business leaders, [so contact us today.](/contact)
+One final note, on your path to self-awareness, it’s good to have someone you can communicate with and who can help you get to where you need to be. That’s exactly what our [One-to-One Mentoring](/one-to-one-mentoring) is designed to provide.

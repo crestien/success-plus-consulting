@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CalendarCheck, Phone } from "lucide-react";
 import { CtaBand, PageHero, SectionHeading, ServiceCard, TestimonialCard } from "@/components/sections";
-import { services, site, solutionAreas } from "@/lib/site";
+import { allServicePages, services, site, solutionAreas } from "@/lib/site";
 
 interface ServicePageProps {
   href: string;
@@ -12,8 +12,8 @@ interface ServicePageProps {
 }
 
 export function ServicePage({ href, subtitle, intro, children }: ServicePageProps) {
-  const index = services.findIndex((s) => s.href === href);
-  const service = services[index];
+  const service = allServicePages.find((s) => s.href === href)!;
+  const index = Math.max(0, services.findIndex((s) => s.href === href));
   const related = [1, 2, 3].map((n) => services[(index + n) % services.length]);
   const area = solutionAreas.find((a) => a.services.includes(href));
 

@@ -34,7 +34,13 @@ export default function ResultsPage() {
             <p className="font-display mt-4 text-7xl font-medium text-ink sm:text-8xl">{proofPoint.value}</p>
             <p className="mt-2 text-xl font-semibold text-ink">{proofPoint.label}</p>
           </div>
-          <p className="text-xl leading-relaxed text-muted-foreground lg:col-span-7">{proofPoint.text}</p>
+          <div className="lg:col-span-7">
+            <p className="text-xl leading-relaxed text-muted-foreground">{proofPoint.text}</p>
+            <Link href={proofPoint.href} className="mt-6 inline-flex items-center gap-2 font-semibold text-navy hover:text-navy-light">
+              Read the Tyson Foods case study
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+          </div>
         </div>
       </section>
 

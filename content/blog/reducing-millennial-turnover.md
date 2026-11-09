@@ -21,7 +21,7 @@ Hopefully you opt for the latter, and here are three ways you can achieve it.
 
 It all starts with communication. As stated above, most millennials leave a job to take, what they see, as a step up for their career. And this is because despite oft repeated stereotypes, millennials are highly ambitious. They have goals and visions for the direction they want to take in life, and they’re more likely to take risks to achieve those goals rather than opt for stability.
 
-As an employer, understanding what’s driving a millennial worker in the first place will help you in retaining those employees before they make that move. [This is why regular one-on-one meetings are more important than ever.](/blog/secrets-to-an-effective-one-to-one)
+As an employer, understanding what’s driving a millennial worker in the first place will help you in retaining those employees before they make that move. [This is why regular one-to-one meetings are more important than ever.](/blog/secrets-to-an-effective-one-to-one)
 
 ## **Provide a Path for Advancement**
 

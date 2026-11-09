@@ -21,4 +21,4 @@ When dealing with efficiency issues, ask yourself the following questions:
 
 A poorly trained manager or supervisor can waste thousands of dollars per day. Remember don’t chase the symptoms, look for the root cause and address it.
 
-Want to invite Isaac to speak at your next corporate event? *[Just follow this link!](/invite-isaac-to-speak)*
+Want Isaac to bring this message to your leadership team or next event? [Invite Isaac to speak](/invite-isaac-to-speak).

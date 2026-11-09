@@ -33,4 +33,4 @@ Bottom line: Diversity is good for the economy. Not only does it boost quality e
 
 Right now, there are approx. 10 million firms owned by women, 3 million firms owned by African Americans, and 3 million owned by Hispanics. In 40 years, there will be no racial or ethnic majority in the United States. Diversity isn’t just a good thing for your business—it’s the cultural direction in which our country is traveling, and our boardrooms, warehouses, and offices need to reflect that direction.
 
-Do you want to learn how you can increase diversity in the workplace? Contact Success Plus today and [speak with one of our consultants about a free seminar!](/free-seminar)
+Want help leading a more diverse workforce? Learn about our [diversity coaching](/diversity-coaching), or [let’s talk about your organization](/contact).

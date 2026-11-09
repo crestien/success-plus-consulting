@@ -38,7 +38,7 @@ export default function InviteIsaacToSpeakPage() {
 
             <div className="prose-sp mt-8">
               <p className="lead">
-                Isaac Russell is the Founder and CEO of Success Plus Consulting, a boutique leadership and organizational
+                Isaac Russell is the Founder &amp; CEO of Success Plus Consulting, a boutique leadership and organizational
                 performance consulting firm.
               </p>
               <p>

@@ -71,7 +71,7 @@ export default function Home() {
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
               <Link href="/how-we-work" className="btn-ghost-light">
-                Discover the Success Plus approach
+                Discover the Success Model
               </Link>
             </div>
             <a
@@ -105,7 +105,7 @@ export default function Home() {
                 />
                 <div>
                   <p className="font-semibold">Isaac Russell</p>
-                  <p className="text-xs text-muted-foreground">Founder &amp; CEO · Organizational Performance Advisor</p>
+                  <p className="text-xs text-muted-foreground">Founder &amp; CEO · Leadership &amp; Organizational Performance Advisor</p>
                 </div>
               </div>
               <div className="absolute -top-5 -right-3 rounded-2xl bg-gold px-4 py-3 text-ink shadow-xl sm:-right-8">

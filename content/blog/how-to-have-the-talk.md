@@ -41,5 +41,3 @@ Documenting a reprimand isn’t meant to be a “black mark” on an employee’
  Once you have clearly addressed the problem, and both you and the employee have agreed to proper course of action to fix the issue, be sure to end the meeting in a positive manner. Let the employee know that just because their actions have been reprimanded, that doesn’t make them any less valuable or worthwhile to the company.
 
 If the meeting ends on a bad note, the employee may begin to resent you as a leader, which will only cause more problems in the future. It’s the mark of a good leader to send an employee away from a disciplinary meeting feeling encouraged, motivated, and appreciative.
-
-Did you find this blog helpful? If so, share it with a friend!

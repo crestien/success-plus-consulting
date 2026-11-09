@@ -2,27 +2,33 @@ import { ServicePage } from "@/components/service-page";
 import { pageMeta } from "@/lib/seo";
 
 const intro =
-  "We help leaders develop the critical skills that only come through on-the-job experience.";
+  "Grow the leaders you already have through real work, building the skills that only come from experience.";
 
 export const metadata = pageMeta("Talent Development", intro, "/talent-development");
 
 export default function TalentDevelopmentPage() {
   return (
-    <ServicePage href="/talent-development" subtitle="Reach your full potential" intro={intro}>
-      <h2>Learn real leadership skills that can&apos;t be taught in the classroom.</h2>
+    <ServicePage href="/talent-development" subtitle="Organizational Performance" intro={intro}>
+      <h2>Some leadership skills can&apos;t be learned in a classroom.</h2>
       <p className="lead">
-        Many new leaders coming up in the world today are highly educated individuals, with most boasting a
-        master&apos;s degree or higher. And while a good education is to be commended, there are many aspects of being
-        a leader that you simply can&apos;t learn in a classroom.
+        Education matters. But many of the skills that make someone a strong leader only develop on the job, with the
+        right guidance at the right time.
       </p>
       <p>
-        Too often we hear about talent management, but not enough about talent development. And at Success Plus,
-        we&apos;re in the business of developing talent.
+        Organizations talk a lot about talent management: hiring, reviewing, and retaining people. Far fewer invest in
+        talent development, the deliberate work of growing people into the leaders the organization will need next.
+        That&apos;s where we focus.
       </p>
+      <h3>What we develop</h3>
+      <ul>
+        <li>The people skills to motivate, coach, and lead others</li>
+        <li>Ownership of productivity, efficiency, and cost</li>
+        <li>Sound decision-making under real-world pressure</li>
+        <li>Communication that builds trust up and down the organization</li>
+      </ul>
       <p>
-        In these sessions, we help leaders develop critical skills that only come through on the job experience. We
-        cover topics such as cost savings, motivation, productivity, efficiency, and the soft skills needed to
-        develop and lead others.
+        We work alongside your people in their actual roles, so development shows up in their results and builds a
+        stronger bench of leaders for the future.
       </p>
     </ServicePage>
   );

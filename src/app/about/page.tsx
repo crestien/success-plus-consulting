@@ -75,7 +75,7 @@ export default function AboutPage() {
               <div className="rounded-[2rem] bg-white p-8">
                 <Image
                   src="/images/isaac-portrait.webp"
-                  alt="Isaac Russell, Founder and CEO of Success Plus Consulting"
+                  alt="Isaac Russell, Founder & CEO of Success Plus Consulting"
                   width={400}
                   height={400}
                   className="mx-auto w-full max-w-[280px] rounded-full ring-8 ring-cream"

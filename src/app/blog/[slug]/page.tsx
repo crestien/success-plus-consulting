@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Clock } from "lucide-react";
 import { CtaBand, PageHero } from "@/components/sections";
 import { PostCard, PostImage } from "@/components/post-card";
-import { formatDate, getAllPosts, getPost, readingTime, renderMarkdown } from "@/lib/blog";
+import { getAllPosts, getPost, readingTime, renderMarkdown } from "@/lib/blog";
 import { ogImage } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -30,7 +30,6 @@ export async function generateMetadata({ params }: PageProps<"/blog/[slug]">): P
       title: post.title,
       description: post.excerpt,
       url,
-      publishedTime: post.date,
       authors: [post.author],
       images: post.image ? [{ url: post.image, alt: post.title }] : [ogImage],
     },
@@ -55,7 +54,6 @@ export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">
     "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
-    datePublished: post.date,
     author: { "@type": "Person", name: post.author },
     publisher: { "@type": "Organization", name: site.name, logo: { "@type": "ImageObject", url: `${site.url}/images/logo-square.png` } },
     mainEntityOfPage: `${site.url}/blog/${post.slug}`,
@@ -72,8 +70,6 @@ export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">
       >
         <p className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-white/70">
           <span className="font-semibold text-white">{post.author}</span>
-          <span aria-hidden className="h-1 w-1 rounded-full bg-gold" />
-          <time dateTime={post.date}>{formatDate(post.date)}</time>
           <span aria-hidden className="h-1 w-1 rounded-full bg-gold" />
           <span className="inline-flex items-center gap-1.5">
             <Clock className="h-3.5 w-3.5" aria-hidden />

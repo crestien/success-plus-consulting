@@ -19,7 +19,7 @@ This skill is the bedrock of great leadership, and it will affect every aspect o
 
 90% of success is due to good planning and organization. As a leader, you need to the ability to think objectively and logically so that you can properly organize your workplace for maximum productivity.
 
-And organization doesn’t just refer to physical labor and output. It also deals with how you manage your employees’ time, how you conduct meetings and one-on-ones, how you communicate, and how you set your KPIs.
+And organization doesn’t just refer to physical labor and output. It also deals with how you manage your employees’ time, how you conduct meetings and one-to-ones, how you communicate, and how you set your KPIs.
 
 Organization is first and foremost a mindset. Sit down and consider the day to day of your business. Are your tasks prioritized effectively? Is there anything that could be done more efficiently?
 
@@ -35,4 +35,4 @@ Empathy is directly related to motivation, but expands past it as well. Empathy 
 
 You simply can’t expect everyone to see the world the way you do. A good leader can see a situation from multiple different perspectives and respond accordingly. You have to be able to think objectively AND subjectively.
 
-**At Success Plus, we specialize in helping leaders develop these management skills so they can find success. [Sign up today for a free seminar, and let us show you what we can do.](/free-seminar)**
+These skills grow fastest with practice and the right guidance. That’s what our [leadership coaching](/leadership-coaching) is built to provide.

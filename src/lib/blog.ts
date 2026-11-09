@@ -13,6 +13,7 @@ import { marked } from "marked";
  *   image: /images/blog/2017/09/photo.jpg   (optional)
  *   categories: [Leadership, Retention]     (optional)
  *   author: Isaac Russell                    (optional)
+ *   draft: true                              (optional: hides the post)
  *   ---
  *
  * The file name is the URL: content/blog/my-post.md -> /blog/my-post/
@@ -75,9 +76,11 @@ export function getAllPosts(): Post[] {
         categories: Array.isArray(data.categories) ? data.categories : str("categories") ? [str("categories")] : [],
         author: str("author") || "Isaac Russell",
         body,
-      } satisfies Post;
+        draft: str("draft") === "true",
+      };
     })
-    .filter((p) => p.title)
+    .filter((p) => p.title && !p.draft)
+    .map(({ draft: _draft, ...p }) => p satisfies Post)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
   cache = posts;
   return posts;

@@ -23,4 +23,4 @@ With any change, there’s liable to be negative talk around the office. Don’t
 
 ## Get Your Team Involved
 
-It’s true that many companies don’t care about their workers opinions or thoughts regarding change. Don’t’ be one of those companies. Get your team involved in the change process by communicating the plan. At the end of the day, most of our fears are based in the unknown. If everyone is up to speed and aware of the situation, it makes it that much easier to stay positive, adapt, and continue down the path of success.
+It’s true that many companies don’t care about their workers’ opinions or thoughts regarding change. Don’t be one of those companies. Get your team involved in the change process by communicating the plan. At the end of the day, most of our fears are based in the unknown. If everyone is up to speed and aware of the situation, it makes it that much easier to stay positive, adapt, and continue down the path of success.

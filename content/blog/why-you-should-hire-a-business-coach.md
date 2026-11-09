@@ -32,4 +32,4 @@ As a leader, you need someone at your side who isn’t afraid to point out your 
 
 Simply put, a good business coach will make you and your business more successful. It’s their job. They’ll keep you focused, improve your performance, and help you reach your goals—all the things you need to win. Their success depends on your success.
 
-Want to learn more about how a business coach can benefit your business? [Contact us today for a free seminar!](/contact)
+Want to know what coaching could look like for your leaders? [Let’s talk about your organization](/contact). The first conversation is a free needs assessment.

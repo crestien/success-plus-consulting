@@ -2,24 +2,34 @@ import { ServicePage } from "@/components/service-page";
 import { pageMeta } from "@/lib/seo";
 
 const intro =
-  "One-to-one mentoring sessions for every level of leadership, with a personal, hands-on approach.";
+  "A trusted, objective advisor for leaders working through real situations, at every level of the organization.";
 
-export const metadata = pageMeta("One to One Mentoring", intro, "/one-to-one-mentoring");
+export const metadata = pageMeta("One-to-One Mentoring", intro, "/one-to-one-mentoring");
 
 export default function OneToOneMentoringPage() {
   return (
-    <ServicePage href="/one-to-one-mentoring" subtitle="Find out how Success Plus helps leaders" intro={intro}>
-      <h2>What challenges are you facing today?</h2>
+    <ServicePage href="/one-to-one-mentoring" subtitle="Leadership Development" intro={intro}>
+      <h2>What challenge are you facing today?</h2>
       <p className="lead">
-        Even the best of the best leaders rely on coaches and mentors for valuable insight, constructive criticism,
-        and actionable feedback to help them grow and develop into better leaders.
+        The best leaders don&apos;t figure it out alone. They rely on someone outside the situation for honest insight,
+        constructive feedback, and a fresh perspective.
       </p>
       <p>
-        At Success Plus, we offer one-to-one mentoring sessions for every level of leadership. We take a personal,
-        hands-on approach and provide an objective perspective to help leaders navigate real life situations and the
-        day to day problems they may bring.
+        One-to-One Mentoring pairs a leader with Isaac Russell or a Success Plus advisor for ongoing, confidential
+        conversations about the work in front of them: a difficult employee, a new role, a team that isn&apos;t
+        gelling, or a decision with no easy answer.
       </p>
-      <p>Contact Success Plus today for information about One to One Mentoring.</p>
+      <h3>Who it&apos;s for</h3>
+      <ul>
+        <li>Frontline supervisors stepping into leadership for the first time</li>
+        <li>Managers taking on larger teams or new responsibilities</li>
+        <li>Executives who want a candid sounding board</li>
+        <li>High-potential leaders you&apos;re preparing for what&apos;s next</li>
+      </ul>
+      <p>
+        Every mentoring relationship is built around the leader and the goals of the organization. Success is measured
+        in how they lead, not how many meetings they attend.
+      </p>
     </ServicePage>
   );
 }

@@ -4,6 +4,7 @@ date: 2014-04-28
 excerpt: "As leaders our jobs are difficult enough without stepping on your own oxygen cord. Hold everyone accountable to their goals by coaching and teaching."
 image: /images/blog/2020/07/news_Image_1398707883.webp
 categories: [Culture]
+draft: true
 author: Isaac Russell
 ---
 

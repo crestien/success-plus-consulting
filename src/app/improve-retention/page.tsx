@@ -2,26 +2,35 @@ import { ServicePage } from "@/components/service-page";
 import { pageMeta } from "@/lib/seo";
 
 const intro =
-  "Success Plus has the expertise to help you develop a thorough plan to prevent turnover and retain your workforce.";
+  "Find out why people are really leaving, then build a retention plan your leaders can carry out every day.";
 
 export const metadata = pageMeta("Improve Retention", intro, "/improve-retention");
 
 export default function ImproveRetentionPage() {
   return (
-    <ServicePage href="/improve-retention" subtitle="Develop a plan to improve retention" intro={intro}>
-      <h2>Do you have a plan?</h2>
+    <ServicePage href="/improve-retention" subtitle="Organizational Performance" intro={intro}>
+      <h2>Turnover is a symptom.</h2>
       <p className="lead">
-        Did you know that over 1/3 of new employees quit their jobs within a month? What about the fact that it can
-        cost up to $10,000 just to replace <strong>one</strong> employee?
+        Every person who walks out the door takes training, experience, and momentum with them. Replacing them costs
+        time, money, and productivity, and the people who stay feel it too.
       </p>
       <p>
-        A company&apos;s most valuable resource is its employees, and retaining that resource is vital to success.
-        High turnover rates and absenteeism are issues that hinder growth, slow productivity, and waste money. If you
-        don&apos;t have a plan to reduce turnover, you need one today.
+        Pay and schedules matter, but they&apos;re rarely the whole story. People most often leave a supervisor, a
+        culture, or a set of expectations that was never made clear. That&apos;s why we look past the exit numbers to
+        what&apos;s happening on the floor.
       </p>
+      <h3>How we approach retention</h3>
+      <ul>
+        <li>Assess where and why turnover and absenteeism are happening</li>
+        <li>Identify the leadership, culture, and process issues behind them</li>
+        <li>Build a retention plan around your workforce, not a template</li>
+        <li>Equip supervisors with the standard work and habits to carry it out</li>
+        <li>Measure the results and adjust as your organization changes</li>
+      </ul>
+      <h3>What it can look like</h3>
       <p>
-        Success Plus possesses the expertise to help you develop a thorough plan to prevent turnover and retain your
-        workforce. Contact Success Plus today to learn more.
+        At a Tyson Foods plant in Alabama, this approach helped leadership reduce turnover by more than 30 percent and
+        absenteeism by 10 percent. Every organization is different, so your plan will be too.
       </p>
     </ServicePage>
   );

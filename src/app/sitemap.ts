@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { services, site, solutionAreas } from "@/lib/site";
+import { allServicePages as services, site, solutionAreas } from "@/lib/site";
 import { getAllPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === "" ? 1 : 0.7,
   }));
   for (const post of getAllPosts()) {
-    entries.push({ url: `${site.url}/blog/${post.slug}`, lastModified: post.date, changeFrequency: "yearly", priority: 0.5 });
+    entries.push({ url: `${site.url}/blog/${post.slug}`, changeFrequency: "yearly", priority: 0.5 });
   }
   return entries;
 }

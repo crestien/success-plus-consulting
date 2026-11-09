@@ -28,4 +28,4 @@ From Moltke the Elder, Winston Churchill, and Dwight D. Eisenhower all had a few
 
 What that means is that your strategic plan is less of an immovable statue, and more of a fluid, evolving idea. Think of it more as a guidance tool. The business world is ever-changing. There will be disagreements, unexpected events, and pitfalls that you simply can’t foresee. Adapting and evolving with these changes as they come will be crucial to a successful strategy.
 
-At Success Plus, we specialize in helping business leaders plan for their business’ future. [Call us today for a free seminar and learn about how our strategic planning solutions can help you.](/contact)
+At Success Plus, we facilitate [strategic planning](/strategic-planning) with leadership teams so the plan is one the whole team owns, and the people are ready to carry it out.

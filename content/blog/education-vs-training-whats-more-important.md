@@ -21,4 +21,4 @@ The first is to apply this understanding to your own sense of self awareness. Do
 
 Secondly, when it comes to implementing a training program and your company, don’t just teach the basic mechanics of a job; educate your employees about the “how” and “why” that come with that job. Training isn’t just about getting an employee to a certain level; it’s an ongoing process of development.
 
-**Interested to see what Success Plus can offer your business? [Sign up today for a free seminar!](/free-seminar)**
+The most lasting development happens on the job, with the right guidance. That’s the idea behind our approach to [talent development](/talent-development).

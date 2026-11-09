@@ -39,59 +39,65 @@ export const services: Service[] = [
     name: "Leadership Coaching",
     href: "/leadership-coaching",
     image: "/images/services/leadership.jpg",
-    summary: "Build a leadership plan that answers the hard questions before they cost you.",
-    cta: "Become a great leader",
+    summary: "Coaching that gives leaders a clear plan for expectations, accountability, and motivation.",
+    cta: "Explore leadership coaching",
   },
   {
     name: "Improve Retention",
     href: "/improve-retention",
     image: "/images/services/retention.jpg",
-    summary: "A thorough plan to prevent turnover and keep your best people.",
-    cta: "Develop a retention plan",
+    summary: "Find the real reasons people leave, then build a plan to keep your best people.",
+    cta: "Explore retention strategy",
   },
   {
     name: "Diversity Coaching",
     href: "/diversity-coaching",
     image: "/images/services/diversity.jpg",
-    summary: "Lead, respect, and motivate a diverse workforce for stronger results.",
+    summary: "Help leaders lead, respect, and motivate every person on a diverse team.",
     cta: "Explore diversity coaching",
   },
   {
-    name: "One to One Mentoring",
+    name: "One-to-One Mentoring",
     href: "/one-to-one-mentoring",
     image: "/images/services/mentoring.png",
-    summary: "Personal, hands-on mentoring for every level of leadership.",
-    cta: "Get personal guidance",
+    summary: "A trusted, objective advisor for leaders working through real situations.",
+    cta: "Explore mentoring",
   },
   {
     name: "Strategic Planning",
     href: "/strategic-planning",
     image: "/images/services/planning.png",
-    summary: "Create, define, and execute your short- and long-term goals.",
-    cta: "Create your strategy",
+    summary: "Give your leadership team one direction and a plan the whole team owns.",
+    cta: "Explore strategic planning",
   },
   {
     name: "Talent Development",
     href: "/talent-development",
     image: "/images/services/talent.jpg",
-    summary: "Real leadership skills that can't be taught in a classroom.",
-    cta: "Reach your full potential",
+    summary: "Grow the leaders you already have through real work, not classroom theory.",
+    cta: "Explore talent development",
   },
+];
+
+/** Specialty programs: linked from the footer only, not the Solutions menu. */
+export const programs: Service[] = [
   {
     name: "Life Coach for Teens",
     href: "/life-coach-for-teens",
     image: "/images/services/teens.jpg",
-    summary: "Our Teen Mentoring Program helps teens build a better future.",
-    cta: "Help your teen succeed",
+    summary: "Mentoring that helps teens set goals, build confidence, and plan their future.",
+    cta: "Learn about teen mentoring",
   },
   {
     name: "Leadership Trainee Program",
     href: "/leadership-trainee-program",
     image: "/images/services/trainee.jpg",
-    summary: "Why an official training process matters, and how to build yours.",
+    summary: "A working session to design how your organization brings new leaders up.",
     cta: "Learn about the program",
   },
 ];
+
+export const allServicePages: Service[] = [...services, ...programs];
 
 export const clients = [
   { name: "Coca-Cola", src: "/images/clients/coca-cola.png", w: 270, h: 103 },
@@ -118,13 +124,13 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "We have gained the respect of our employees through the training that was received for the managers/supervisors at our facility. This training gave us the insight that was needed for our managers/supervisors to understand the Leadership Competencies.",
+      "We have gained the respect of our employees through the training our managers and supervisors received at our facility. It gave our managers and supervisors the insight they needed to understand the Leadership Competencies.",
     name: "Bob Massaro",
-    title: "Former Human Resource Manager, Tyson’s Foods",
+    title: "Former Human Resources Manager, Tyson Foods",
   },
   {
     quote:
-      "Isaac was an amazing leadership coach that helped me take the development of my teams to a new level. After working with Isaac I was able to develop systems and processes to drive improvement in myself and those who report to me. This lead to improvement in all major metrics with my work teams, some of which improved over 70%. The amazing part isn't the improvement, it's the sustainment in the improvements. With his help, I didn't just drive short-term change, I drove cultural change. The skills Isaac shared with me have changed how I manage people and will impact me for the rest of my career. I can't say enough about training and develop he shared with me!",
+      "Isaac was an amazing leadership coach who helped me take the development of my teams to a new level. After working with Isaac I was able to develop systems and processes to drive improvement in myself and those who report to me. This led to improvement in all major metrics with my work teams, some of which improved over 70%. The amazing part isn’t the improvement, it’s that the improvements lasted. With his help, I didn’t just drive short-term change, I drove cultural change. The skills Isaac shared with me have changed how I manage people and will impact me for the rest of my career. I can’t say enough about the training and development he shared with me.",
     name: "Paul Novak",
     title: "Asset Leader, Rockline Industries",
   },
@@ -196,7 +202,7 @@ export const solutionAreas: SolutionArea[] = [
       "Leaders with a plan for goals, policies, and motivation",
       "Stronger relationships between leaders and their employees",
     ],
-    services: ["/leadership-coaching", "/one-to-one-mentoring", "/leadership-trainee-program"],
+    services: ["/leadership-coaching", "/one-to-one-mentoring"],
   },
   {
     slug: "organizational-performance",
@@ -270,5 +276,6 @@ export const differences = [
 export const proofPoint = {
   value: "30%+",
   label: "Reduction in annual turnover",
-  text: "Success Plus helped a client develop and deploy a leader standard work model that reduced workforce turnover by more than 30 percent annually.",
+  text: "At a Tyson Foods plant in Ashland, Alabama, Success Plus helped leadership develop and deploy a leader standard work model that reduced workforce turnover by more than 30 percent and absenteeism by 10 percent.",
+  href: "/blog/how-success-plus-helped-tyson-foods-decrease-turnover-by-30",
 };
