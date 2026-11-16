@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, CalendarCheck, Phone } from "lucide-react";
+import { ArrowRight, CalendarCheck, Phone, Plus } from "lucide-react";
 import { CtaBand, PageHero, SectionHeading, ServiceCard, TestimonialCard } from "@/components/sections";
 import { allServicePages, services, site, solutionAreas } from "@/lib/site";
 import { ldJson, serviceLd } from "@/lib/seo";
+import { serviceFaqs } from "@/lib/faqs";
 
 interface ServicePageProps {
   href: string;
@@ -17,6 +18,7 @@ export function ServicePage({ href, subtitle, intro, children }: ServicePageProp
   const index = Math.max(0, services.findIndex((s) => s.href === href));
   const related = [1, 2, 3].map((n) => services[(index + n) % services.length]);
   const area = solutionAreas.find((a) => a.services.includes(href));
+  const faqs = serviceFaqs[href] ?? [];
 
   return (
     <div>
@@ -90,6 +92,46 @@ export function ServicePage({ href, subtitle, intro, children }: ServicePageProp
           </aside>
         </div>
       </section>
+
+      {faqs.length > 0 && (
+        <section aria-labelledby="faq-heading" className="border-t border-border bg-white py-20 sm:py-24">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: ldJson({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: faqs.map((f) => ({
+                  "@type": "Question",
+                  name: f.q,
+                  acceptedAnswer: { "@type": "Answer", text: f.a },
+                })),
+              }),
+            }}
+          />
+          <div className="container-x grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <p className="eyebrow text-navy-light">FAQ</p>
+              <h2 id="faq-heading" className="font-display mt-4 text-4xl leading-[1.08] font-medium text-ink sm:text-5xl">
+                {service.name} questions, answered.
+              </h2>
+            </div>
+            <div className="divide-y divide-border border-y border-border lg:col-span-8">
+              {faqs.map((f, i) => (
+                <details key={f.q} className="group py-2" open={i === 0}>
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-4 text-left [&::-webkit-details-marker]:hidden">
+                    <h3 className="text-lg font-semibold text-ink sm:text-xl">{f.q}</h3>
+                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-muted text-navy transition group-open:rotate-45 group-open:bg-gold group-open:text-ink">
+                      <Plus className="h-4 w-4" aria-hidden />
+                    </span>
+                  </summary>
+                  <p className="max-w-3xl pb-5 text-lg leading-relaxed text-muted-foreground">{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-cream py-20 sm:py-24">
         <div className="container-x">
