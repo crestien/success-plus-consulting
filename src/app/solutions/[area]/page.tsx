@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowRight, Check, Phone } from "lucide-react";
 import { CtaBand, PageHero, SectionHeading, ServiceCard, TestimonialCard } from "@/components/sections";
-import { pageMeta } from "@/lib/seo";
+import { ldJson, pageMeta, serviceLd } from "@/lib/seo";
 import { services, site, solutionAreas } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -27,6 +27,7 @@ export default async function SolutionAreaPage({ params }: PageProps<"/solutions
 
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldJson(serviceLd(a)) }} />
       <PageHero
         eyebrow="Solutions"
         title={a.name}

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowRight, CalendarCheck, Phone } from "lucide-react";
 import { CtaBand, PageHero, SectionHeading, ServiceCard, TestimonialCard } from "@/components/sections";
 import { allServicePages, services, site, solutionAreas } from "@/lib/site";
+import { ldJson, serviceLd } from "@/lib/seo";
 
 interface ServicePageProps {
   href: string;
@@ -19,6 +20,7 @@ export function ServicePage({ href, subtitle, intro, children }: ServicePageProp
 
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldJson(serviceLd(service, area?.name)) }} />
       <PageHero
         eyebrow={subtitle}
         title={service.name}

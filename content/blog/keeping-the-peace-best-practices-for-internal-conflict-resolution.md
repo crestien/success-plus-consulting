@@ -14,7 +14,7 @@ You should be able to trust your employees to work out the minor issues among th
 
 As a leader, there are three levels of conflict resolution that you’re responsible for maintaining: Pre-Conflict, Present Conflict, and Post-Conflict. Within each of these levels there exists practices and standards that, when executed properly, will ensure any problems between employees are dealt with quickly and effectively.
 
-### Pre-Conflict: Stopping the Problem Before it Starts
+## Pre-Conflict: Stopping the Problem Before it Starts
  Though you won’t be able to prevent every dispute that arises in the workplace, there are certain standards you can put into place that will kill the problem before it has a chance to snowball into a major issue.
 
 The first, most important thing you can do is set clear, concise expectations and enforce them with consistency. This includes guidelines on behavior, etiquette, responsibility, and the chain of command so that each employee knows their job, their place, and the proper channels to go through for any questions, problems, or needs.
@@ -23,7 +23,7 @@ These expectations should be stated clearly in the employee handbook or some oth
 
 Secondly, you’ll want to establish a reporting system. This is a specific route that employees can take to report any problems they may have with either their job or another co-worker in a dignified, procedural, and confidential manner. This allows employees the opportunity to address an issue before it blows out of proportion.
 
-### Present Conflict: Dealing With a Problem Head On
+## Present Conflict: Dealing With a Problem Head On
  Even with preventative measures in place, some problems are going to fall through the cracks. When they do, it will be your job as the leader to resolve it as quickly and efficiently as possible.
 
 To do this, you’ll need to follow three steps:
@@ -38,7 +38,7 @@ Once you’ve acknowledged the issue, privately engage the employees involved wi
 
 Lastly, after you’ve addressed the issue with your employees, you should act quickly, albeit professionally and proportionally. First, you should insist that everyone involved with the problem cease conflict immediately. If necessary, you should take the proper steps to [reprimand the employees](/blog/how-to-have-the-talk) who were out of line to begin with. You may want to reiterate company policy and remind everyone of the expectations they are required to uphold. Whatever you do, it’s important you remain consistent and impartial.
 
-### Post-Conflict: Upholding Morale and Positivity after an Issue is Resolved
+## Post-Conflict: Upholding Morale and Positivity after an Issue is Resolved
  Even after a conflict has been resolved, there are likely to be some residual effects you will need to deal with. Friction between the employees involved in the dispute can remain and possibly put a strain or tension on future productivity. To minimize any damage this could cause, you want to radiate positivity throughout the workplace.
 
 While you may have to criticize and reprimand some of the parties involved in the dispute, it’s equally important that you build them up and find a way to compliment the areas where they excel. You’ll also want to directly encourage teamwork, camaraderie, and community with your employees. When you exude a positive outlook, your employees will see that, and it will help them to “bury the hatchet” and move forward in a positive, productive manner.

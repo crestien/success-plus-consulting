@@ -2,6 +2,7 @@
 title: "For Leaders, Self-Awareness Is Everything"
 date: 2017-03-10
 excerpt: "Without self-awareness, you will almost certainly fail as a leader."
+description: "Self-awareness is the foundation of effective leadership. Learn what it really means, why leaders without it fail, and how to practice it every day."
 image: /images/blog/covers/for-leaders-self-awareness-is-everything.webp
 legacyImage: /images/blog/2020/07/news_Image_1484085676.webp
 categories: [Leadership]
@@ -12,7 +13,7 @@ In our last blog, [we mentioned briefly that self-awareness is a major component
 
 In fact, self-awareness isn’t a major component, it’s THE major component. Without self-awareness, you will almost certainly fail as a leader.
 
-### What does it mean to be self-aware?
+## What does it mean to be self-aware?
 
 For starters, self-awareness is not about knowing what you like or what you want. It’s much deeper than that.
 
@@ -22,7 +23,7 @@ One mistake too many leaders make is letting their passions or wants get in the 
 
 And speaking of your employees, you should be preaching self-awareness to them as well. In fact, it should be a topic of conversation [during every one-to-one](/blog/secrets-to-an-effective-one-to-one). Instilling this value in your employees will help them communicate better with you and other team members, and it will ultimately make them more productive.
 
-### Practicing self-awareness
+## Practicing self-awareness
 
 It’s important you understand that self-awareness is an ongoing practice. So you need to make a conscious effort to settle down and focus on yourself every day.
 

@@ -2,6 +2,7 @@
 title: "Want To Be A Great Leader? Master These Four Management Skills"
 date: 2016-12-09
 excerpt: "These four skills are the mark of a great leader. Can you master them?"
+description: "Four management skills mark a great leader: self-awareness, organization, motivation, and empathy. Here is what each one looks like in practice."
 image: /images/blog/covers/want-to-be-a-great-leader-master-these-four-management-skills-1.webp
 legacyImage: /images/blog/2020/07/news_Image_1481303805.webp
 categories: [Leadership]

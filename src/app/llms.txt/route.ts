@@ -27,8 +27,15 @@ export function GET() {
     `- [About Isaac Russell](${site.url}/about)`,
     `- [Invite Isaac to speak](${site.url}/invite-isaac-to-speak)`,
     "",
+    "## About Isaac Russell",
+    "Isaac Russell began his career as an hourly factory worker and has advised leaders from frontline supervisors to the C-suite since 1993. He is the author of \"Improving Profits Through People\" and a keynote speaker on practical leadership.",
+    "",
     "## Articles",
     ...posts.map((p) => `- [${p.title}](${site.url}/blog/${p.slug}): ${p.excerpt}`),
+    "",
+    "## Optional",
+    `- [Sitemap](${site.url}/sitemap.xml)`,
+    `- [RSS feed](${site.url}/feed.xml)`,
     "",
   ];
   return new Response(lines.join("\n"), { headers: { "Content-Type": "text/plain; charset=utf-8" } });

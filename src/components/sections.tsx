@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowRight, ArrowUpRight, Check, ChevronRight, Phone, Quote } from "lucide-react";
 import { clients, eventTypes, site, testimonial as featured, type Service, type Testimonial } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { breadcrumbLd, ldJson } from "@/lib/seo";
 
 /* ------------------------------------------------------------------ */
 /* Page hero used by inner pages                                       */
@@ -35,6 +36,7 @@ export function PageHero({
         <div className={cn(aside && "lg:col-span-7")}>
           {crumbs.length > 0 && (
             <nav aria-label="Breadcrumb" className="rise mb-8">
+              <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldJson(breadcrumbLd(crumbs)) }} />
               <ol className="flex flex-wrap items-center gap-1.5 text-sm text-white/50">
                 <li>
                   <Link href="/" className="link-sweep hover:text-white">

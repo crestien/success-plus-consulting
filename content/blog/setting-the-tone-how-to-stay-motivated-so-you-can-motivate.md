@@ -16,15 +16,15 @@ Whenever I’m working with a company, I ask the leaders to find time at the sta
 
 Of course, we’re all human. We have our bad days, both at home and at work. If this happens to you try these tips:
 
-### 1. Learn to motivate yourself from within.
+## 1. Learn to motivate yourself from within.
 
 This means meditating on the good and reminding yourself why it’s important for you to be an enthusiastic leader. You can even go as far as to give yourself a pep talk! (I always say I talk to myself because I like talking to smart people.)
 
-### 2. Call or talk to a positive friend or mentor just to see how they are doing.
+## 2. Call or talk to a positive friend or mentor just to see how they are doing.
 
 Sometimes a good, positive conversation can help you get your mind of the negative and give you a fresh point of view to attack your problems.
 
-### 3. Read positive books, scriptures, quotes, and think positive thoughts.
+## 3. Read positive books, scriptures, quotes, and think positive thoughts.
 
 We’ve all heard the saying “garbage in, garbage out.” That means, whatever you choose to put in your head will manifest itself in your behavior. If you only focus on the negative, then you’ll act negative. But on the flip side, if you consume positive information and focus on the good, you’ll find the motivation you’re looking for.
 

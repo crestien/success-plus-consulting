@@ -10,6 +10,7 @@ import { marked } from "marked";
  *   title: "Post title"
  *   date: 2017-09-19
  *   excerpt: "One or two sentences for cards and search results."
+ *   description: "Meta description, ~150 characters"  (optional)
  *   image: /images/blog/2017/09/photo.jpg   (optional)
  *   categories: [Leadership, Retention]     (optional)
  *   author: Isaac Russell                    (optional)
@@ -43,6 +44,8 @@ export type Post = {
   title: string;
   date: string;
   excerpt: string;
+  /** Meta description (front matter `description:`, else the trimmed excerpt). */
+  description: string;
   image?: string;
   categories: string[];
   author: string;
@@ -75,6 +78,14 @@ function parseFrontMatter(raw: string): { data: Record<string, string | string[]
   return { data, body: m[2] };
 }
 
+/** Trim text to a search-friendly meta description length at a word boundary. */
+export function metaDescription(text: string, max = 160) {
+  const t = text.replace(/\s+/g, " ").trim();
+  if (t.length <= max) return t;
+  const cut = t.slice(0, max - 1);
+  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:.\s]+$/, "")}…`;
+}
+
 let cache: Post[] | null = null;
 
 export function getAllPosts(): Post[] {
@@ -91,6 +102,7 @@ export function getAllPosts(): Post[] {
         title: str("title"),
         date: str("date"),
         excerpt: str("excerpt"),
+        description: metaDescription(str("description") || str("excerpt")),
         image: str("image") || undefined,
         categories: Array.isArray(data.categories) ? data.categories : str("categories") ? [str("categories")] : [],
         author: str("author") || "Isaac Russell",

@@ -4,7 +4,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Spotlight } from "@/components/spotlight";
 import { site } from "@/lib/site";
-import { ogImage } from "@/lib/seo";
+import { homeDescription, ids, ldJson, ogImage } from "@/lib/seo";
 import "./globals.css";
 
 const sans = Geist({
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     default: `${site.name} | Strengthen Organizational Performance Through People`,
     template: `%s | ${site.name}`,
   },
-  description: site.description,
+  description: homeDescription,
   applicationName: site.name,
   authors: [{ name: "Isaac Russell" }],
   keywords: [
@@ -48,12 +48,17 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     title: `${site.name} | Strengthen Organizational Performance Through People`,
-    description: site.description,
+    description: homeDescription,
     images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
     site: "@successplusllc",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
   },
   icons: {
     icon: "/favicon.png",
@@ -65,32 +70,92 @@ export const viewport: Viewport = {
   themeColor: "#15163f",
 };
 
+const address = {
+  "@type": "PostalAddress",
+  streetAddress: site.addresses.mailing.street,
+  addressLocality: site.addresses.mailing.city,
+  addressRegion: site.addresses.mailing.region,
+  postalCode: site.addresses.mailing.postal,
+  addressCountry: "US",
+};
+
+/** Sitewide entity graph: the firm, the website, Isaac, and his book. */
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: site.name,
-  url: site.url,
-  logo: `${site.url}/images/logo-square.png`,
-  image: `${site.url}/images/book-header.jpg`,
-  description: site.description,
-  telephone: `+1-${site.phone}`,
-  foundingDate: String(site.founded),
-  founder: { "@type": "Person", name: "Isaac Russell", jobTitle: "Founder & CEO" },
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: site.addresses.mailing.street,
-    addressLocality: site.addresses.mailing.city,
-    addressRegion: site.addresses.mailing.region,
-    postalCode: site.addresses.mailing.postal,
-    addressCountry: "US",
-  },
-  areaServed: "US",
-  sameAs: Object.values(site.social),
+  "@graph": [
+    {
+      "@type": ["ProfessionalService", "Organization"],
+      "@id": ids.org,
+      name: site.name,
+      alternateName: site.shortName,
+      slogan: site.brandLine,
+      url: site.url,
+      logo: { "@type": "ImageObject", url: `${site.url}/images/logo-square.png` },
+      image: `${site.url}${ogImage.url}`,
+      description: site.description,
+      telephone: `+1-${site.phone}`,
+      foundingDate: String(site.founded),
+      founder: { "@id": ids.isaac },
+      address,
+      areaServed: { "@type": "Country", name: "United States" },
+      knowsAbout: [
+        "Leadership development",
+        "Leadership coaching",
+        "Organizational performance",
+        "Employee retention",
+        "Diversity coaching",
+        "Strategic planning",
+        "Talent development",
+        "Mentoring",
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: `+1-${site.phone}`,
+        contactType: "sales",
+        areaServed: "US",
+        availableLanguage: "English",
+        url: `${site.url}/contact`,
+      },
+      sameAs: Object.values(site.social),
+    },
+    {
+      "@type": "WebSite",
+      "@id": ids.website,
+      url: site.url,
+      name: site.name,
+      description: homeDescription,
+      publisher: { "@id": ids.org },
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "Person",
+      "@id": ids.isaac,
+      name: "Isaac Russell",
+      jobTitle: "Founder & CEO",
+      description:
+        "Leadership coach, organizational performance consultant, author, and speaker. Founded Success Plus Consulting in 1993 after starting his career as an hourly factory worker.",
+      url: `${site.url}/about`,
+      image: `${site.url}/images/isaac-portrait.webp`,
+      worksFor: { "@id": ids.org },
+      knowsAbout: ["Leadership", "Employee retention", "Organizational performance", "Manufacturing leadership"],
+    },
+    {
+      "@type": "Book",
+      "@id": ids.book,
+      name: "Improving Profits Through People",
+      author: { "@id": ids.isaac },
+      image: `${site.url}/images/book-cover.webp`,
+      inLanguage: "en",
+    },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${sans.variable} ${display.variable}`}>
+      <head>
+        <link rel="alternate" type="application/rss+xml" title={`${site.name} Blog`} href="/feed.xml" />
+      </head>
       <body className="flex min-h-dvh flex-col">
         <a
           href="#main"
@@ -106,7 +171,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Spotlight />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+          dangerouslySetInnerHTML={{ __html: ldJson(jsonLd) }}
         />
       </body>
     </html>

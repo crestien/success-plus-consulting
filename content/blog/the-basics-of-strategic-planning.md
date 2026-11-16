@@ -2,6 +2,7 @@
 title: "The Basics of Strategic Planning"
 date: 2017-02-20
 excerpt: "Does your business have a strategic plan for success?"
+description: "What strategic planning is, how to develop a plan, and the basic steps most successful planning sessions share, from assessment to execution."
 image: /images/blog/covers/the-basics-of-strategic-planning.webp
 legacyImage: /images/blog/2020/07/news_Image_1487602952.webp
 categories: [Strategy]

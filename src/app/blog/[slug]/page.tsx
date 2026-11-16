@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowRight, Clock, Phone } from "lucide-react";
 import { CtaBand, PageHero } from "@/components/sections";
 import { PostCard, PostImage } from "@/components/post-card";
 import { getAllPosts, getFaqs, getPost, readingTime, renderMarkdown } from "@/lib/blog";
-import { ogImage } from "@/lib/seo";
+import { ids, ldJson, ogImage } from "@/lib/seo";
 import { allServicePages, site, solutionAreas } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -20,18 +20,23 @@ export async function generateMetadata({ params }: PageProps<"/blog/[slug]">): P
   const post = getPost(slug);
   if (!post) return {};
   const url = `/blog/${post.slug}`;
+  const suffixed = `${post.title} | ${site.name}`;
   return {
-    title: post.title,
-    description: post.excerpt,
+    // Long titles get truncated in results; drop the brand suffix for those.
+    title: suffixed.length > 65 ? { absolute: post.title } : post.title,
+    description: post.description,
     alternates: { canonical: url },
     openGraph: {
       type: "article",
       siteName: site.name,
       locale: "en_US",
       title: post.title,
-      description: post.excerpt,
+      description: post.description,
       url,
-      authors: [post.author],
+      authors: [`${site.url}/about`],
+      ...(post.date ? { publishedTime: new Date(`${post.date.slice(0, 10)}T12:00:00Z`).toISOString() } : {}),
+      section: post.categories[0],
+      tags: post.categories,
       images: post.image ? [{ url: post.image, alt: post.title }] : [ogImage],
     },
   };
@@ -57,23 +62,33 @@ export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${site.url}/blog/${post.slug}#article`,
     headline: post.title,
-    description: post.excerpt,
-    author: { "@type": "Person", name: post.author, url: `${site.url}/about` },
-    ...(service ? { about: { "@type": "Service", name: service.name, url: `${site.url}${service.href}`, provider: { "@type": "Organization", name: site.name } } } : {}),
-    publisher: { "@type": "Organization", name: site.name, logo: { "@type": "ImageObject", url: `${site.url}/images/logo-square.png` } },
+    description: post.description,
+    ...(post.date ? { datePublished: post.date.slice(0, 10) } : {}),
+    inLanguage: "en-US",
+    articleSection: post.categories[0],
+    keywords: post.categories.join(", "),
+    wordCount: post.body.split(/\s+/).filter(Boolean).length,
+    author:
+      post.author === "Isaac Russell"
+        ? { "@type": "Person", "@id": ids.isaac, name: post.author, url: `${site.url}/about` }
+        : { "@type": "Person", name: post.author },
+    isPartOf: { "@id": ids.website },
+    ...(service ? { about: { "@type": "Service", name: service.name, url: `${site.url}${service.href}`, provider: { "@id": ids.org } } } : {}),
+    publisher: { "@type": "Organization", "@id": ids.org, name: site.name, logo: { "@type": "ImageObject", url: `${site.url}/images/logo-square.png` } },
     mainEntityOfPage: `${site.url}/blog/${post.slug}`,
     ...(post.image ? { image: `${site.url}${post.image}` } : {}),
   };
 
   return (
     <article>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldJson(jsonLd) }} />
       {faqs.length > 0 && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+            __html: ldJson({
               "@context": "https://schema.org",
               "@type": "FAQPage",
               mainEntity: faqs.map((f) => ({

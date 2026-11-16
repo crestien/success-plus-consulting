@@ -18,6 +18,7 @@ const MIME = {
   ".gif": "image/gif",
   ".svg": "image/svg+xml",
   ".ico": "image/x-icon",
+  ".avif": "image/avif",
 };
 
 function servePublicFile(req, res, pathname) {
@@ -42,7 +43,7 @@ function servePublicFile(req, res, pathname) {
   const ext = path.extname(resolved).toLowerCase();
   res.writeHead(200, {
     "Content-Type": MIME[ext] || "application/octet-stream",
-    "Cache-Control": "public, max-age=86400",
+    "Cache-Control": "public, max-age=2592000, stale-while-revalidate=86400",
     "Content-Length": stat.size,
   });
   fs.createReadStream(resolved).pipe(res);

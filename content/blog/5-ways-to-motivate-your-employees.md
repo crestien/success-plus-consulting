@@ -2,6 +2,7 @@
 title: "5 Ways to Motivate Your Employees"
 date: 2016-10-17
 excerpt: "When your employees are motivated, everyone wins."
+description: "Five practical ways leaders can motivate employees: trust them, listen to them, and more. Motivated teams are more productive and far less likely to quit."
 image: /images/blog/covers/5-ways-to-motivate-your-employees.webp
 legacyImage: /images/blog/2020/07/news_Image_1476737312.webp
 categories: [Motivation]

@@ -59,14 +59,14 @@ export const services: Service[] = [
   {
     name: "One-to-One Mentoring",
     href: "/one-to-one-mentoring",
-    image: "/images/services/mentoring.png",
+    image: "/images/services/mentoring.webp",
     summary: "A trusted, objective advisor for leaders working through real situations.",
     cta: "Explore mentoring",
   },
   {
     name: "Strategic Planning",
     href: "/strategic-planning",
-    image: "/images/services/planning.png",
+    image: "/images/services/planning.webp",
     summary: "Give your leadership team one direction and a plan the whole team owns.",
     cta: "Explore strategic planning",
   },
@@ -235,7 +235,7 @@ export const solutionAreas: SolutionArea[] = [
     summary: "Give your leadership team a clear direction and the structure to execute it through change.",
     intro:
       "Without direction, there is no success. We help leadership teams define where the organization is headed, plan for the people it will take to get there, and lead their workforce through change.",
-    image: "/images/services/planning.png",
+    image: "/images/services/planning.webp",
     capabilities: [
       "Strategic Planning",
       "Succession Planning",
