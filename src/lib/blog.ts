@@ -123,7 +123,11 @@ export function getPost(slug: string): Post | undefined {
 }
 
 export function renderMarkdown(md: string): string {
-  return marked.parse(md, { async: false, gfm: true }) as string;
+  const html = marked.parse(md, { async: false, gfm: true }) as string;
+  // Make bare US phone numbers in post text tappable (skips ones already in links).
+  return html.replace(/(<a\b[\s\S]*?<\/a>)|\(?\b(\d{3})\)?[\s.-](\d{3})[\s.-](\d{4})\b/g, (m, link, a, b, c) =>
+    link ? link : `<a href="tel:+1${a}${b}${c}">${m}</a>`,
+  );
 }
 
 export function formatDate(iso: string) {
