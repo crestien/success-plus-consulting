@@ -125,7 +125,18 @@ export function ServicePage({ href, subtitle, intro, children }: ServicePageProp
                       <Plus className="h-4 w-4" aria-hidden />
                     </span>
                   </summary>
-                  <p className="max-w-3xl pb-5 text-lg leading-relaxed text-muted-foreground">{f.a}</p>
+                  <p className="max-w-3xl pb-5 text-lg leading-relaxed text-muted-foreground">
+                    {f.a.split(site.phone).map((part, j) => (
+                      <span key={j}>
+                        {j > 0 && (
+                          <a href={site.phoneHref} className="font-semibold whitespace-nowrap text-navy underline-offset-4 hover:underline">
+                            {site.phone}
+                          </a>
+                        )}
+                        {part}
+                      </span>
+                    ))}
+                  </p>
                 </details>
               ))}
             </div>
