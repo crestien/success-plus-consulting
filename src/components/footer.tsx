@@ -75,9 +75,20 @@ export function Footer() {
                     <Link href={a.href} className="link-sweep font-medium text-white/90 hover:text-gold">
                       {a.name}
                     </Link>
+                    <ul className="mt-2 space-y-2 border-l border-white/15 pl-3">
+                      {services
+                        .filter((s) => a.services.includes(s.href))
+                        .map((s) => (
+                          <li key={s.href}>
+                            <Link href={s.href} className="link-sweep hover:text-gold">
+                              {s.name}
+                            </Link>
+                          </li>
+                        ))}
+                    </ul>
                   </li>
                 ))}
-                {[...services, ...programs].map((s) => (
+                {programs.map((s) => (
                   <li key={s.href}>
                     <Link href={s.href} className="link-sweep hover:text-gold">
                       {s.name}

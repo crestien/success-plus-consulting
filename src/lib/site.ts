@@ -196,9 +196,10 @@ export const solutionAreas: SolutionArea[] = [
     capabilities: [
       "Executive Coaching",
       "Supervisor Development",
+      "Mentoring",
+      "Emerging Leaders",
       "Leadership Coaching",
       "Management Development",
-      "Emerging Leaders",
     ],
     outcomes: [
       "Supervisors who deliver on expectations and the KPIs that drive the business",
@@ -217,13 +218,13 @@ export const solutionAreas: SolutionArea[] = [
     image: "/images/services/retention.jpg",
     photo: "A production team huddle on the manufacturing floor",
     capabilities: [
-      "Workforce Development",
+      "Workforce Performance",
+      "Employee Retention",
       "Employee Engagement",
-      "Retention Strategy",
-      "Performance Improvement",
       "Accountability Systems",
+      "Process Improvement",
+      "Workforce Development",
       "Culture Development",
-      "Process Analysis",
     ],
     outcomes: [
       "Lower turnover and absenteeism",
@@ -243,10 +244,10 @@ export const solutionAreas: SolutionArea[] = [
     photo: "Isaac facilitating a leadership team planning session",
     capabilities: [
       "Strategic Planning",
-      "Succession Planning",
       "Organizational Assessments",
-      "Leadership Team Facilitation",
+      "Succession Planning",
       "Change Management",
+      "Leadership Team Facilitation",
       "Project Management Strategy",
       "Team Building Strategy",
     ],
