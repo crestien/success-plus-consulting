@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Compass, Mic, Phone, UsersRound } from "lucide-react";
-import { CtaBand, LogoMarquee, PageHero, SectionHeading, TestimonialCard } from "@/components/sections";
+import { ArrowRight, Phone } from "lucide-react";
+import { CtaBand, FeaturedResult, LogoMarquee, PageHero, SectionHeading, TestimonialCard } from "@/components/sections";
 import { pageMeta } from "@/lib/seo";
 import { site, yearsInBusiness } from "@/lib/site";
 
@@ -12,10 +12,10 @@ export const metadata = pageMeta(
 );
 
 const roles = [
-  { icon: Compass, title: "Organizational advisor", text: "Partners with executives and HR leaders on people and performance challenges." },
-  { icon: UsersRound, title: "Leadership coach & mentor", text: "From first-line supervisors to the C-suite." },
-  { icon: BookOpen, title: "Author", text: "Wrote Improving Profits Through People." },
-  { icon: Mic, title: "Speaker", text: "Practical, down-to-earth keynotes and seminars." },
+  { title: "Organizational advisor", text: "Partners with executives and HR leaders on people and performance challenges." },
+  { title: "Leadership coach & mentor", text: "From first-line supervisors to the C-suite." },
+  { title: "Author", text: "Wrote Improving Profits Through People." },
+  { title: "Speaker", text: "Practical, down-to-earth keynotes and seminars." },
 ];
 
 export default function AboutPage() {
@@ -71,25 +71,20 @@ export default function AboutPage() {
       <section className="bg-cream py-20 sm:py-28">
         <div className="container-x grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <div className="reveal relative mx-auto max-w-sm lg:sticky lg:top-28">
-              <div className="rounded-[2rem] bg-white p-8">
-                <Image
-                  src="/images/isaac-portrait.webp"
-                  alt="Isaac Russell, Founder & CEO of Success Plus Consulting"
-                  width={400}
-                  height={400}
-                  className="mx-auto w-full max-w-[280px] rounded-full ring-8 ring-cream"
-                />
-                <p className="font-display mt-6 text-center text-2xl font-medium text-ink">Isaac Russell</p>
-                <p className="text-center text-sm text-muted-foreground">
-                  Founder &amp; CEO · Leadership &amp; Organizational Performance Advisor
-                </p>
-              </div>
-              <div className="absolute -top-4 -right-2 rounded-2xl bg-navy px-4 py-3 text-white shadow-xl">
-                <p className="font-display text-3xl leading-none font-semibold text-gold">{yearsInBusiness()}+</p>
-                <p className="mt-1 text-[11px] font-semibold tracking-wider uppercase">years leading</p>
-              </div>
-            </div>
+            <figure className="lg:sticky lg:top-28">
+              <Image
+                src="/images/isaac-portrait.webp"
+                alt="Isaac Russell, Founder & CEO of Success Plus Consulting"
+                width={400}
+                height={400}
+                className="w-full max-w-sm rounded-md"
+              />
+              <figcaption className="mt-4 text-muted-foreground">
+                <strong className="font-display text-xl font-medium text-ink">Isaac Russell</strong>
+                <br />
+                Founder &amp; CEO. Advising leaders for {yearsInBusiness()} years.
+              </figcaption>
+            </figure>
           </div>
 
           <div className="lg:col-span-7">
@@ -123,15 +118,14 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <ul className="mt-12 grid gap-4 sm:grid-cols-2">
-              {roles.map(({ icon: Icon, title, text }) => (
-                <li key={title} className="reveal rounded-2xl border border-border bg-white p-6">
-                  <Icon className="h-6 w-6 text-navy" aria-hidden />
-                  <p className="mt-4 font-semibold text-ink">{title}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{text}</p>
-                </li>
+            <dl className="mt-12 grid gap-x-10 gap-y-6 sm:grid-cols-2">
+              {roles.map(({ title, text }) => (
+                <div key={title} className="border-t border-ink pt-4">
+                  <dt className="font-display text-xl font-medium text-ink">{title}</dt>
+                  <dd className="mt-1 text-muted-foreground">{text}</dd>
+                </div>
               ))}
-            </ul>
+            </dl>
             <Link
               href="/invite-isaac-to-speak"
               className="mt-8 inline-flex items-center gap-2 font-semibold text-navy hover:text-navy-light"
@@ -143,8 +137,10 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <FeaturedResult />
+
       {/* Proof */}
-      <section className="relative isolate overflow-hidden bg-ink py-20 text-white sm:py-28">
+      <section className="bg-ink py-20 text-white sm:py-28">
           <div className="container-x grid items-center gap-16 lg:grid-cols-2">
           <div>
             <SectionHeading tone="light" eyebrow="In their words" title="Coaching rather than training." />

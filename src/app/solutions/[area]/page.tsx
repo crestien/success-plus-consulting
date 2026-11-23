@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Check, Phone } from "lucide-react";
-import { CtaBand, PageHero, PhotoSlot, SectionHeading, ServiceCard, TestimonialCard } from "@/components/sections";
+import { CtaBand, FeaturedResult, PageHero, PhotoSlot, ServiceList, TestimonialCard } from "@/components/sections";
 import { ldJson, pageMeta, serviceLd } from "@/lib/seo";
 import { services, site, solutionAreas } from "@/lib/site";
 
@@ -50,30 +50,27 @@ export default async function SolutionAreaPage({ params }: PageProps<"/solutions
         <div className="container-x grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p className="font-display text-2xl leading-snug text-ink sm:text-3xl">{a.intro}</p>
-            <h2 className="mt-12 text-sm font-semibold tracking-wider text-muted-foreground uppercase">Capabilities</h2>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+            <h2 className="font-display mt-14 text-2xl font-medium text-ink">What it includes</h2>
+            <ul className="mt-5 grid border-t border-ink sm:grid-cols-2 sm:gap-x-10">
               {a.capabilities.map((c) => (
-                <li key={c} className="flex items-center gap-3 rounded-2xl border border-border p-4 font-medium text-ink">
-                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-gold">
-                    <Check className="h-4 w-4" aria-hidden />
-                  </span>
+                <li key={c} className="border-b border-border py-3.5 text-lg text-ink">
                   {c}
                 </li>
               ))}
             </ul>
           </div>
           <aside className="lg:col-span-5 lg:col-start-8">
-            <div className="rounded-3xl bg-navy p-8 text-white lg:sticky lg:top-28">
-              <h2 className="font-display text-2xl font-medium">What changes</h2>
+            <div className="border-t-4 border-navy pt-6 lg:sticky lg:top-28">
+              <h2 className="font-display text-2xl font-medium text-ink">What changes</h2>
               <ul className="mt-6 space-y-4">
                 {a.outcomes.map((o) => (
-                  <li key={o} className="flex gap-3 text-white/80">
-                    <Check className="mt-1 h-4 w-4 shrink-0 text-gold" aria-hidden />
+                  <li key={o} className="flex gap-3 text-lg text-muted-foreground">
+                    <Check className="mt-1.5 h-4 w-4 shrink-0 text-gold-dark" aria-hidden />
                     {o}
                   </li>
                 ))}
               </ul>
-              <Link href="/how-we-work" className="mt-8 inline-flex items-center gap-2 font-semibold text-gold hover:text-gold-light">
+              <Link href="/how-we-work" className="mt-8 inline-flex items-center gap-2 font-semibold text-navy underline underline-offset-4">
                 How we work
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
@@ -82,20 +79,18 @@ export default async function SolutionAreaPage({ params }: PageProps<"/solutions
         </div>
       </section>
 
+      <FeaturedResult />
+
       {related.length > 0 && (
         <section className="bg-cream py-20 sm:py-24">
           <div className="container-x">
-            <SectionHeading eyebrow="Go deeper" title={`Inside ${a.name.toLowerCase()}.`} />
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {related.map((s) => (
-                <ServiceCard key={s.href} service={s} />
-              ))}
-            </div>
+            <h2 className="font-display text-4xl leading-[1.1] font-medium text-ink sm:text-5xl">Inside {a.name.toLowerCase()}.</h2>
+            <ServiceList items={related} className="mt-12" />
           </div>
         </section>
       )}
 
-      <section className="bg-white py-20 sm:py-24">
+      <section className="bg-white py-20 sm:py-28">
         <div className="container-x mx-auto max-w-4xl">
           <TestimonialCard />
         </div>

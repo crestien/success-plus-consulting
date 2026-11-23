@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BarChart3, ClipboardList, Ear, Handshake, Microscope, RefreshCw, Wrench } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { CtaBand, PageHero, SectionHeading, TestimonialCard } from "@/components/sections";
 import { pageMeta } from "@/lib/seo";
 import { method, site } from "@/lib/site";
@@ -9,8 +9,6 @@ export const metadata = pageMeta(
   "Listen, assess, analyze, customize, partner, measure, evolve. The Success Plus approach to strengthening organizational performance through people.",
   "/how-we-work",
 );
-
-const icons = [Ear, ClipboardList, Microscope, Wrench, Handshake, BarChart3, RefreshCw];
 
 export default function HowWeWorkPage() {
   return (
@@ -30,17 +28,14 @@ export default function HowWeWorkPage() {
       <section className="bg-white py-20 sm:py-28">
         <div className="container-x">
           <ol className="relative mx-auto max-w-4xl">
-            <span aria-hidden className="absolute top-2 bottom-2 left-6 w-px bg-border sm:left-8" />
             {method.map((m, i) => {
-              const Icon = icons[i];
               return (
                 <li key={m.step} className="reveal relative flex gap-6 pb-12 last:pb-0 sm:gap-10">
-                  <span className="relative z-10 grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-navy text-gold ring-8 ring-white sm:h-16 sm:w-16">
-                    <Icon className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden />
+                  <span className="font-display w-12 shrink-0 text-4xl font-medium text-navy sm:w-16 sm:text-5xl">
+                    0{i + 1}
                   </span>
-                  <div className="pt-1 sm:pt-3">
-                    <p className="text-sm font-semibold tracking-wider text-gold-dark uppercase">Step 0{i + 1}</p>
-                    <h2 className="font-display mt-1 text-3xl font-medium text-ink">{m.step}</h2>
+                  <div className="border-t border-ink pt-3 grow">
+                    <h2 className="font-display text-3xl font-medium text-ink sm:text-4xl">{m.step}</h2>
                     <p className="mt-2 max-w-xl text-lg leading-relaxed text-muted-foreground">{m.text}</p>
                   </div>
                 </li>
@@ -50,7 +45,7 @@ export default function HowWeWorkPage() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-ink py-20 text-white sm:py-28">
+      <section className="bg-ink py-20 text-white sm:py-28">
           <div className="container-x grid items-center gap-16 lg:grid-cols-2">
           <div>
             <SectionHeading

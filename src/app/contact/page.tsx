@@ -58,7 +58,7 @@ export default function ContactPage() {
 
             <address className="mt-10 grid gap-4 not-italic">
               {cards.map(({ icon: Icon, title, body }) => (
-                <div key={title} className="flex gap-5 rounded-2xl bg-white p-6 ring-1 ring-border">
+                <div key={title} className="flex gap-5 border-t border-ink pt-5">
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gold text-ink">
                     <Icon className="h-5 w-5" aria-hidden />
                   </span>

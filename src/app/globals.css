@@ -95,7 +95,7 @@
 }
 
 @utility card-surface {
-  @apply rounded-3xl border border-border bg-white shadow-[0_1px_2px_rgb(20_21_47/0.04),0_12px_40px_-16px_rgb(20_21_47/0.12)];
+  @apply rounded-md border border-border bg-white shadow-[0_1px_2px_rgb(20_21_47/0.04),0_12px_40px_-16px_rgb(20_21_47/0.12)];
 }
 
 /* Subtle grid backdrop for dark sections */

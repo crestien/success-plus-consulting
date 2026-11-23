@@ -118,14 +118,14 @@ export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">
       <div className="bg-white py-14 sm:py-20">
         <div className="container-x">
           {post.image && (
-            <div className="relative mx-auto -mt-20 mb-14 aspect-[16/7] max-w-5xl overflow-hidden rounded-[2rem] bg-navy shadow-[0_32px_64px_-32px_rgb(20_21_47/0.45)] sm:-mt-28">
+            <div className="relative mx-auto -mt-20 mb-14 aspect-[16/7] max-w-5xl overflow-hidden rounded-md bg-navy shadow-[0_32px_64px_-32px_rgb(20_21_47/0.45)] sm:-mt-28">
               <PostImage src={post.image} priority sizes="(min-width: 1024px) 1024px, 100vw" />
             </div>
           )}
           <div className="prose-sp prose-blog mx-auto max-w-3xl" dangerouslySetInnerHTML={{ __html: html }} />
 
           {service && (
-            <aside className="mx-auto mt-14 grid max-w-3xl overflow-hidden rounded-3xl bg-navy text-white sm:grid-cols-5">
+            <aside className="mx-auto mt-14 grid max-w-3xl overflow-hidden rounded-md bg-navy text-white sm:grid-cols-5">
               <div className="relative min-h-40 sm:col-span-2">
                 <Image src={service.image} alt="" fill sizes="(min-width: 640px) 300px, 100vw" className="object-cover" />
                 <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent sm:bg-gradient-to-r" />

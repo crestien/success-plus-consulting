@@ -1,7 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, CalendarCheck, Phone, Plus } from "lucide-react";
-import { CtaBand, PageHero, SectionHeading, ServiceCard, TestimonialCard } from "@/components/sections";
+import { ArrowRight, Phone, Plus } from "lucide-react";
+import { CtaBand, FeaturedResult, PageHero, ServiceList, TestimonialCard } from "@/components/sections";
 import { allServicePages, services, site, solutionAreas } from "@/lib/site";
 import { ldJson, serviceLd } from "@/lib/seo";
 import { serviceFaqs } from "@/lib/faqs";
@@ -16,8 +15,9 @@ interface ServicePageProps {
 export function ServicePage({ href, subtitle, intro, children }: ServicePageProps) {
   const service = allServicePages.find((s) => s.href === href)!;
   const index = Math.max(0, services.findIndex((s) => s.href === href));
-  const related = [1, 2, 3].map((n) => services[(index + n) % services.length]);
   const area = solutionAreas.find((a) => a.services.includes(href));
+  const siblings = area ? services.filter((s) => area.services.includes(s.href) && s.href !== href) : [];
+  const related = siblings.length > 0 ? siblings : [1, 2, 3].map((n) => services[(index + n) % services.length]);
   const faqs = serviceFaqs[href] ?? [];
 
   return (
@@ -32,24 +32,6 @@ export function ServicePage({ href, subtitle, intro, children }: ServicePageProp
           ...(area ? [{ name: area.name, href: area.href }] : []),
           { name: service.name },
         ]}
-        aside={
-          <div className="relative">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] ring-1 ring-white/10">
-              <Image
-                src={service.image}
-                alt=""
-                fill
-                priority
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover"
-              />
-              <div aria-hidden className="absolute inset-0 bg-gradient-to-tr from-ink/40 to-transparent" />
-            </div>
-            <div className="absolute -bottom-5 left-6 rounded-2xl bg-gold px-5 py-3 text-sm font-semibold text-ink shadow-xl">
-              Free needs assessment
-            </div>
-          </div>
-        }
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <Link href="/contact" className="btn-gold">
@@ -69,25 +51,23 @@ export function ServicePage({ href, subtitle, intro, children }: ServicePageProp
 
           <aside className="lg:col-span-5 lg:col-start-8">
             <div className="space-y-6 lg:sticky lg:top-28">
-              <div className="card-surface p-8">
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-gold text-ink">
-                  <CalendarCheck className="h-5 w-5" aria-hidden />
-                </span>
-                <h2 className="font-display mt-5 text-2xl font-medium text-ink">Ready to get started?</h2>
+              <div className="border-t-4 border-navy pt-6">
+                <h2 className="font-display text-2xl font-medium text-ink">Start with a free needs assessment.</h2>
                 <p className="mt-2 text-muted-foreground">
                   Every engagement is built around your organization. The first conversation is a free needs assessment.
                 </p>
-                <div className="mt-6 grid gap-3">
-                  <a href={site.phoneHref} className="btn-navy">
+                <div className="mt-6 flex flex-col gap-4">
+                  <Link href="/contact" className="btn-navy self-start">
+                    Send us a message
+                    <ArrowRight className="h-4 w-4" aria-hidden />
+                  </Link>
+                  <a href={site.phoneHref} className="inline-flex items-center gap-2 font-semibold text-navy">
                     <Phone className="h-4 w-4" aria-hidden />
                     {site.phone}
                   </a>
-                  <Link href="/contact" className="btn-ghost-dark">
-                    Send us a message
-                  </Link>
                 </div>
               </div>
-              <TestimonialCard className="hidden lg:block" />
+              <TestimonialCard className="hidden pt-6 lg:block" size="md" />
             </div>
           </aside>
         </div>
@@ -111,8 +91,7 @@ export function ServicePage({ href, subtitle, intro, children }: ServicePageProp
           />
           <div className="container-x grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <p className="eyebrow text-navy-light">FAQ</p>
-              <h2 id="faq-heading" className="font-display mt-4 text-4xl leading-[1.08] font-medium text-ink sm:text-5xl">
+              <h2 id="faq-heading" className="font-display text-4xl leading-[1.08] font-medium text-ink sm:text-5xl">
                 {service.name} questions, answered.
               </h2>
             </div>
@@ -144,14 +123,20 @@ export function ServicePage({ href, subtitle, intro, children }: ServicePageProp
         </section>
       )}
 
-      <section className="bg-cream py-20 sm:py-24">
+      <FeaturedResult />
+
+      <section className="bg-white py-20 sm:py-24">
         <div className="container-x">
-          <SectionHeading eyebrow="Keep exploring" title="More ways we help leaders grow." />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {related.map((s) => (
-              <ServiceCard key={s.href} service={s} />
-            ))}
-          </div>
+          <h2 className="font-display max-w-3xl text-4xl leading-[1.1] font-medium text-ink sm:text-5xl">
+            {area ? `More from ${area.name}.` : "More ways we help leaders grow."}
+          </h2>
+          <ServiceList items={related} className="mt-12" />
+          {area && (
+            <Link href={area.href} className="mt-10 inline-flex items-center gap-2 font-semibold text-navy underline underline-offset-4">
+              See all of {area.name}
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+          )}
         </div>
       </section>
 

@@ -29,7 +29,7 @@ export function PostCard({ post, featured = false, className }: { post: Post; fe
     <Link
       href={`/blog/${post.slug}`}
       className={cn(
-        "group reveal spotlight relative flex flex-col overflow-hidden rounded-3xl border border-border bg-white transition-all duration-300 hover:-translate-y-1 hover:border-navy/20 hover:shadow-[0_24px_48px_-24px_rgb(20_21_47/0.35)]",
+        "group reveal relative flex flex-col overflow-hidden rounded-md border border-border bg-white transition-all duration-300 hover:-translate-y-1 hover:border-navy/20 hover:shadow-[0_24px_48px_-24px_rgb(20_21_47/0.35)]",
         featured && "lg:grid lg:grid-cols-12",
         className,
       )}
