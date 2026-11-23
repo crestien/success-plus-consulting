@@ -1,4 +1,5 @@
 import { CtaBand, PageHero } from "@/components/sections";
+import { BlogSearch } from "@/components/blog-search";
 import { PostCard } from "@/components/post-card";
 import { getAllPosts } from "@/lib/blog";
 import { pageMeta } from "@/lib/seo";
@@ -21,6 +22,7 @@ export default function BlogIndex() {
         crumbs={[{ name: "Blog" }]}
       />
 
+      <BlogSearch>
       <section className="bg-cream py-16 sm:py-24">
         <div className="container-x">
           {first ? (
@@ -43,6 +45,7 @@ export default function BlogIndex() {
           )}
         </div>
       </section>
+      </BlogSearch>
 
       <CtaBand title="Want these ideas working inside your organization?" text="Tell us what you’re facing. We’ll listen first, then help you build a plan." />
     </div>
