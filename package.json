@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev --port 4173",
-    "build": "next build --webpack",
+    "build": "node scripts/prune-deploys.js && next build --webpack",
     "start": "node server.js"
   },
   "dependencies": {
