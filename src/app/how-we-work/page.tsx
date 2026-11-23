@@ -51,8 +51,7 @@ export default function HowWeWorkPage() {
       </section>
 
       <section className="relative isolate overflow-hidden bg-ink py-20 text-white sm:py-28">
-        <div aria-hidden className="bg-grid absolute inset-0 -z-10" />
-        <div className="container-x grid items-center gap-16 lg:grid-cols-2">
+          <div className="container-x grid items-center gap-16 lg:grid-cols-2">
           <div>
             <SectionHeading
               tone="light"

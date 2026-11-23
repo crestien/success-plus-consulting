@@ -1,21 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import {
-  ArrowRight,
-  BarChart3,
-  Compass,
-  Factory,
-  Handshake,
-  Layers,
-  Phone,
-  Search,
-  Sprout,
-  Target,
-  UsersRound,
-} from "lucide-react";
-import { CtaBand, LogoMarquee, SectionHeading, TestimonialCard } from "@/components/sections";
-import { differences, method, proofPoint, site, solutionAreas, yearsInBusiness } from "@/lib/site";
+import { ArrowRight, Phone } from "lucide-react";
+import { ClientLogos, CtaBand, PhotoSlot } from "@/components/sections";
+import { differences, method, proofPoint, site, solutionAreas, testimonials, yearsInBusiness } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -23,256 +10,226 @@ export const metadata: Metadata = {
 
 const problems = [
   {
-    icon: Target,
     title: "Leadership effectiveness",
     text: "Supervisors and managers who were promoted for their skills, not taught how to lead people.",
   },
   {
-    icon: UsersRound,
     title: "Workforce performance",
     text: "Turnover, absenteeism, low engagement, and expectations that aren't landing on the floor.",
   },
   {
-    icon: BarChart3,
     title: "Organizational performance",
     text: "Productivity and efficiency that stall because leadership, culture, and process are out of step.",
   },
   {
-    icon: Compass,
     title: "Strategic change",
     text: "Growth, succession, and change that need a clear plan and leaders who can carry it through.",
   },
 ];
 
-const differenceIcons = [Layers, Search, Handshake, UsersRound, Factory, Sprout];
+const featuredQuotes = [
+  {
+    quote:
+      "I don’t make a habit of hiring consultants, because so few actually bring value to the table. Success Plus is the exception to the rule.",
+    t: testimonials[1],
+  },
+  {
+    quote: "The amazing part isn’t the improvement, it’s that the improvements lasted.",
+    t: testimonials[3],
+  },
+];
 
 export default function Home() {
   return (
     <div>
-      {/* ---------------------------------------------------------- Hero */}
-      <section className="relative isolate overflow-hidden bg-ink text-white">
-        <div aria-hidden className="bg-grid absolute inset-0 -z-10" />
-        <div aria-hidden className="absolute -top-40 -left-40 -z-10 h-[520px] w-[520px] rounded-full bg-navy blur-3xl drift" />
-        <div aria-hidden className="absolute right-0 bottom-0 -z-10 h-[420px] w-[420px] rounded-full bg-gold/15 blur-3xl drift-slow" />
-
-        <div className="container-x grid items-center gap-16 pt-16 pb-20 sm:pt-24 lg:grid-cols-12 lg:pb-28">
+      {/* 1 ------------------------------------------- Brand positioning */}
+      <section className="bg-navy-dark text-white">
+        <div className="container-x grid items-center gap-12 pt-14 pb-16 sm:pt-20 sm:pb-20 lg:grid-cols-12 lg:gap-16 lg:pb-24">
           <div className="lg:col-span-7">
-            <p className="eyebrow rise text-gold">{site.tagline}</p>
-            <h1 className="font-display rise rise-1 mt-6 text-5xl leading-[1.04] font-medium sm:text-6xl lg:text-[4.25rem]">
+            <h1 className="font-display text-[2.6rem] leading-[1.06] font-medium sm:text-6xl lg:text-[4.5rem]">
               Strengthen organizational performance <em className="text-gold">through people.</em>
             </h1>
-            <p className="rise rise-2 mt-7 max-w-xl text-lg leading-relaxed text-white/75 sm:text-xl">
-              Boutique leadership and organizational performance consulting built around your people, culture,
-              challenges, and business goals.
+            <p className="mt-7 max-w-xl text-lg leading-relaxed text-white/85 sm:text-xl">
+              {site.tagline}, built around your people, culture, challenges, and business goals.
             </p>
-            <div className="rise rise-3 mt-10 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact" className="btn-gold">
-                Let&apos;s talk about your organization
+            <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7">
+              <Link href="/contact" className="btn-gold self-start">
+                Get a free needs assessment
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
-              <Link href="/how-we-work" className="btn-ghost-light">
-                Discover the Success Model
-              </Link>
+              <a href={site.phoneHref} className="inline-flex items-center gap-2 text-white/85 hover:text-white">
+                <Phone className="h-4 w-4" aria-hidden />
+                or call <span className="border-b border-white/50 font-semibold text-white">{site.phone}</span>
+              </a>
             </div>
-            <a
-              href={site.phoneHref}
-              className="rise rise-3 mt-8 inline-flex items-center gap-2 text-sm text-white/60 hover:text-white"
-            >
-              <Phone className="h-4 w-4" aria-hidden />
-              Prefer to talk? Call <span className="font-semibold text-white">{site.phone}</span>
-            </a>
+
+            <div className="mt-12 grid gap-6 border-t border-white/20 pt-8 sm:grid-cols-[auto_1fr] sm:gap-10">
+              <div>
+                <p className="font-display text-6xl leading-none font-medium text-gold">{proofPoint.value}</p>
+                <p className="mt-2 max-w-[11rem] text-sm text-white/85">drop in annual turnover at a Tyson Foods plant</p>
+              </div>
+              <figure>
+                <blockquote className="font-display text-xl leading-snug">
+                  &ldquo;Think of it as coaching rather than training.&rdquo;
+                </blockquote>
+                <figcaption className="mt-2 text-sm text-white/75">
+                  John Sherman, CEO – East Region, Coca-Cola Bottling Company United
+                </figcaption>
+              </figure>
+            </div>
           </div>
 
-          {/* Visual */}
-          <div className="rise rise-2 relative mx-auto w-full max-w-md lg:col-span-5">
-            <div className="relative aspect-square rounded-[2rem] bg-gradient-to-br from-navy to-navy-dark p-8 ring-1 ring-white/10 sm:aspect-[4/5]">
-              <div aria-hidden className="bg-grid absolute inset-0 rounded-[2rem]" />
-              <Image
-                src="/images/book-cover.webp"
-                alt="Improving Profits Through People, by Isaac Russell"
-                width={305}
-                height={410}
-                priority
-                className="relative mx-auto mt-0 w-[56%] -rotate-3 drop-shadow-[0_30px_30px_rgb(0_0_0/0.5)] sm:mt-4 sm:w-[68%]"
-              />
-              <div className="float absolute -bottom-6 -left-4 flex items-center gap-4 rounded-2xl bg-white p-3 pr-6 text-ink shadow-2xl sm:-left-10">
-                <Image
-                  src="/images/isaac-portrait.webp"
-                  alt="Isaac Russell"
-                  width={400}
-                  height={400}
-                  className="h-16 w-16 rounded-full"
-                />
-                <div>
-                  <p className="font-semibold">Isaac Russell</p>
-                  <p className="text-xs text-muted-foreground">Founder &amp; CEO · Leadership &amp; Organizational Performance Advisor</p>
-                </div>
-              </div>
-              <div className="absolute -top-5 -right-3 rounded-2xl bg-gold px-4 py-3 text-ink shadow-xl sm:-right-8">
-                <p className="font-display text-3xl leading-none font-semibold">{proofPoint.value}</p>
-                <p className="mt-1 text-[11px] font-semibold tracking-wider uppercase">Turnover reduced</p>
-              </div>
-            </div>
+          <div className="lg:col-span-5">
+            <PhotoSlot
+              className="aspect-[16/10] lg:aspect-[4/5]"
+              note="Isaac Russell with a client leadership team on the plant floor"
+              tone="dark"
+            />
+            <p className="mt-3 text-sm text-white/75">
+              <strong className="font-semibold text-white">Isaac Russell</strong>, Founder &amp; CEO. Former hourly
+              factory worker, advising leaders for {yearsInBusiness()} years.
+            </p>
           </div>
         </div>
       </section>
 
-      <LogoMarquee />
+      <ClientLogos />
 
-      {/* ------------------------------------------------------- Promise */}
+      {/* 2 --------------------------------------------- Challenges we solve */}
       <section className="bg-white py-20 sm:py-28">
-        <div className="container-x grid gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-6">
-            <SectionHeading eyebrow="Our promise" title="Every organization is unique. So is our approach." />
+        <div className="container-x">
+          <div className="max-w-3xl">
+            <h2 className="font-display text-4xl leading-[1.1] font-medium text-ink sm:text-5xl">
+              The people challenges behind your performance numbers.
+            </h2>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              We work alongside CEOs, presidents, HR and operations leaders, plant managers, and supervisors.
+            </p>
           </div>
-          <div className="space-y-5 text-lg leading-relaxed text-muted-foreground lg:col-span-6 lg:pt-10">
-            <p className="text-xl text-ink">
+          <ul className="mt-12 grid border-t border-ink sm:grid-cols-2 lg:grid-cols-4">
+            {problems.map(({ title, text }, i) => (
+              <li
+                key={title}
+                className="py-7 sm:pr-6 lg:[&:not(:first-child)]:border-l lg:[&:not(:first-child)]:pl-6 lg:[&:not(:last-child)]:pr-6"
+              >
+                <span className="sr-only">Challenge {i + 1}: </span>
+                <h3 className="font-display text-xl font-medium text-ink">{title}</h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">{text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* 3 ------------------------------------------- Three solutions */}
+      <section className="bg-cream" aria-labelledby="solutions-heading">
+        <div className="container-x pt-20 pb-4 sm:pt-28">
+          <h2 id="solutions-heading" className="font-display max-w-3xl text-4xl leading-[1.1] font-medium text-ink sm:text-5xl">
+            Three ways we strengthen your organization.
+          </h2>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            Every engagement is built around your organization. Most clients draw on more than one.
+          </p>
+        </div>
+        <div className="container-x divide-y divide-border">
+          {solutionAreas.map((a, i) => (
+            <article key={a.slug} className="grid items-center gap-8 py-14 sm:py-20 lg:grid-cols-12 lg:gap-16">
+              <PhotoSlot
+                className={`aspect-[16/10] lg:col-span-6 ${i % 2 ? "lg:order-2" : ""}`}
+                note={a.photo}
+              />
+              <div className={`lg:col-span-6 ${i % 2 ? "lg:order-1" : ""}`}>
+                <p className="font-display text-lg font-semibold text-navy">0{i + 1}</p>
+                <h3 className="font-display mt-1 text-3xl font-medium text-ink sm:text-4xl">{a.name}</h3>
+                <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{a.summary}</p>
+                <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-ink">
+                  {a.capabilities.slice(0, 5).map((c) => (
+                    <li key={c} className="flex items-center gap-2">
+                      <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-gold-dark" />
+                      {c}
+                    </li>
+                  ))}
+                </ul>
+                <Link href={a.href} className="btn-navy mt-8">
+                  Explore {a.name}
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* 4 --------------------------------- The Success Plus difference */}
+      <section className="bg-white py-20 sm:py-28">
+        <div className="container-x grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5">
+            <h2 className="font-display text-4xl leading-[1.1] font-medium text-ink sm:text-5xl">
+              A trusted extension of your leadership team.
+            </h2>
+            <p className="mt-5 text-xl leading-relaxed text-ink">
               When performance falls short, the answer isn&apos;t always another training program.
             </p>
-            <p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
               Success Plus doesn&apos;t begin with a standardized program. We listen, assess, and analyze, then build a
               solution around your people, culture, challenges, and business objectives.
             </p>
-            <ul className="flex flex-wrap gap-2 pt-2">
-              {site.promise.map((p) => (
-                <li key={p} className="rounded-full bg-lavender px-4 py-2 text-sm font-semibold text-navy">
-                  {p}
-                </li>
-              ))}
-            </ul>
+            <p className="font-display mt-6 text-lg text-navy italic">{site.promise.join(" ")}</p>
           </div>
-        </div>
-      </section>
-
-      {/* ------------------------------------------------ What we solve */}
-      <section className="bg-cream py-20 sm:py-28">
-        <div className="container-x">
-          <SectionHeading
-            eyebrow="What we help solve"
-            title="The people challenges behind your performance numbers."
-            intro="We work alongside executives, HR leaders, plant managers, supervisors, and emerging leaders."
-          />
-          <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {problems.map(({ icon: Icon, title, text }) => (
-              <li key={title} className="reveal rounded-3xl bg-white p-7 ring-1 ring-border">
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-navy text-gold">
-                  <Icon className="h-5 w-5" aria-hidden />
-                </span>
-                <h3 className="font-display mt-6 text-xl font-medium text-ink">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
-              </li>
+          <dl className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:col-span-7">
+            {differences.map((d) => (
+              <div key={d.title} className="border-t border-ink pt-4">
+                <dt className="font-display text-xl font-medium text-ink">{d.title}</dt>
+                <dd className="mt-2 leading-relaxed text-muted-foreground">{d.text}</dd>
+              </div>
             ))}
-          </ul>
-
-          <div className="mt-16 grid gap-5 lg:grid-cols-3">
-            {solutionAreas.map((a) => (
-              <Link
-                key={a.href}
-                href={a.href}
-                className="group reveal relative overflow-hidden rounded-3xl bg-navy p-8 text-white transition-transform hover:-translate-y-1"
-              >
-                <Image src={a.image} alt="" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover opacity-15 mix-blend-luminosity transition-opacity group-hover:opacity-25" />
-                <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-navy via-navy/80 to-navy/40" />
-                <div className="relative">
-                  <p className="eyebrow text-gold">Solutions</p>
-                  <h3 className="font-display mt-4 text-2xl font-medium">{a.name}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-white/75">{a.summary}</p>
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-gold">
-                    Explore {a.name.toLowerCase()}
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
+          </dl>
         </div>
       </section>
 
-      {/* ---------------------------------------------- The difference */}
-      <section className="relative isolate overflow-hidden bg-ink py-20 text-white sm:py-28">
-        <div aria-hidden className="bg-grid absolute inset-0 -z-10" />
-        <div className="container-x">
-          <SectionHeading
-            tone="light"
-            eyebrow="The Success Plus difference"
-            title="A trusted extension of your leadership team."
-            intro="Our role goes beyond delivering training and walking away."
-          />
-          <ul className="mt-14 grid gap-px overflow-hidden rounded-3xl bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
-            {differences.map((d, i) => {
-              const Icon = differenceIcons[i];
-              return (
-                <li key={d.title} className="bg-ink p-8">
-                  <Icon className="h-6 w-6 text-gold" aria-hidden />
-                  <h3 className="mt-5 text-lg font-semibold">{d.title}</h3>
-                  <p className="mt-2 leading-relaxed text-white/65">{d.text}</p>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </section>
-
-      {/* ------------------------------------------------- How we work */}
-      <section className="bg-white py-20 sm:py-28">
-        <div className="container-x">
-          <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-            <SectionHeading eyebrow="How we work" title="Seven steps from first conversation to lasting change." />
-            <Link href="/how-we-work" className="btn-ghost-dark shrink-0 self-start lg:self-auto">
-              See the full approach
+      {/* 5 ----------------------------------- Results and testimonials */}
+      <section className="bg-navy text-white">
+        <div className="container-x grid gap-12 py-20 sm:py-28 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-6">
+            <p className="font-display text-[7rem] leading-none font-medium text-gold sm:text-[9rem]">{proofPoint.value}</p>
+            <h2 className="font-display mt-4 text-3xl leading-tight font-medium sm:text-4xl">
+              {proofPoint.label}
+            </h2>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/85">{proofPoint.text}</p>
+            <Link
+              href={proofPoint.href}
+              className="mt-7 inline-flex items-center gap-2 font-semibold text-gold underline underline-offset-4 hover:text-gold-light"
+            >
+              Read the Tyson Foods story
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
           </div>
-          <ol className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-7">
-            {method.map((m, i) => (
-              <li key={m.step} className="reveal relative rounded-2xl border border-border p-5">
-                <span className="font-display text-sm font-semibold text-gold-dark">0{i + 1}</span>
-                <p className="font-display mt-2 text-xl font-medium text-ink">{m.step}</p>
-                <p className="mt-2 text-sm leading-snug text-muted-foreground">{m.text}</p>
-              </li>
+          <div className="space-y-12 lg:col-span-6 lg:pt-4">
+            {featuredQuotes.map(({ quote, t }) => (
+              <figure key={t.name} className="border-l-4 border-gold pl-7">
+                <blockquote className="font-display text-2xl leading-snug sm:text-[1.7rem]">&ldquo;{quote}&rdquo;</blockquote>
+                <figcaption className="mt-4 text-white/80">
+                  <strong className="font-semibold text-white">{t.name}</strong>, {t.title}
+                </figcaption>
+              </figure>
             ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* ------------------------------------------------------ Results */}
-      <section className="bg-cream py-20 sm:py-28">
-        <div className="container-x grid items-center gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <SectionHeading eyebrow="Proof & results" title="Measured in behavior change and business outcomes." />
-            <div className="reveal mt-10 rounded-3xl bg-navy p-8 text-white">
-              <p className="font-display text-6xl font-medium text-gold">{proofPoint.value}</p>
-              <p className="mt-2 text-lg font-semibold">{proofPoint.label}</p>
-              <p className="mt-3 leading-relaxed text-white/70">{proofPoint.text}</p>
-            </div>
-            <Link href="/results" className="mt-8 inline-flex items-center gap-2 font-semibold text-navy hover:text-navy-light">
-              See client results
+            <Link href="/results" className="inline-flex items-center gap-2 font-semibold text-white underline underline-offset-4 hover:text-gold">
+              More client results
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
           </div>
-          <div className="lg:col-span-6 lg:col-start-7">
-            <TestimonialCard className="reveal" />
-          </div>
         </div>
       </section>
 
-      {/* ---------------------------------------------------- Meet Isaac */}
-      <section className="bg-white py-20 sm:py-28">
-        <div className="container-x grid items-center gap-16 lg:grid-cols-2">
-          <div className="reveal relative order-2 lg:order-1">
-            <div className="relative mx-auto aspect-square max-w-lg rounded-[2rem] bg-lavender">
-              <div aria-hidden className="absolute inset-10 rounded-full bg-gold/60 blur-2xl" />
-              <Image
-                src="/images/book-cover.webp"
-                alt="Improving Profits Through People book cover"
-                width={305}
-                height={410}
-                className="absolute top-1/2 left-1/2 w-[54%] -translate-x-1/2 -translate-y-1/2 rotate-2 drop-shadow-[0_30px_30px_rgb(20_21_47/0.35)]"
-              />
-            </div>
-          </div>
-          <div className="order-1 lg:order-2">
-            <SectionHeading eyebrow="From the factory floor to the C-suite" title="Meet Isaac Russell." />
+      {/* 6 --------------------------------------------------- Meet Isaac */}
+      <section className="bg-cream py-20 sm:py-28">
+        <div className="container-x grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <PhotoSlot className="aspect-[5/4]" note="Isaac coaching a supervisor on the floor, candid, natural light" />
+          <div>
+            <p className="font-display text-lg font-semibold text-navy">From the factory floor to the C-suite</p>
+            <h2 className="font-display mt-2 text-4xl leading-[1.1] font-medium text-ink sm:text-5xl">
+              Meet Isaac Russell.
+            </h2>
             <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
               <p>
                 Isaac&apos;s career began as an hourly factory worker. He experienced organizations from the ground up
@@ -286,12 +243,12 @@ export default function Home() {
                 the philosophy behind the work: organizations become stronger when they invest in their people.
               </p>
             </div>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Link href="/about" className="btn-navy">
+            <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7">
+              <Link href="/about" className="btn-navy self-start">
                 More about Isaac
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
-              <Link href="/invite-isaac-to-speak" className="btn-ghost-dark">
+              <Link href="/invite-isaac-to-speak" className="font-semibold text-navy underline underline-offset-4 hover:text-navy-light">
                 Invite Isaac to speak
               </Link>
             </div>
@@ -299,7 +256,49 @@ export default function Home() {
         </div>
       </section>
 
-      <CtaBand />
+      {/* 7 ---------------------------------------------------- How we work */}
+      <section className="bg-white py-20 sm:py-28">
+        <div className="container-x">
+          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+            <h2 className="font-display max-w-2xl text-4xl leading-[1.1] font-medium text-ink sm:text-5xl">
+              A customized process, from first conversation to lasting change.
+            </h2>
+            <Link href="/how-we-work" className="font-semibold text-navy underline underline-offset-4 hover:text-navy-light">
+              See the full approach
+            </Link>
+          </div>
+          <ol className="mt-12 grid border-t border-ink sm:grid-cols-2 lg:grid-cols-7">
+            {method.map((m, i) => (
+              <li key={m.step} className="pt-5 pr-4 pb-6">
+                <span className="font-display text-sm font-semibold text-navy">
+                  0{i + 1}
+                  <span aria-hidden className="mt-1.5 block h-[3px] w-6 bg-gold" />
+                </span>
+                <h3 className="font-display mt-3 text-xl font-medium text-ink">{m.step}</h3>
+                <p className="mt-2 text-[0.95rem] leading-snug text-muted-foreground">{m.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Secondary: speaking, events, publications */}
+      <section className="border-t border-border bg-white py-10">
+        <div className="container-x flex flex-col gap-4 text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p>Also from Isaac: keynotes and events, the book, and the Success Plus blog.</p>
+          <p className="flex flex-wrap gap-x-6 gap-y-2 font-semibold text-navy">
+            <Link href="/invite-isaac-to-speak" className="underline underline-offset-4">Speaking &amp; events</Link>
+            <Link href="/about" className="underline underline-offset-4">Publications</Link>
+            <Link href="/blog" className="underline underline-offset-4">Blog</Link>
+          </p>
+        </div>
+      </section>
+
+      {/* 8 --------------------------------------------------- Invitation */}
+      <CtaBand
+        title="Start with a free needs assessment."
+        text="A first conversation about your people, your plant, and what's getting in the way. We listen first, with no obligation."
+      />
     </div>
   );
 }

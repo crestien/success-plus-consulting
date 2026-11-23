@@ -24,20 +24,13 @@ export function PageHero({
   aside?: React.ReactNode;
 }) {
   return (
-    <section className="relative isolate overflow-hidden bg-ink text-white">
-      <div aria-hidden className="bg-grid absolute inset-0 -z-10" />
-      <div
-        aria-hidden
-        className="absolute -top-32 left-1/2 -z-10 h-[420px] w-[820px] -translate-x-1/2 rounded-full bg-navy/70 blur-3xl drift"
-      />
-      <div aria-hidden className="absolute -right-24 bottom-0 -z-10 h-64 w-64 rounded-full bg-gold/15 blur-3xl drift-slow" />
-
+    <section className="bg-navy-dark text-white">
       <div className={cn("container-x py-16 sm:py-24", aside && "grid items-center gap-12 lg:grid-cols-12")}>
         <div className={cn(aside && "lg:col-span-7")}>
           {crumbs.length > 0 && (
             <nav aria-label="Breadcrumb" className="rise mb-8">
               <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldJson(breadcrumbLd(crumbs)) }} />
-              <ol className="flex flex-wrap items-center gap-1.5 text-sm text-white/50">
+              <ol className="flex flex-wrap items-center gap-1.5 text-sm text-white/70">
                 <li>
                   <Link href="/" className="link-sweep hover:text-white">
                     Home
@@ -60,11 +53,11 @@ export function PageHero({
               </ol>
             </nav>
           )}
-          {eyebrow && <p className="eyebrow rise text-gold">{eyebrow}</p>}
+          {eyebrow && <p className="rise text-sm font-semibold text-gold">{eyebrow}</p>}
           <h1 className="font-display rise rise-1 mt-5 text-4xl leading-[1.05] font-medium sm:text-5xl lg:text-6xl">
             {title}
           </h1>
-          {subtitle && <p className="rise rise-2 mt-6 max-w-2xl text-lg leading-relaxed text-white/70">{subtitle}</p>}
+          {subtitle && <p className="rise rise-2 mt-6 max-w-2xl text-lg leading-relaxed text-white/85">{subtitle}</p>}
           {children && <div className="rise rise-3 mt-9">{children}</div>}
         </div>
         {aside && <div className="rise rise-2 lg:col-span-5">{aside}</div>}
@@ -94,7 +87,7 @@ export function SectionHeading({
   return (
     <div className={cn("max-w-2xl", align === "center" && "mx-auto text-center", className)}>
       {eyebrow && (
-        <p className={cn("eyebrow", tone === "dark" ? "text-navy-light" : "text-gold", align === "center" && "justify-center")}>
+        <p className={cn("eyebrow", tone === "dark" ? "text-navy" : "text-gold", align === "center" && "justify-center")}>
           {eyebrow}
         </p>
       )}
@@ -118,30 +111,8 @@ export function SectionHeading({
 /* ------------------------------------------------------------------ */
 /* Client logos                                                        */
 /* ------------------------------------------------------------------ */
-export function LogoMarquee({ label = "Trusted by America’s most recognized brands" }: { label?: string }) {
-  const row = [...clients, ...clients];
-  return (
-    <section aria-label={label} className="border-y border-border bg-white py-10">
-      <p className="container-x text-center text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase">
-        {label}
-      </p>
-      <div className="marquee relative mt-8 overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_12%,#000_88%,transparent)]">
-        <ul className="marquee-track flex w-max items-center gap-16 pr-16 sm:gap-24 sm:pr-24">
-          {row.map((c, i) => (
-            <li key={`${c.name}-${i}`} aria-hidden={i >= clients.length || undefined}>
-              <Image
-                src={c.src}
-                alt={i < clients.length ? c.name : ""}
-                width={c.w}
-                height={c.h}
-                className="h-12 w-auto object-contain opacity-70 mix-blend-multiply grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:h-14"
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
+export function LogoMarquee({ label = "Trusted by leaders at" }: { label?: string }) {
+  return <ClientLogos label={label} />;
 }
 
 /* ------------------------------------------------------------------ */
@@ -276,22 +247,89 @@ export function CtaBand({
   text?: string;
 }) {
   return (
-    <section className="bg-white px-5 py-20 sm:px-8 sm:py-28">
-      <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-navy px-6 py-16 text-center text-white sm:px-16 sm:py-20">
-        <div aria-hidden className="bg-grid absolute inset-0 -z-10" />
-        <div aria-hidden className="absolute -bottom-40 left-1/2 -z-10 h-80 w-[720px] -translate-x-1/2 rounded-full bg-gold/25 blur-3xl drift-slow" />
-        <h2 className="font-display mx-auto max-w-3xl text-4xl leading-tight font-medium sm:text-5xl">{title}</h2>
-        <p className="mx-auto mt-5 max-w-xl text-lg text-white/75">{text}</p>
-        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Link href="/contact" className="btn-gold w-full sm:w-auto">
+    <section className="bg-navy text-white">
+      <div className="container-x flex flex-col justify-between gap-8 py-16 sm:py-20 lg:flex-row lg:items-center">
+        <div className="max-w-2xl">
+          <h2 className="font-display text-4xl leading-tight font-medium sm:text-5xl">{title}</h2>
+          <p className="mt-4 text-lg text-white/85">{text}</p>
+        </div>
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-7">
+          <Link href="/contact" className="btn-gold self-start">
             Start the conversation
             <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
-          <a href={site.phoneHref} className="btn-ghost-light w-full sm:w-auto">
+          <a href={site.phoneHref} className="inline-flex items-center gap-2 text-white/85 hover:text-white">
             <Phone className="h-4 w-4" aria-hidden />
-            Call {site.phone}
+            or call <span className="border-b border-white/50 font-semibold text-white">{site.phone}</span>
           </a>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Photography slot: swap for <Image> when real photos are supplied    */
+/* ------------------------------------------------------------------ */
+export function PhotoSlot({
+  note,
+  src,
+  className,
+  tone = "light",
+}: {
+  note: string;
+  src?: string;
+  className?: string;
+  tone?: "light" | "dark";
+}) {
+  if (src) {
+    return (
+      <div className={cn("relative overflow-hidden rounded-md", className)}>
+        <Image src={src} alt={note} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+      </div>
+    );
+  }
+  return (
+    <div
+      role="img"
+      aria-label={`Photography to come: ${note}`}
+      className={cn(
+        "relative grid place-items-center overflow-hidden rounded-md p-8 text-center",
+        tone === "dark"
+          ? "bg-gradient-to-br from-navy to-ink text-white/80"
+          : "bg-gradient-to-br from-lavender to-[#d9d6ee] text-navy",
+        className,
+      )}
+    >
+      <div className="max-w-[18rem]">
+        <p className="text-xs font-semibold tracking-[0.14em] uppercase opacity-80">Photography to come</p>
+        <p className="font-display mt-2 text-lg leading-snug">{note}</p>
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Static client logo row                                              */
+/* ------------------------------------------------------------------ */
+export function ClientLogos({ label = "Trusted by leaders at" }: { label?: string }) {
+  return (
+    <section aria-label={label} className="border-b border-border bg-white py-8">
+      <div className="container-x flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+        <p className="text-sm text-muted-foreground">{label}</p>
+        <ul className="flex flex-wrap items-center gap-x-10 gap-y-5 lg:gap-x-14">
+          {clients.map((c) => (
+            <li key={c.name}>
+              <Image
+                src={c.src}
+                alt={c.name}
+                width={c.w}
+                height={c.h}
+                className="h-9 w-auto max-w-[8.5rem] object-contain opacity-80 mix-blend-multiply grayscale sm:h-11"
+              />
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

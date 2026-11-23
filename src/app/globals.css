@@ -75,11 +75,7 @@
 }
 
 @utility eyebrow {
-  @apply inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase;
-  &::before {
-    content: "";
-    @apply h-px w-8 bg-current opacity-60;
-  }
+  @apply text-sm font-semibold;
 }
 
 @utility btn {

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowRight, Check, Phone } from "lucide-react";
-import { CtaBand, PageHero, SectionHeading, ServiceCard, TestimonialCard } from "@/components/sections";
+import { CtaBand, PageHero, PhotoSlot, SectionHeading, ServiceCard, TestimonialCard } from "@/components/sections";
 import { ldJson, pageMeta, serviceLd } from "@/lib/seo";
 import { services, site, solutionAreas } from "@/lib/site";
 
@@ -33,12 +32,7 @@ export default async function SolutionAreaPage({ params }: PageProps<"/solutions
         title={a.name}
         subtitle={a.summary}
         crumbs={[{ name: "Solutions", href: "/solutions" }, { name: a.name }]}
-        aside={
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] ring-1 ring-white/10">
-            <Image src={a.image} alt="" fill priority sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
-            <div aria-hidden className="absolute inset-0 bg-gradient-to-tr from-ink/40 to-transparent" />
-          </div>
-        }
+        aside={<PhotoSlot className="aspect-[4/3]" note={a.photo} tone="dark" />}
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <Link href="/contact" className="btn-gold">

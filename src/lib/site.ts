@@ -175,6 +175,8 @@ export type SolutionArea = {
   summary: string;
   intro: string;
   image: string;
+  /** Photography direction until real photos are supplied. */
+  photo: string;
   capabilities: string[];
   outcomes: string[];
   /** Existing detail pages that sit under this area. */
@@ -190,6 +192,7 @@ export const solutionAreas: SolutionArea[] = [
     intro:
       "Most leaders are promoted for being good at the work, not for leading people who do it. We work alongside your leaders at every level so they set clear expectations, hold people accountable, and build teams that perform.",
     image: "/images/services/leadership.jpg",
+    photo: "Isaac coaching a plant supervisor one-on-one at the line",
     capabilities: [
       "Executive Coaching",
       "Supervisor Development",
@@ -212,6 +215,7 @@ export const solutionAreas: SolutionArea[] = [
     intro:
       "People genuinely want to do great work. When performance falls short, we look past the symptoms: are expectations clear, do people have the skills and support to succeed, and are processes helping or hurting?",
     image: "/images/services/retention.jpg",
+    photo: "A production team huddle on the manufacturing floor",
     capabilities: [
       "Workforce Development",
       "Employee Engagement",
@@ -236,6 +240,7 @@ export const solutionAreas: SolutionArea[] = [
     intro:
       "Without direction, there is no success. We help leadership teams define where the organization is headed, plan for the people it will take to get there, and lead their workforce through change.",
     image: "/images/services/planning.webp",
+    photo: "Isaac facilitating a leadership team planning session",
     capabilities: [
       "Strategic Planning",
       "Succession Planning",

@@ -32,8 +32,6 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-ink text-white/70">
-      <div aria-hidden className="bg-grid pointer-events-none absolute inset-0 opacity-60" />
-      <div aria-hidden className="pointer-events-none absolute -top-40 right-0 h-80 w-80 rounded-full bg-gold/10 blur-3xl" />
 
       <div className="container-x relative py-16 sm:py-20">
         <div className="grid gap-12 lg:grid-cols-12">
